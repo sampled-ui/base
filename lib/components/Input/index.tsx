@@ -8,7 +8,7 @@ interface InputProps
 }
 
 const defaultProps: Partial<InputProps> = {
-  size: SizeUnits.md,
+  size: "md",
 };
 
 export const Input: React.FC<InputProps> = ({
@@ -20,9 +20,9 @@ export const Input: React.FC<InputProps> = ({
   return (
     <input
       className={`${className} ${classNames(styles.input, {
-        [styles.size_sm]: size === SizeUnits.sm,
-        [styles.size_md]: size === SizeUnits.md,
-        [styles.size_lg]: size === SizeUnits.lg,
+        [styles.size_sm]: size === "sm",
+        [styles.size_md]: size === "md",
+        [styles.size_lg]: size === "lg",
       })}`}
       {...restProps}
     />

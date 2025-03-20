@@ -1,7 +1,10 @@
-export enum SizeUnits {
-  xs = "xs",
-  sm = "sm",
-  md = "md",
-  lg = "lg",
-  xl = "xl",
-}
+export type SizeUnits = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+
+export type Variants =
+  | "primary"
+  | "secondary"
+  | "success"
+  | "warning"
+  | "danger";
+
+export type HeadingUnits = 1 | 2 | 3 | 4 | 5;

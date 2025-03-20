@@ -12,7 +12,6 @@ interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const defaultProps: Partial<FlexProps> = {
   direction: "row",
-  gap: SizeUnits.md,
   justify: "start",
   align: "center",
 };
@@ -27,7 +26,6 @@ export const Flex: React.FC<FlexProps> = ({
   ...restProps
 }) => {
   direction = direction ?? defaultProps.direction;
-  gap = gap ?? defaultProps.gap;
   justify = justify ?? defaultProps.justify;
   align = align ?? defaultProps.align;
 
@@ -36,11 +34,12 @@ export const Flex: React.FC<FlexProps> = ({
       className={`${classNames(styles.container, {
         [styles.row]: direction === "row",
         [styles.column]: direction === "column",
-        [styles.gap_xs]: gap === SizeUnits.xs,
-        [styles.gap_sm]: gap === SizeUnits.sm,
-        [styles.gap_md]: gap === SizeUnits.md,
-        [styles.gap_lg]: gap === SizeUnits.lg,
-        [styles.gap_xl]: gap === SizeUnits.xl,
+        [styles.gap_xs]: gap === "xs",
+        [styles.gap_sm]: gap === "sm",
+        [styles.gap_md]: gap === "md",
+        [styles.gap_lg]: gap === "lg",
+        [styles.gap_xl]: gap === "xl",
+        [styles.gap_xxl]: gap === "xxl",
         [styles.justify_center]: justify === "center",
         [styles.justify_start]: justify === "start",
         [styles.justify_end]: justify === "end",

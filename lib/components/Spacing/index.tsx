@@ -8,7 +8,7 @@ interface SpacingProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const defaultProps: Partial<SpacingProps> = {
-  gap: SizeUnits.md,
+  gap: "md",
 };
 
 export const Spacing: React.FC<SpacingProps> = ({
@@ -21,11 +21,11 @@ export const Spacing: React.FC<SpacingProps> = ({
   return (
     <div
       className={`${classNames({
-        [styles.gap_xs]: gap === SizeUnits.xs,
-        [styles.gap_sm]: gap === SizeUnits.sm,
-        [styles.gap_md]: gap === SizeUnits.md,
-        [styles.gap_lg]: gap === SizeUnits.lg,
-        [styles.gap_xl]: gap === SizeUnits.xl,
+        [styles.gap_xs]: gap === "xs",
+        [styles.gap_sm]: gap === "sm",
+        [styles.gap_md]: gap === "md",
+        [styles.gap_lg]: gap === "lg",
+        [styles.gap_xl]: gap === "xl",
       })} ${className}`}
       {...restProps}
     >

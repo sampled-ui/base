@@ -1,8 +1,9 @@
 import classNames from "classnames";
+import { Variants } from "../../units";
 import styles from "./styles.module.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary";
+  variant?: Variants;
 }
 
 const defaultProps: Partial<ButtonProps> = {

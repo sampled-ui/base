@@ -17,21 +17,21 @@
 
 .size_sm {
   border-radius: $border-radius-xs;
-  padding: $spacing-xs $spacing-sm;
+  padding: $padding-xs;
   font-size: $font-size-xs;
   line-height: $line-height-xs;
 }
 
 .size_md {
   border-radius: $border-radius-sm;
-  padding: $spacing-sm $spacing-md;
+  padding: $padding-sm;
   font-size: $font-size-sm;
   line-height: $line-height-sm;
 }
 
 .size_lg {
   border-radius: $border-radius-md;
-  padding: $spacing-md $spacing-md;
+  padding: $padding-md;
   font-size: $font-size-md;
   line-height: $line-height-sm;
 }

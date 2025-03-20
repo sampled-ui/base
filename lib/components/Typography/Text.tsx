@@ -1,11 +1,12 @@
 import classNames from "classnames";
 
+import { Variants } from "../../units";
 import styles from "./Text.module.scss";
 
 export interface TextProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "children"> {
   children: string;
-  type?: "secondary" | "success" | "warning" | "danger";
+  variant?: Omit<Variants, "primary">;
   disabled?: boolean;
   underline?: boolean;
   deleted?: boolean;
@@ -18,7 +19,7 @@ export interface TextProps
 
 export const Text: React.FC<TextProps> = ({
   children,
-  type,
+  variant,
   disabled,
   underline,
   deleted,
@@ -33,10 +34,10 @@ export const Text: React.FC<TextProps> = ({
   return (
     <div
       className={`${classNames(styles.container, {
-        [styles.secondary]: type === "secondary",
-        [styles.success]: type === "success",
-        [styles.warning]: type === "warning",
-        [styles.danger]: type === "danger",
+        [styles.secondary]: variant === "secondary",
+        [styles.success]: variant === "success",
+        [styles.warning]: variant === "warning",
+        [styles.danger]: variant === "danger",
         [styles.disabled]: disabled,
         [styles.underline]: underline,
         [styles.deleted]: deleted,
