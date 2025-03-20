@@ -39,7 +39,9 @@ export const Section: React.FC<SectionProps> = ({
       className={`${styles.section} ${className}`}
       {...restProps}
     >
-      <Heading level={2} className={styles.title}>{title}</Heading>
+      <Heading level={3} className={styles.title}>
+        {title}
+      </Heading>
       {children}
       {divided ? <Divider className={styles.divider} /> : null}
     </Flex>

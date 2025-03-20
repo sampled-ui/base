@@ -1,0 +1,31 @@
+@use "../../variables" as *;
+
+.layout {
+  width: 100%;
+
+  .header {
+    width: 100%;
+    min-height: 4rem;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: $border;
+
+    @at-root .layout:has(.header) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    border-right: $border;
+
+    @at-root .layout:has(.sidebar) {
+      display: flex;
+    }
+  }
+}

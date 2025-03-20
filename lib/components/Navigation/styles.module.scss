@@ -1,0 +1,17 @@
+@use "../../variables" as *;
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  width: calc(100% - $spacing-md * 2);
+  padding: $spacing-md $spacing-md;
+}
+
+.item:hover {
+  cursor: pointer;
+  border-radius: $border-radius-sm;
+  background-color: hsl(0, 0%, 95%);
+}

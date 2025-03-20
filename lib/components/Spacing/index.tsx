@@ -4,7 +4,7 @@ import { SizeUnits } from "../../units";
 import styles from "./styles.module.scss";
 
 interface SpacingProps extends React.HTMLAttributes<HTMLDivElement> {
-  gap?: Omit<SizeUnits, "xl">;
+  gap?: SizeUnits;
 }
 
 const defaultProps: Partial<SpacingProps> = {
@@ -26,6 +26,7 @@ export const Spacing: React.FC<SpacingProps> = ({
         [styles.gap_md]: gap === "md",
         [styles.gap_lg]: gap === "lg",
         [styles.gap_xl]: gap === "xl",
+        [styles.gap_xxl]: gap === "xxl",
       })} ${className}`}
       {...restProps}
     >
