@@ -21,6 +21,10 @@ export const Button: React.FC<ButtonProps> = ({
       className={`${className} ${classNames(styles.button, {
         [styles.primary]: variant === "primary",
         [styles.secondary]: variant === "secondary",
+        [styles.danger]: variant === "danger",
+        [styles.success]: variant === "success",
+        [styles.warning]: variant === "warning",
+        [styles.disabled]: variant === "disabled",
       })}`}
       {...restProps}
     />

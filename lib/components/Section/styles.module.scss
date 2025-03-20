@@ -1,0 +1,13 @@
+@use "../../variables" as *;
+
+.section {
+    padding-bottom: $spacing-lg;
+}
+
+.title {
+    margin-bottom: initial;
+}
+
+.divider {
+    margin-bottom: initial;
+}

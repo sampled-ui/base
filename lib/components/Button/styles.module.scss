@@ -4,6 +4,8 @@
   all: unset;
   cursor: pointer;
 
+  user-select: none;
+
   text-align: center;
   font-family: $font-primary;
   font-size: $font-size-sm;
@@ -24,11 +26,6 @@
   color: $color-primary;
 }
 
-.secondary {
-  background-color: $color-primary;
-  color: $color-secondary;
-}
-
 .primary:hover {
   background-color: hsl(0, 0%, 20%);
 }
@@ -38,7 +35,63 @@
   box-shadow: initial;
 }
 
-.secondary:active {
+.secondary {
+  background-color: $color-primary;
+  color: $color-secondary;
+}
+
+.secondary:hover {
   background-color: hsl(0, 0%, 98%);
+}
+
+.secondary:active {
+  background-color: hsl(0, 0%, 96%);
   box-shadow: initial;
+}
+
+.danger {
+  background-color: $color-error;
+  color: $color-primary;
+}
+
+.danger:hover {
+  background-color: hsl(0, 100%, 48%);
+}
+
+.danger:active {
+  background-color: hsl(0, 100%, 40%);
+  box-shadow: initial;
+}
+
+.success {
+  background-color: $color-success;
+  color: $color-primary;
+}
+
+.success:hover {
+  background-color: hsl(120, 100%, 38%);
+}
+
+.success:active {
+  background-color: hsl(120, 100%, 30%);
+  box-shadow: initial;
+}
+
+.warning {
+  background-color: $color-warning;
+  color: $color-primary;
+}
+
+.warning:hover {
+  background-color: hsl(40, 100%, 48%);
+}
+
+.warning:active {
+  background-color: hsl(40, 100%, 40%);
+  box-shadow: initial;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
 }

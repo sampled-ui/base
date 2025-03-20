@@ -2,7 +2,21 @@
 
 .container {
   font-family: $font-primary;
+}
+
+.sm {
   font-size: $font-size-sm;
+  line-height: $line-height-sm;
+}
+
+.md {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+}
+
+.lg {
+  font-size: $font-size-lg;
+  line-height: $line-height-lg;
 }
 
 .secondary {
@@ -52,14 +66,10 @@
   background-color: hsl(0, 0%, 95%);
   font-size: $font-size-xs;
   font-family: $font-mono;
+  line-height: $line-height-xs;
 }
 
 .keyboard {
-  padding: 0.1rem $spacing-xs;
-  border: $border;
-  border-radius: 0.2rem;
   background-color: hsl(0, 0%, 98%);
   box-shadow: $shadow-sm;
-  font-size: $font-size-xs;
-  font-family: $font-mono;
 }

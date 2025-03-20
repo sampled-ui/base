@@ -7,6 +7,7 @@ export interface TextProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "children"> {
   children: string;
   variant?: Omit<Variants, "primary">;
+  size?: "sm" | "md" | "lg";
   disabled?: boolean;
   underline?: boolean;
   deleted?: boolean;
@@ -17,9 +18,14 @@ export interface TextProps
   keyboard?: boolean;
 }
 
+const defaultProps: Partial<TextProps> = {
+  size: "sm",
+}
+
 export const Text: React.FC<TextProps> = ({
   children,
   variant,
+  size,
   disabled,
   underline,
   deleted,
@@ -31,6 +37,8 @@ export const Text: React.FC<TextProps> = ({
   className,
   ...restProps
 }) => {
+  size = size || defaultProps.size;
+
   return (
     <div
       className={`${classNames(styles.container, {
@@ -38,13 +46,16 @@ export const Text: React.FC<TextProps> = ({
         [styles.success]: variant === "success",
         [styles.warning]: variant === "warning",
         [styles.danger]: variant === "danger",
+        [styles.sm]: size === "sm",
+        [styles.md]: size === "md",
+        [styles.lg]: size === "lg",
         [styles.disabled]: disabled,
         [styles.underline]: underline,
         [styles.deleted]: deleted,
         [styles.italic]: italic,
         [styles.bold]: bold,
         [styles.mark]: mark,
-        [styles.code]: code,
+        [styles.code]: code || keyboard,
         [styles.keyboard]: keyboard,
       })} ${className}`}
       {...restProps}

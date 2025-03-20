@@ -5,6 +5,7 @@ export type Variants =
   | "secondary"
   | "success"
   | "warning"
-  | "danger";
+  | "danger"
+  | "disabled";
 
 export type HeadingUnits = 1 | 2 | 3 | 4 | 5;

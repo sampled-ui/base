@@ -1,0 +1,11 @@
+@use "../../variables" as *;
+
+.paragraph {
+    margin-top: initial;
+    margin-bottom: $spacing-sm;
+    font-family: $font-primary;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+    width: 100%;
+    max-width: 70ch;
+}

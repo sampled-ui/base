@@ -15,12 +15,24 @@ $font-size-md: 1rem;
 $font-size-lg: 1.2rem;
 $font-size-xl: 1.5rem;
 
+$heading-size-xs: 1.2rem;
+$heading-size-sm: 1.5rem;
+$heading-size-md: 2rem;
+$heading-size-lg: 2.5rem;
+$heading-size-xl: 3rem;
+
 // Line height
 $line-height-xs: 1rem;
 $line-height-sm: 1.2rem;
-$line-height-md: 1.6rem;
-$line-height-lg: 1.8rem;
+$line-height-md: 1.5rem;
+$line-height-lg: 1.7rem;
 $line-height-xl: 2rem;
+
+$heading-line-height-xs: 1.7rem;
+$heading-line-height-sm: 2rem;
+$heading-line-height-md: 2.6rem;
+$heading-line-height-lg: 3.1rem;
+$heading-line-height-xl: 3.6rem;
 
 // Border
 $border-radius-xs: 0.4rem;
@@ -51,6 +63,7 @@ $color-primary-dim: hsl(0, 0%, 95%);
 $color-accent: hsl(205, 100%, 50%);
 $color-success: hsl(120, 100%, 40%);
 $color-error: hsl(0, 100%, 50%);
+$color-warning: hsl(40, 100%, 50%);
 
 // Shadows
 $shadow-sm: rgba(0, 0, 0, 0.16) 0px 1px 4px;

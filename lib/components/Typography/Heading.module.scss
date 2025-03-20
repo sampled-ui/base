@@ -1,5 +1,31 @@
 @use "../../variables" as *;
 
 .heading {
-    font-family: $font-primary;
+  font-family: $font-primary;
+  margin: initial;
+}
+
+h1.heading {
+  font-size: $heading-size-xl;
+  line-height: $heading-line-height-xl;
+}
+
+h2.heading {
+  font-size: $heading-size-lg;
+  line-height: $heading-line-height-lg;
+}
+
+h3.heading {
+  font-size: $heading-size-md;
+  line-height: $heading-line-height-md;
+}
+
+h4.heading {
+  font-size: $heading-size-sm;
+  line-height: $heading-line-height-sm;
+}
+
+h5.heading {
+  font-size: $heading-size-xs;
+  line-height: $heading-line-height-xs;
 }
