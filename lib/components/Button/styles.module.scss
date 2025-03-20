@@ -31,10 +31,14 @@
 
 .primary:hover {
   background-color: hsl(0, 0%, 20%);
+}
+
+.primary:active {
+  background-color: hsl(0, 0%, 30%);
   box-shadow: initial;
 }
 
-.secondary:hover {
-  background-color: hsl(0, 0%, 92%);
+.secondary:active {
+  background-color: hsl(0, 0%, 98%);
   box-shadow: initial;
 }

@@ -26,7 +26,7 @@ $line-height-xl: 2rem;
 $border-radius-xs: 0.4rem;
 $border-radius-sm: 0.5rem;
 $border-radius-md: 0.6rem;
-$border-radius-lg: 0.8rem;
+
 $border: 1px solid hsl(0, 0%, 80%);
 
 // Spacing
@@ -56,9 +56,13 @@ $color-error: hsl(0, 100%, 50%);
 $shadow-sm: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 $shadow-md: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
+$shadow-accent-sm: hsl(205, 100%, 90%) 0px 1px 4px;
+
 // Opacity
 $opacity-dim: 0.8;
 $opacity-disabled: 0.5;
 
 // Transition
-$transition-fast: 0.15s;
+$transition-fast: 0.2s;
+
+$transition-function: cubic-bezier(0.4, 0, 0.2, 1);

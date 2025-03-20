@@ -4,10 +4,15 @@
   all: unset;
   font-family: $font-primary;
   border: $border;
+
+  transition-property: border-color box-shadow;
+  transition-duration: $transition-fast;
+  transition-timing-function: $transition-function;
 }
 
 .input:focus {
   border-color: $color-accent;
+  box-shadow: $shadow-accent-sm;
 }
 
 .size_sm {
@@ -26,7 +31,7 @@
 
 .size_lg {
   border-radius: $border-radius-md;
-  padding: $spacing-md $spacing-lg;
+  padding: $spacing-md $spacing-md;
   font-size: $font-size-md;
-  line-height: $line-height-md;
+  line-height: $line-height-sm;
 }
