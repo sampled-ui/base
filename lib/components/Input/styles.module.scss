@@ -1,0 +1,32 @@
+@use "../../variables" as *;
+
+.input {
+  all: unset;
+  font-family: $font-primary;
+  border: $border;
+}
+
+.input:focus {
+  border-color: $color-accent;
+}
+
+.size_sm {
+  border-radius: $border-radius-xs;
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+}
+
+.size_md {
+  border-radius: $border-radius-sm;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+}
+
+.size_lg {
+  border-radius: $border-radius-md;
+  padding: $spacing-md $spacing-lg;
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+}

@@ -1,0 +1,17 @@
+@use "../../variables" as *;
+
+.gap_xs {
+  padding: $padding-xs;
+}
+
+.gap_sm {
+  padding: $padding-sm;
+}
+
+.gap_md {
+  padding: $padding-md;
+}
+
+.gap_lg {
+  padding: $padding-lg;
+}

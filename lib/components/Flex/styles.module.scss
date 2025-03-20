@@ -1,0 +1,73 @@
+@use "../../variables.scss" as *;
+
+.container {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.gap_xs {
+  gap: $spacing-xs;
+}
+
+.gap_sm {
+  gap: $spacing-sm;
+}
+
+.gap_md {
+  gap: $spacing-md;
+}
+
+.gap_lg {
+  gap: $spacing-lg;
+}
+
+.gap_xl {
+  gap: $spacing-xl;
+}
+
+.gap_xxl {
+  gap: $spacing-xxl;
+}
+
+.justify_center {
+  justify-content: center;
+}
+
+.justify_start {
+  justify-content: flex-start;
+}
+
+.justify_end {
+  justify-content: flex-end;
+}
+
+.justify_between {
+  justify-content: space-between;
+}
+
+.justify_around {
+  justify-content: space-around;
+}
+
+.align_center {
+  align-items: center;
+}
+
+.align_start {
+  align-items: flex-start;
+}
+
+.align_end {
+  align-items: flex-end;
+}
+
+.align_stretch {
+  align-items: stretch;
+}

@@ -1,0 +1,65 @@
+@use "../../variables" as *;
+
+.container {
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+}
+
+.secondary {
+  color: hsl(0, 0%, 60%);
+}
+
+.success {
+  color: $color-success;
+}
+
+.warning {
+  color: hsl(40, 100%, 50%);
+}
+
+.danger {
+  color: $color-error;
+}
+
+.disabled {
+  color: hsl(0, 0%, 80%);
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.deleted {
+  text-decoration: line-through;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.mark {
+  background-color: hsl(40, 100%, 70%);
+}
+
+.code {
+  padding: 0.1rem $spacing-xs;
+  border: $border;
+  border-radius: 0.2rem;
+  background-color: hsl(0, 0%, 95%);
+  font-size: $font-size-xs;
+  font-family: $font-mono;
+}
+
+.keyboard {
+  padding: 0.1rem $spacing-xs;
+  border: $border;
+  border-radius: 0.2rem;
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: $shadow-sm;
+  font-size: $font-size-xs;
+  font-family: $font-mono;
+}
