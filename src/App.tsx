@@ -14,19 +14,24 @@ const { Text, Heading, Paragraph } = Typography;
 
 function App() {
   return (
-    <Layout>
+    <Layout style={{ height: "100vh" }}>
       <Header>
         <img
           style={{ padding: "0 1.5rem", maxHeight: "2rem" }}
           src="./wordmark-logo.png"
         />
-        <Flex align="center" justify="end" gap="md" style={{ padding: "0 1.5rem" }}>
+        <Flex
+          align="center"
+          justify="end"
+          gap="md"
+          style={{ padding: "0 1.5rem" }}
+        >
           <Text>Design</Text>
           <Text>Development</Text>
           <Text>Components</Text>
         </Flex>
       </Header>
-      <Layout>
+      <Layout style={{ height: "calc(100% - 4rem)" }}>
         <Sidebar style={{ width: "20rem" }}>
           <Navigation
             items={[
@@ -38,7 +43,7 @@ function App() {
           />
         </Sidebar>
         <Layout>
-          <Spacing gap="xl">
+          <Spacing gap="xxl">
             <Flex direction="column" align="start">
               <Heading level={1}>🧪 Components</Heading>
               <Divider />
