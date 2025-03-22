@@ -1,0 +1,32 @@
+@use "../../variables.scss" as *;
+
+.link {
+  all: unset;
+  cursor: pointer;
+  
+  font-family: $font-primary;
+  color: $color-accent;
+
+  transition-property: color;
+  transition-duration: $transition-fast;
+  transition-timing-function: $transition-function;
+}
+
+.link:hover {
+  color: hsl(205, 100%, 65%);
+}
+
+.sm {
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+}
+
+.md {
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+}
+
+.lg {
+  font-size: $font-size-lg;
+  line-height: $line-height-lg;
+}
