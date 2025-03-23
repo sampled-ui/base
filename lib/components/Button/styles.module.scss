@@ -91,6 +91,20 @@
   box-shadow: initial;
 }
 
+.ghost {
+  background-color: initial;
+  color: $color-secondary;
+  box-shadow: initial;
+}
+
+.ghost:hover {
+  background-color: hsl(0, 0%, 96%);
+}
+
+.ghost:active {
+  background-color: hsl(0, 0%, 92%);
+}
+
 .disabled {
   cursor: not-allowed;
   opacity: 0.4;

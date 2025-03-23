@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variants;
+  ghost?: boolean;
 }
 
 const defaultProps: Partial<ButtonProps> = {
@@ -12,6 +13,7 @@ const defaultProps: Partial<ButtonProps> = {
 
 export const Button: React.FC<ButtonProps> = ({
   variant,
+  ghost,
   className,
   ...restProps
 }) => {
@@ -25,6 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
         [styles.success]: variant === "success",
         [styles.warning]: variant === "warning",
         [styles.disabled]: variant === "disabled",
+        [styles.ghost]: ghost,
       })}`}
       {...restProps}
     />

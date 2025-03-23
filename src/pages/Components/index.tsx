@@ -32,7 +32,7 @@ export const ComponentsPage: React.FC = () => {
         <Spacing gap="xl">
           <Flex direction="column" align="start">
             <Heading level={1}>🧪 Components</Heading>
-            <Divider />
+            <Divider style={{marginBottom: "initial"}}/>
           </Flex>
           <Section title="Button" id="button" divided>
             <Paragraph>
@@ -46,6 +46,7 @@ export const ComponentsPage: React.FC = () => {
               <Button variant="warning">Warning</Button>
               <Button variant="danger">Danger</Button>
               <Button variant="disabled">Disabled</Button>
+              <Button ghost>Ghost</Button>
             </Flex>
           </Section>
           <Section title="Input" id="input" divided>
