@@ -21,14 +21,15 @@ export const Section: React.FC<SectionProps> = ({
   className,
   ...restProps
 }) => {
+  const { hash } = window.location;
   useEffect(() => {
-    if (window.location.hash === `#${id}`) {
+    if (hash === `#${id}`) {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }, [id]);
+  }, [id, hash]);
 
   return (
     <Flex

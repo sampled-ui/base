@@ -32,9 +32,11 @@ export const Navigation: React.FC<NavigationProps> = ({
         {items.map((item, index) => {
           return (
             <div
+              key={index}
               className={classNames(styles.item, {
                 [styles.selected]: item.key === selected,
               })}
+              onClick={item.onClick}
             >
               <Text size="md" key={index}>
                 {item.title}
