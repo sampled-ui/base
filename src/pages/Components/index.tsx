@@ -2,12 +2,14 @@ import { useMemo } from "react";
 import { Location, useLocation, useNavigate } from "react-router";
 import {
   Button,
+  Column,
   Divider,
   Flex,
   HeadingUnits,
   Input,
   Layout,
   Navigation,
+  Row,
   Section,
   Sidebar,
   Spacing,
@@ -18,7 +20,7 @@ const { Text, Heading, Paragraph } = Typography;
 
 const useGetSelectedNavItem = (
   navItems: { key: string; title: string; onClick: () => void }[],
-  location: Location,
+  location: Location
 ) => {
   return useMemo(() => {
     const path = location.pathname + location.hash;
@@ -29,7 +31,7 @@ const useGetSelectedNavItem = (
 
 export const ComponentsPage: React.FC = () => {
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
 
   const navItems = [
     {
@@ -47,6 +49,11 @@ export const ComponentsPage: React.FC = () => {
       key: "typography",
       title: "Typography",
       onClick: () => navigate("#typography"),
+    },
+    {
+      key: "grid",
+      title: "Grid",
+      onClick: () => navigate("#grid"),
     },
   ];
 
@@ -97,7 +104,7 @@ export const ComponentsPage: React.FC = () => {
               <Input placeholder="Large size" size={"lg"} />
             </Flex>
           </Section>
-          <Section title="Typography" id="typography">
+          <Section title="Typography" id="typography" divided>
             <Paragraph>
               A collection of simple typography components with different
               variants.
@@ -150,6 +157,89 @@ export const ComponentsPage: React.FC = () => {
                 </Paragraph>
               </Flex>
             </Flex>
+          </Section>
+          <Section title="Grid" id="grid" divided>
+            <Paragraph>
+              Simple row and column components that allow you to create a grid layout.
+            </Paragraph>
+            <Row>
+              <Column span={24}>
+                <Spacing gap="sm" style={{ background: "gainsboro" }}>
+                  <Text
+                    style={{
+                      width: "100%",
+                      textAlign: "center",
+                    }}
+                  >
+                    24 columns wide
+                  </Text>
+                </Spacing>
+              </Column>
+            </Row>
+            <Row>
+              <Column span={12}>
+                <Spacing gap="sm" style={{ background: "gainsboro" }}>
+                  <Text
+                    style={{
+                      width: "100%",
+                      textAlign: "center",
+                    }}
+                  >
+                    12 columns wide
+                  </Text>
+                </Spacing>
+              </Column>
+              <Column span={12}>
+                <Spacing gap="sm" style={{ background: "whitesmoke" }}>
+                  <Text
+                    style={{
+                      width: "100%",
+                      textAlign: "center",
+                    }}
+                  >
+                    12 columns wide
+                  </Text>
+                </Spacing>
+              </Column>
+            </Row>
+            <Row>
+              <Column span={8}>
+                <Spacing gap="sm" style={{ background: "gainsboro" }}>
+                  <Text
+                    style={{
+                      width: "100%",
+                      textAlign: "center",
+                    }}
+                  >
+                    8 columns wide
+                  </Text>
+                </Spacing>
+              </Column>
+              <Column span={8}>
+                <Spacing gap="sm" style={{ background: "whitesmoke" }}>
+                  <Text
+                    style={{
+                      width: "100%",
+                      textAlign: "center",
+                    }}
+                  >
+                    8 columns wide
+                  </Text>
+                </Spacing>
+              </Column>
+              <Column span={8}>
+                <Spacing gap="sm" style={{ background: "gainsboro" }}>
+                  <Text
+                    style={{
+                      width: "100%",
+                      textAlign: "center",
+                    }}
+                  >
+                    8 columns wide
+                  </Text>
+                </Spacing>
+              </Column>
+            </Row>
           </Section>
         </Spacing>
       </Layout>
