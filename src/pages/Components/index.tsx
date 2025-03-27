@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router";
+import { useMemo } from "react";
+import { Location, useLocation, useNavigate } from "react-router";
 import {
   Button,
   Divider,
@@ -15,32 +16,46 @@ import {
 
 const { Text, Heading, Paragraph } = Typography;
 
+const useGetSelectedNavItem = (
+  navItems: { key: string; title: string; onClick: () => void }[],
+  location: Location,
+) => {
+  return useMemo(() => {
+    const path = location.pathname + location.hash;
+    const selected = navItems.find((item) => path.includes(item.key));
+    return selected?.key || "overview";
+  }, [navItems, location]);
+};
+
 export const ComponentsPage: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation()
+
+  const navItems = [
+    {
+      key: "overview",
+      title: "Overview",
+      onClick: () => navigate("/components"),
+    },
+    {
+      key: "button",
+      title: "Button",
+      onClick: () => navigate("#button"),
+    },
+    { key: "input", title: "Input", onClick: () => navigate("#input") },
+    {
+      key: "typography",
+      title: "Typography",
+      onClick: () => navigate("#typography"),
+    },
+  ];
+
+  const selected = useGetSelectedNavItem(navItems, location);
+
   return (
     <Layout style={{ height: "calc(100% - 4rem)" }}>
       <Sidebar style={{ width: "20rem" }}>
-        <Navigation
-          selected="overview"
-          items={[
-            {
-              key: "overview",
-              title: "Overview",
-              onClick: () => navigate("/components"),
-            },
-            {
-              key: "button",
-              title: "Button",
-              onClick: () => navigate("#button"),
-            },
-            { key: "input", title: "Input", onClick: () => navigate("#input") },
-            {
-              key: "typography",
-              title: "Typography",
-              onClick: () => navigate("#typography"),
-            },
-          ]}
-        />
+        <Navigation selected={selected} items={navItems} />
       </Sidebar>
       <Layout>
         <Spacing gap="xl">
@@ -105,7 +120,10 @@ export const ComponentsPage: React.FC = () => {
                 <Flex direction="column" align="start">
                   {Object.values([1, 2, 3, 4, 5]).map((level) => {
                     return (
-                      <Heading key={`heading-${level}`} level={level as HeadingUnits}>
+                      <Heading
+                        key={`heading-${level}`}
+                        level={level as HeadingUnits}
+                      >
                         {"Heading " + String(level)}
                       </Heading>
                     );
