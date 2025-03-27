@@ -35,7 +35,7 @@ export const ComponentsPage: React.FC = () => {
     {
       key: "overview",
       title: "Overview",
-      onClick: () => navigate("/components"),
+      onClick: () => navigate("/components#overview"),
     },
     {
       key: "button",
@@ -63,6 +63,14 @@ export const ComponentsPage: React.FC = () => {
             <Heading level={1}>🧪 Components</Heading>
             <Divider style={{ marginBottom: "initial" }} />
           </Flex>
+          <Section title="Overview" id="overview" divided>
+            <Paragraph>
+              This page showcases the different components that are available
+              for use in the Sampled UI library. The components are built using
+              the simplest implementation possible to ensure that they are easy
+              to customize and use.
+            </Paragraph>
+          </Section>
           <Section title="Button" id="button" divided>
             <Paragraph>
               A simple button component with basic variants. It uses the same
