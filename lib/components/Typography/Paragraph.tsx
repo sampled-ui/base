@@ -1,6 +1,6 @@
 import styles from "./Paragraph.module.scss";
 
-interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {
+export interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {
   children: string;
 }
 

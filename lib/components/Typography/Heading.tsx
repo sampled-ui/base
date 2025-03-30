@@ -1,7 +1,7 @@
 import { HeadingUnits } from "../../units";
 import styles from "./Heading.module.scss";
 
-interface HeadingProps
+export interface HeadingProps
   extends Omit<React.HTMLAttributes<HTMLHeadingElement>, "children"> {
   children: string;
   level: HeadingUnits;

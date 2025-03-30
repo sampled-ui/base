@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import styles from "./Link.module.scss";
 
-interface LinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
+export interface LinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
   size?: "sm" | "md" | "lg";
 }
 
