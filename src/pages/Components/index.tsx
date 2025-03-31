@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Location, useLocation, useNavigate } from "react-router";
 import {
   Button,
+  Card,
   Column,
   Divider,
   Flex,
@@ -92,6 +93,12 @@ export const ComponentsPage: React.FC = () => {
               <Button variant="disabled">Disabled</Button>
               <Button ghost>Ghost</Button>
             </Flex>
+            <Heading level={4}>Sizes</Heading>
+            <Flex gap="md">
+              <Button size="xl">Extra Large</Button>
+              <Button size="lg">Large</Button>
+              <Button size="md">Medium</Button>
+            </Flex>
           </Section>
           <Section title="Input" id="input" divided>
             <Paragraph>
@@ -145,9 +152,28 @@ export const ComponentsPage: React.FC = () => {
                   })}
                 </Flex>
               </Flex>
-              <Flex direction="column" align="start" gap="md">
+              <Flex direction="column" align="start" gap="md" style={{maxWidth: "50%"}}>
                 <Heading level={4}>Paragraph</Heading>
+                <Heading level={5}>Small (default)</Heading>
                 <Paragraph>
+                  This is an example for a 'Sampled UI' paragraph component that
+                  has a maximum width of 70 characters that, when exceeded, will
+                  break the text into a new line. This is an example for a
+                  'Sampled UI' paragraph component that has a maximum width of
+                  70 characters that, when exceeded, will break the text into a
+                  new line.
+                </Paragraph>
+                <Heading level={5}>Medium</Heading>
+                <Paragraph size="md">
+                  This is an example for a 'Sampled UI' paragraph component that
+                  has a maximum width of 70 characters that, when exceeded, will
+                  break the text into a new line. This is an example for a
+                  'Sampled UI' paragraph component that has a maximum width of
+                  70 characters that, when exceeded, will break the text into a
+                  new line.
+                </Paragraph>
+                <Heading level={5}>Large</Heading>
+                <Paragraph size="lg">
                   This is an example for a 'Sampled UI' paragraph component that
                   has a maximum width of 70 characters that, when exceeded, will
                   break the text into a new line. This is an example for a
@@ -294,6 +320,14 @@ export const ComponentsPage: React.FC = () => {
                 </Spacing>
               </Column>
             </Row>
+          </Section>
+          <Section title="Card" id="card" divided>
+            <Card title="Card title">
+              <Paragraph size="md">
+                This is a card body text but you can really render anything you
+                want in here.
+              </Paragraph>
+            </Card>
           </Section>
         </Spacing>
       </Layout>

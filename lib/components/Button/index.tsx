@@ -1,10 +1,11 @@
 import classNames from "classnames";
-import { Variants } from "../../units";
+import { SizeUnits, Variants } from "../../units";
 import styles from "./styles.module.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variants;
   ghost?: boolean;
+  size?: Omit<SizeUnits, "xs" | "xxl">;
 }
 
 const defaultProps: Partial<ButtonProps> = {
@@ -14,6 +15,7 @@ const defaultProps: Partial<ButtonProps> = {
 export const Button: React.FC<ButtonProps> = ({
   variant,
   ghost,
+  size,
   className,
   ...restProps
 }) => {
@@ -27,6 +29,10 @@ export const Button: React.FC<ButtonProps> = ({
         [styles.success]: variant === "success",
         [styles.warning]: variant === "warning",
         [styles.disabled]: variant === "disabled",
+        [styles.sm]: size === "sm",
+        [styles.md]: size === "md",
+        [styles.lg]: size === "lg",
+        [styles.xl]: size === "xl",
         [styles.ghost]: ghost,
       })}`}
       {...restProps}

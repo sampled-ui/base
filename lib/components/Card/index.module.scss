@@ -1,0 +1,8 @@
+@use "../../variables" as *;
+
+.card {
+    border: $border;
+    border-radius: $border-radius-md;
+
+    padding: $padding-xl;
+}
