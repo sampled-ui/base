@@ -1,0 +1,51 @@
+import classNames from "classnames";
+
+import { SizeUnits } from "../../units";
+import { Typography } from "../Typography";
+
+import styles from "./styles.module.scss";
+
+type TagVariant = "outlined" | "filled";
+
+interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
+  label: string;
+  size?: Omit<SizeUnits, "xxl" | "xl" | "xs">;
+  variant?: TagVariant;
+  color?: string;
+}
+
+const defaultProps = {
+  size: "sm",
+  variant: "outlined",
+};
+
+const Tag: React.FC<TagProps> = ({
+  label,
+  size,
+  variant,
+  color,
+  className,
+}) => {
+  size = size ?? defaultProps.size;
+  variant = variant ?? (defaultProps.variant as TagVariant);
+  return (
+    <Typography.Text
+      className={classNames(styles.tag, className, {
+        [styles.outlined]: variant === "outlined",
+        [styles.filled]: variant === "filled",
+        [styles.sm]: size === "sm",
+        [styles.md]: size === "md",
+        [styles.lg]: size === "lg",
+      })}
+      style={{
+        color: variant === "outlined" ? color ?? "gray" : "white",
+        backgroundColor: variant === "outlined" ? "transparent" : color,
+        borderColor: variant === "outlined" ? color ?? "gray" : "initial",
+      }}
+    >
+      {label}
+    </Typography.Text>
+  );
+};
+
+export default Tag;

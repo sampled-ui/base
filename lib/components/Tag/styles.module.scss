@@ -1,0 +1,33 @@
+@use "../../variables" as *;
+
+.tag {
+  box-sizing: border-box;
+  border: $border;
+}
+
+.filled {
+  border: initial;
+  background: $color-tertiary;
+  color: $color-secondary;
+}
+
+.sm {
+  padding: $padding-xs;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+  border-radius: $border-radius-xs;
+}
+
+.md {
+  padding: $padding-xs;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  border-radius: $border-radius-xs;
+}
+
+.lg {
+  padding: $padding-xs;
+  font-size: $font-size-md;
+  line-height: $line-height-md;
+  border-radius: $border-radius-xs;
+}

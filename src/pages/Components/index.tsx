@@ -1,5 +1,7 @@
 import { useMemo } from "react";
 import { Location, useLocation, useNavigate } from "react-router";
+import Showcase from "../../../lib/components/Showcase";
+import Tag from "../../../lib/components/Tag";
 import {
   Button,
   Card,
@@ -152,7 +154,12 @@ export const ComponentsPage: React.FC = () => {
                   })}
                 </Flex>
               </Flex>
-              <Flex direction="column" align="start" gap="md" style={{maxWidth: "50%"}}>
+              <Flex
+                direction="column"
+                align="start"
+                gap="md"
+                style={{ maxWidth: "50%" }}
+              >
                 <Heading level={4}>Paragraph</Heading>
                 <Heading level={5}>Small (default)</Heading>
                 <Paragraph>
@@ -328,6 +335,23 @@ export const ComponentsPage: React.FC = () => {
                 want in here.
               </Paragraph>
             </Card>
+          </Section>
+          <Section title="Tag" id="tag" divided>
+            <Flex gap="md" align="center">
+              <Tag label="Tag" size="sm" />
+              <Tag label="Tag" size="md" />
+              <Tag label="Tag" size="lg" />
+              <Tag label="Tag" size="lg" variant="filled" />
+              <Tag label="Tag" size="lg" variant="outlined" color="orange" />
+              <Tag label="Tag" size="lg" variant="filled" color="orange" />
+            </Flex>
+          </Section>
+          <Section title="Showcase" id="showcase" divided>
+            <Showcase
+              title="Sampled UI"
+              subtitle={<Tag label="Design System" variant="filled" color="gray" />}
+              image="./wordmark-logo.png"
+            />
           </Section>
         </Spacing>
       </Layout>

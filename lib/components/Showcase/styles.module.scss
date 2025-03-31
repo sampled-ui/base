@@ -1,0 +1,24 @@
+@use "../../variables" as *;
+
+.showcase {
+  position: static;
+  height: 12rem;
+  width: 20rem;
+  padding: $spacing-lg;
+  border-radius: $border-radius-md;
+  background-blend-mode: darken;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border: $border;
+  color: $color-primary;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: start;
+  justify-content: end;
+  box-shadow: $shadow-sm;
+}
+
+.title {
+    font-weight: bolder;
+}
