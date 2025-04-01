@@ -4,11 +4,12 @@ import { JSX } from "react";
 import { Typography } from "../Typography";
 import styles from "./styles.module.scss";
 
-interface ShowcaseProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ShowcaseProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "style"> {
   title: string;
   subtitle: string | JSX.Element | JSX.Element[];
   image: string;
   backgroundSize?: string;
+  width?: string;
 }
 
 export const Showcase: React.FC<ShowcaseProps> = ({
@@ -17,6 +18,8 @@ export const Showcase: React.FC<ShowcaseProps> = ({
   image,
   backgroundSize,
   className,
+  width,
+  ...restProps
 }) => {
   return (
     <div
@@ -24,7 +27,9 @@ export const Showcase: React.FC<ShowcaseProps> = ({
       style={{
         background: `linear-gradient(whitesmoke, #333), url(${image})`,
         ...(backgroundSize ? { backgroundSize } : {}),
+        ...(width ? { width } : {}),
       }}
+      {...restProps}
     >
       <Typography.Heading level={3} className={styles.title}>
         {title}

@@ -58,6 +58,21 @@ export const ComponentsPage: React.FC = () => {
       title: "Grid",
       onClick: () => navigate("#grid"),
     },
+    {
+      key: "card",
+      title: "Card",
+      onClick: () => navigate("#card"),
+    },
+    {
+      key: "tag",
+      title: "Tag",
+      onClick: () => navigate("#tag"),
+    },
+    {
+      key: "showcase",
+      title: "Showcase",
+      onClick: () => navigate("#showcase"),
+    },
   ];
 
   const selected = useGetSelectedNavItem(navItems, location);
@@ -349,8 +364,11 @@ export const ComponentsPage: React.FC = () => {
           <Section title="Showcase" id="showcase" divided>
             <Showcase
               title="Sampled UI"
-              subtitle={<Tag label="Design System" variant="filled" color="gray" />}
+              subtitle={
+                <Tag label="Design System" variant="filled" color="gray" />
+              }
               image="./wordmark-logo.png"
+              width="calc(100% - 3rem)"
             />
           </Section>
         </Spacing>

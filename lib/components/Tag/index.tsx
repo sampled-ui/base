@@ -25,6 +25,7 @@ const Tag: React.FC<TagProps> = ({
   variant,
   color,
   className,
+  ...restProps
 }) => {
   size = size ?? defaultProps.size;
   variant = variant ?? (defaultProps.variant as TagVariant);
@@ -42,6 +43,7 @@ const Tag: React.FC<TagProps> = ({
         backgroundColor: variant === "outlined" ? "transparent" : color,
         borderColor: variant === "outlined" ? color ?? "gray" : "initial",
       }}
+      {...restProps}
     >
       {label}
     </Typography.Text>
