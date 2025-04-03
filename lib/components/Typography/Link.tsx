@@ -1,8 +1,10 @@
 import classNames from "classnames";
 import styles from "./Link.module.scss";
+import { Text, TextProps } from "./Text";
 
 export interface LinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
   size?: "sm" | "md" | "lg";
+  textProps?: TextProps;
 }
 
 const defaultProps: Partial<LinkProps> = {
@@ -11,21 +13,15 @@ const defaultProps: Partial<LinkProps> = {
 
 export const Link: React.FC<LinkProps> = ({
   size,
+  textProps,
   className,
   children,
   ...restProps
 }) => {
   size = size ?? defaultProps.size;
   return (
-    <a
-      className={`${classNames(styles.link, {
-        [styles.sm]: size === "sm",
-        [styles.md]: size === "md",
-        [styles.lg]: size === "lg",
-      })} ${className}`}
-      {...restProps}
-    >
-      {children}
+    <a className={classNames(styles.link, className)} {...restProps}>
+      <Text {...{ ...textProps, size }}>{children}</Text>
     </a>
   );
 };

@@ -3,17 +3,14 @@
 .link {
   all: unset;
   cursor: pointer;
-  
-  font-family: $font-primary;
-  color: $color-accent;
 
-  transition-property: color;
+  transition-property: opacity;
   transition-duration: $transition-fast;
   transition-timing-function: $transition-function;
 }
 
 .link:hover {
-  color: hsl(205, 100%, 65%);
+  opacity: 0.5;
 }
 
 .sm {

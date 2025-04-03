@@ -3,9 +3,7 @@ import classNames from "classnames";
 import { Variants } from "../../units";
 import styles from "./Text.module.scss";
 
-export interface TextProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "children"> {
-  children: string;
+export interface TextProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: Omit<Variants, "primary">;
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
@@ -20,7 +18,7 @@ export interface TextProps
 
 const defaultProps: Partial<TextProps> = {
   size: "sm",
-}
+};
 
 export const Text: React.FC<TextProps> = ({
   children,
