@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { SizeUnits } from "../../units";
 import styles from "./styles.module.scss";
 
-interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
   direction?: "row" | "column";
   gap?: SizeUnits;
   justify?: "center" | "start" | "end" | "between" | "around";
