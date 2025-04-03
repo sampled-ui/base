@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import { Location, useLocation, useNavigate } from "react-router";
 import Showcase from "../../../lib/components/Showcase";
 import Tag from "../../../lib/components/Tag";
@@ -35,12 +35,16 @@ const useGetSelectedNavItem = (
 export const ComponentsPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const innerLayoutRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
     {
       key: "overview",
       title: "Overview",
-      onClick: () => navigate("/components#overview"),
+      onClick: () => {
+        navigate("#");
+        innerLayoutRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+      },
     },
     {
       key: "button",
@@ -82,7 +86,7 @@ export const ComponentsPage: React.FC = () => {
       <Sidebar style={{ width: "20rem" }}>
         <Navigation selected={selected} items={navItems} />
       </Sidebar>
-      <Layout>
+      <Layout ref={innerLayoutRef}>
         <Spacing gap="xl">
           <Flex direction="column" align="start">
             <Heading level={1}>🧪 Components</Heading>
