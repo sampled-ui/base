@@ -6,7 +6,7 @@ import { Heading } from "../Typography/Heading";
 import styles from "./styles.module.scss";
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  title: string;
+  title?: string;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -18,7 +18,7 @@ export const Card: React.FC<CardProps> = ({
   return (
     <div className={classNames(styles.card, className)} {...restProps}>
       <Flex gap="lg" direction="column" align="start">
-        <Heading level={4}>{title}</Heading>
+        {title ? <Heading level={4}>{title}</Heading> : null}
         {children}
       </Flex>
     </div>
