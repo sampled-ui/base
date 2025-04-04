@@ -1,6 +1,7 @@
 import classNames from "classnames";
 
 import { Variants } from "../../units";
+
 import styles from "./Text.module.scss";
 
 export interface TextProps extends React.HTMLAttributes<HTMLDivElement> {

@@ -1,5 +1,7 @@
-import classNames from "classnames";
 import { HTMLAttributes } from "react";
+
+import classNames from "classnames";
+
 import styles from "./styles.module.scss";
 
 interface RowProps extends Omit<HTMLAttributes<HTMLDivElement>, "style"> {

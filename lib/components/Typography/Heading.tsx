@@ -1,4 +1,5 @@
 import { HeadingUnits } from "../../units";
+
 import styles from "./Heading.module.scss";
 
 export interface HeadingProps

@@ -1,8 +1,9 @@
 import { useEffect } from "react";
+
+import { Divider } from "../Divider";
 import { Flex } from "../Flex";
 import { Typography } from "../Typography";
 
-import { Divider } from "../Divider";
 import styles from "./styles.module.scss";
 
 const { Heading } = Typography;

@@ -1,7 +1,9 @@
-import classNames from "classnames";
 import { JSX } from "react";
 
+import classNames from "classnames";
+
 import { Typography } from "../Typography";
+
 import styles from "./styles.module.scss";
 
 interface ShowcaseProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "style"> {

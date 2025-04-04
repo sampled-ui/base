@@ -1,4 +1,5 @@
 import classNames from "classnames";
+
 import styles from "./Paragraph.module.scss";
 
 export interface ParagraphProps
