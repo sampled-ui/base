@@ -8,7 +8,7 @@ import styles from "./styles.module.scss";
 export interface NavigationItem {
   key: string;
   title: string;
-  href?: string;
+  icon?: React.ReactNode;
   onClick?: () => void;
 }
 
@@ -31,17 +31,20 @@ export const Navigation: React.FC<NavigationProps> = ({
       <Flex direction="column" gap="sm">
         {items.map((item, index) => {
           return (
-            <div
+            <Flex
+              gap="md"
+              align="center"
               key={index}
               className={classNames(styles.item, {
                 [styles.selected]: item.key === selected,
               })}
               onClick={item.onClick}
             >
+              {item.icon ?? null}
               <Text size="md" key={index}>
                 {item.title}
               </Text>
-            </div>
+            </Flex>
           );
         })}
       </Flex>

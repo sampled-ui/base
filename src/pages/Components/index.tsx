@@ -1,3 +1,4 @@
+import { Home } from "lucide-react";
 import { useMemo, useRef } from "react";
 import { Location, useLocation, useNavigate } from "react-router";
 import Showcase from "../../../lib/components/Showcase";
@@ -41,6 +42,7 @@ export const ComponentsPage: React.FC = () => {
     {
       key: "overview",
       title: "Overview",
+      icon: <Home />,
       onClick: () => {
         navigate("#");
         innerLayoutRef.current?.scrollTo({ top: 0, behavior: "smooth" });
