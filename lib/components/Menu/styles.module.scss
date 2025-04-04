@@ -1,0 +1,40 @@
+@use "../../variables.scss" as *;
+
+.menu {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+
+  width: calc(100% - 2 * $spacing-sm);
+  min-width: 10rem;
+
+  padding: $spacing-sm $spacing-sm;
+
+  border: $border;
+  border-radius: $border-radius-sm;
+  background-color: $color-primary;
+
+  transition-property: opacity, visibility;
+  transition-duration: $transition-fast;
+  transition-timing-function: $transition-function;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.item {
+  cursor: pointer;
+  padding: $padding-sm;
+
+  border-radius: $border-radius-sm;
+
+  transition-property: background-color;
+  transition-duration: $transition-fast;
+  transition-timing-function: $transition-function;
+}
+
+.item:hover {
+  background-color: $color-primary-dim;
+}

@@ -18,8 +18,9 @@ import {
   Section,
   Sidebar,
   Spacing,
-  Typography,
+  Typography
 } from "../../../lib/main";
+import MenuSection from "./MenuSection";
 
 const { Text, Heading, Paragraph } = Typography;
 
@@ -377,6 +378,7 @@ export const ComponentsPage: React.FC = () => {
               width="calc(100% - 3rem)"
             />
           </Section>
+          <MenuSection />
         </Spacing>
       </Layout>
     </Layout>
