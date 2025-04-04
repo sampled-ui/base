@@ -1,14 +1,14 @@
 import React from "react";
 
 import {
-    Button,
-    Column,
-    Flex,
-    Input,
-    Menu,
-    Row,
-    Section,
-    Typography,
+  Button,
+  Column,
+  Flex,
+  Input,
+  Menu,
+  Row,
+  Section,
+  Typography,
 } from "../../../lib/main";
 
 interface MenuSectionProps {}
@@ -16,14 +16,13 @@ interface MenuSectionProps {}
 const menuItems = [
   { label: "Item 1", onClick: () => {} },
   { label: "Item 2", onClick: () => {} },
-  { label: "Item 3", onClick: () => {} },
 ];
 
 const MenuSection: React.FC<MenuSectionProps> = () => {
   return (
     <Section title="Menu" id="menu">
       <Row>
-        <Column span={6}>
+        <Column span={8}>
           <Flex direction="column" align="start" gap="md">
             <Typography.Heading level={5}>Top Aligned</Typography.Heading>
             <Menu trigger="hover" items={menuItems}>
@@ -31,7 +30,7 @@ const MenuSection: React.FC<MenuSectionProps> = () => {
             </Menu>
           </Flex>
         </Column>
-        <Column span={6}>
+        <Column span={8}>
           <Flex direction="column" align="start" gap="md">
             <Typography.Heading level={5}>Bottom Aligned</Typography.Heading>
             <Menu trigger="hover" alignment="bottom" items={menuItems}>
@@ -39,7 +38,7 @@ const MenuSection: React.FC<MenuSectionProps> = () => {
             </Menu>
           </Flex>
         </Column>
-        <Column span={6}>
+        <Column span={8}>
           <Flex direction="column" align="start" gap="md">
             <Typography.Heading level={5}>Click Trigger</Typography.Heading>
             <Menu trigger="click" items={menuItems}>
