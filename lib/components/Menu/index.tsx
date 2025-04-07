@@ -101,7 +101,7 @@ export const Menu: React.FC<MenuProps> = ({
         {...restProps}
       >
         {items.map((item) => (
-          <div className={styles.item} key={item.title}>
+          <div className={styles.item} key={item.title} onClick={item.onClick}>
             {item.icon ?? null}
             <Text size="md">{item.title}</Text>
           </div>
