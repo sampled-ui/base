@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Button, Flex, Section, Typography } from "../../../lib/main";
+import { Button, Flex, Typography } from "../../../lib/main";
+import CodeSection from "../../CodeSection";
 
 interface ButtonSectionProps {}
 
@@ -8,7 +9,7 @@ const { Heading, Paragraph } = Typography;
 
 const ButtonSection: React.FC<ButtonSectionProps> = () => {
   return (
-    <Section title="Button" id="button" divided>
+    <CodeSection title="Button" id="button">
       <Paragraph>
         A simple button component with basic variants. It uses the same props as
         the regular HTML button element.
@@ -28,7 +29,7 @@ const ButtonSection: React.FC<ButtonSectionProps> = () => {
         <Button size="lg">Large</Button>
         <Button size="md">Medium</Button>
       </Flex>
-    </Section>
+    </CodeSection>
   );
 };
 

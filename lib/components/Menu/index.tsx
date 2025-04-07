@@ -101,7 +101,7 @@ export const Menu: React.FC<MenuProps> = ({
         {...restProps}
       >
         {items.map((item) => (
-          <div className={styles.item}>
+          <div className={styles.item} key={item.label}>
             <Text size="md">{item.label}</Text>
           </div>
         ))}
