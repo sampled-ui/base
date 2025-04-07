@@ -25,6 +25,11 @@
 }
 
 .item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: $spacing-sm;
+
   cursor: pointer;
   padding: $padding-sm;
 

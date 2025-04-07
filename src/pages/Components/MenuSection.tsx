@@ -14,8 +14,9 @@ import {
 interface MenuSectionProps {}
 
 const menuItems = [
-  { label: "Item 1", onClick: () => {} },
-  { label: "Item 2", onClick: () => {} },
+  { title: "Item 1", onClick: () => {} },
+  { title: "Item 2", onClick: () => {} },
+  { title: "Item 3", onClick: () => {}, icon: <span>🧪</span> },
 ];
 
 const MenuSection: React.FC<MenuSectionProps> = () => {
@@ -42,7 +43,7 @@ const MenuSection: React.FC<MenuSectionProps> = () => {
           <Flex direction="column" align="start" gap="md">
             <Typography.Heading level={5}>Click Trigger</Typography.Heading>
             <Menu trigger="click" items={menuItems}>
-              <Input placeholder="Click me"/>
+              <Input placeholder="Click me" />
             </Menu>
           </Flex>
         </Column>

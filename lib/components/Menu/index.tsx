@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { JSX, useEffect, useRef, useState } from "react";
 
 import classNames from "classnames";
 
@@ -14,8 +14,8 @@ type MenuTrigger = "hover" | "click";
 interface MenuProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "style"> {
   items: {
-    label: string;
-    icon?: string;
+    title: string;
+    icon?: JSX.Element;
     onClick: () => void;
   }[];
   trigger?: MenuTrigger;
@@ -101,8 +101,9 @@ export const Menu: React.FC<MenuProps> = ({
         {...restProps}
       >
         {items.map((item) => (
-          <div className={styles.item} key={item.label}>
-            <Text size="md">{item.label}</Text>
+          <div className={styles.item} key={item.title}>
+            {item.icon ?? null}
+            <Text size="md">{item.title}</Text>
           </div>
         ))}
       </Flex>
