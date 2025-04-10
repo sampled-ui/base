@@ -6,8 +6,8 @@
 }
 
 .item {
-  width: calc(100% - $spacing-md * 2);
-  padding: $spacing-md;
+  width: calc(100% - 1.5rem);
+  padding: $padding-md;
 }
 
 .item:hover {
