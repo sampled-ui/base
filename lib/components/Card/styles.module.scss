@@ -3,6 +3,13 @@
 .card {
     border: $border;
     border-radius: $border-radius-md;
+}
 
-    padding: $padding-xl;
+.image {
+    min-height: 20rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-top-left-radius: $border-radius-md;
+    border-top-right-radius: $border-radius-md;
 }

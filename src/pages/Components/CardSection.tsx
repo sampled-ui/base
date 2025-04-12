@@ -14,6 +14,12 @@ const CardSection: React.FC<CardSectionProps> = () => {
           in here.
         </Paragraph>
       </Card>
+      <Card title="Card title" image="https://picsum.photos/1000">
+        <Paragraph size="md">
+          This is a card body text but you can really render anything you want
+          in here.
+        </Paragraph>
+      </Card>
     </Section>
   );
 };
