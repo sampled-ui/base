@@ -16,6 +16,7 @@ const TypographySection: React.FC<TypographySectionProps> = () => {
         <Flex direction="column" align="start" gap="md">
           <Heading level={4}>Text</Heading>
           <Flex direction="column" align="start" gap="sm">
+            <Text size="xs">Sampled UI extra small</Text>
             <Text>Sampled UI small (default)</Text>
             <Text size="md">Sampled UI medium</Text>
             <Text size="lg">Sampled UI large</Text>

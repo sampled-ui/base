@@ -1,12 +1,12 @@
 import classNames from "classnames";
 
-import { Variants } from "../../units";
+import { SizeUnits, Variants } from "../../units";
 
 import styles from "./Text.module.scss";
 
 export interface TextProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: Omit<Variants, "primary">;
-  size?: "sm" | "md" | "lg";
+  size?: Omit<SizeUnits, "xl" | "xxl">;
   disabled?: boolean;
   underline?: boolean;
   deleted?: boolean;
@@ -45,6 +45,7 @@ export const Text: React.FC<TextProps> = ({
         [styles.success]: variant === "success",
         [styles.warning]: variant === "warning",
         [styles.danger]: variant === "danger",
+        [styles.xs]: size === "xs",
         [styles.sm]: size === "sm",
         [styles.md]: size === "md",
         [styles.lg]: size === "lg",
