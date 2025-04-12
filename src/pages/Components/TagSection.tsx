@@ -1,6 +1,6 @@
 import React from "react";
 
-import Tag from "../../../lib/components/Tag";
+import { Tag } from "../../../lib/components/Tag";
 import { Flex, Section } from "../../../lib/main";
 
 interface TagSectionProps {}

@@ -19,7 +19,7 @@ const defaultProps = {
   variant: "outlined",
 };
 
-const Tag: React.FC<TagProps> = ({
+export const Tag: React.FC<TagProps> = ({
   label,
   size,
   variant,
@@ -49,5 +49,3 @@ const Tag: React.FC<TagProps> = ({
     </Typography.Text>
   );
 };
-
-export default Tag;

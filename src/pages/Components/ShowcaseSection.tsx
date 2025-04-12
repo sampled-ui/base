@@ -1,7 +1,7 @@
 import React from "react";
 
 import Showcase from "../../../lib/components/Showcase";
-import Tag from "../../../lib/components/Tag";
+import { Tag } from "../../../lib/components/Tag";
 import { Section } from "../../../lib/main";
 
 interface ShowcaseSectionProps {}

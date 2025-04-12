@@ -6,7 +6,7 @@ import { Typography } from "../Typography";
 
 import styles from "./styles.module.scss";
 
-interface ShowcaseProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "style"> {
+interface ShowcaseProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   subtitle: string | JSX.Element | JSX.Element[];
   image: string;
@@ -27,9 +27,11 @@ export const Showcase: React.FC<ShowcaseProps> = ({
     <div
       className={classNames(styles.showcase, className)}
       style={{
-        background: `linear-gradient(whitesmoke, #333), url(${image})`,
+        height: "50vh",
+        background: `linear-gradient(rgba(0,0,0,0) 0,rgba(0,0,0,0.5) 50% 50%, rgb(0,0,0) 90% 100%), url(${image})`,
         ...(backgroundSize ? { backgroundSize } : {}),
         ...(width ? { width } : {}),
+        ...restProps.style,
       }}
       {...restProps}
     >

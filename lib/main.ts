@@ -8,7 +8,9 @@ export { Header, Layout, Sidebar } from "./components/Layout";
 export { Menu } from "./components/Menu";
 export { Navigation } from "./components/Navigation";
 export { Section } from "./components/Section";
+export { Showcase } from "./components/Showcase";
 export { Spacing } from "./components/Spacing";
+export { Tag } from "./components/Tag";
 export { Typography } from "./components/Typography";
 
 export * from "./units";
