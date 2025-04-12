@@ -4,13 +4,15 @@ import classNames from "classnames";
 
 import styles from "./styles.module.scss";
 
-interface RowProps extends Omit<HTMLAttributes<HTMLDivElement>, "style"> {
+interface RowProps extends HTMLAttributes<HTMLDivElement> {
   gap?: number | string;
+  columns?: number;
   className?: string;
 }
 
 export const Row: React.FC<RowProps> = ({
   gap,
+  columns,
   className,
   children,
   ...restProps
@@ -18,7 +20,11 @@ export const Row: React.FC<RowProps> = ({
   return (
     <div
       className={classNames(styles.row, className)}
-      style={{ gap }}
+      style={{
+        gap,
+        gridTemplateColumns: `repeat(${columns ?? 24}, 1fr)`,
+        ...restProps.style,
+      }}
       {...restProps}
     >
       {children}
