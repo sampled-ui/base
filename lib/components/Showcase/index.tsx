@@ -6,8 +6,9 @@ import { Typography } from "../Typography";
 
 import styles from "./styles.module.scss";
 
-interface ShowcaseProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
+interface ShowcaseProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
+  title: string | JSX.Element;
   subtitle: string | JSX.Element | JSX.Element[];
   image: string;
   backgroundSize?: string;
@@ -35,9 +36,13 @@ export const Showcase: React.FC<ShowcaseProps> = ({
       }}
       {...restProps}
     >
-      <Typography.Heading level={3} className={styles.title}>
-        {title}
-      </Typography.Heading>
+      {typeof title === "string" ? (
+        <Typography.Heading level={3} className={styles.title}>
+          {title}
+        </Typography.Heading>
+      ) : (
+        title
+      )}
       {typeof subtitle === "string" ? (
         <Typography.Text bold size="md">
           {subtitle}
