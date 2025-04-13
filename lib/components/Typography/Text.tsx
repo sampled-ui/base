@@ -15,6 +15,7 @@ export interface TextProps extends React.HTMLAttributes<HTMLDivElement> {
   mark?: boolean;
   code?: boolean;
   keyboard?: boolean;
+  ref?: React.RefObject<HTMLDivElement | null>;
 }
 
 const defaultProps: Partial<TextProps> = {
@@ -34,12 +35,14 @@ export const Text: React.FC<TextProps> = ({
   code,
   keyboard,
   className,
+  ref,
   ...restProps
 }) => {
   size = size || defaultProps.size;
 
   return (
     <div
+      ref={ref}
       className={`${classNames(styles.container, {
         [styles.secondary]: variant === "secondary",
         [styles.success]: variant === "success",

@@ -8,6 +8,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variants;
   ghost?: boolean;
   size?: Omit<SizeUnits, "xs" | "xxl">;
+  ref?: React.RefObject<HTMLButtonElement | null>;
 }
 
 const defaultProps: Partial<ButtonProps> = {

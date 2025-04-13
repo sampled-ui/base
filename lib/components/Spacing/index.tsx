@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 
 interface SpacingProps extends React.HTMLAttributes<HTMLDivElement> {
   gap?: SizeUnits;
+  ref?: React.RefObject<HTMLDivElement | null>;
 }
 
 const defaultProps: Partial<SpacingProps> = {
@@ -16,11 +17,13 @@ export const Spacing: React.FC<SpacingProps> = ({
   className,
   gap,
   children,
+  ref,
   ...restProps
 }) => {
   gap = gap ?? defaultProps.gap;
   return (
     <div
+      ref={ref}
       className={`${classNames({
         [styles.gap_xs]: gap === "xs",
         [styles.gap_sm]: gap === "sm",

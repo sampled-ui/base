@@ -9,6 +9,7 @@ export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
   gap?: SizeUnits;
   justify?: "center" | "start" | "end" | "between" | "around";
   align?: "center" | "start" | "end" | "stretch";
+  ref?: React.RefObject<HTMLDivElement | null>;
 }
 
 const defaultProps: Partial<FlexProps> = {
@@ -24,6 +25,7 @@ export const Flex: React.FC<FlexProps> = ({
   gap,
   justify,
   align,
+  ref,
   ...restProps
 }) => {
   direction = direction ?? defaultProps.direction;
@@ -32,6 +34,7 @@ export const Flex: React.FC<FlexProps> = ({
 
   return (
     <div
+      ref={ref}
       className={`${classNames(styles.container, {
         [styles.row]: direction === "row",
         [styles.column]: direction === "column",

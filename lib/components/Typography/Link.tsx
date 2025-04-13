@@ -6,6 +6,7 @@ import { Text, TextProps } from "./Text";
 export interface LinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
   size?: "sm" | "md" | "lg";
   textProps?: TextProps;
+  ref?: React.RefObject<HTMLAnchorElement | null>;
 }
 
 const defaultProps: Partial<LinkProps> = {
@@ -17,11 +18,12 @@ export const Link: React.FC<LinkProps> = ({
   textProps,
   className,
   children,
+  ref,
   ...restProps
 }) => {
   size = size ?? defaultProps.size;
   return (
-    <a className={classNames(styles.link, className)} {...restProps}>
+    <a ref={ref} className={classNames(styles.link, className)} {...restProps}>
       <Text {...{ ...textProps, size }}>{children}</Text>
     </a>
   );

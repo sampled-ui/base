@@ -1,24 +1,34 @@
 import styles from "./styles.module.scss";
 
-export const Layout: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
+  ref?: React.RefObject<HTMLDivElement | null>;
+}
+
+export const Layout: React.FC<LayoutProps> = ({
   children,
   className,
+  ref,
   ...restProps
 }) => {
   return (
-    <div className={`${styles.layout} ${className}`} {...restProps}>
+    <div ref={ref} className={`${styles.layout} ${className}`} {...restProps}>
       {children}
     </div>
   );
 };
 
-export const Header: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+  ref?: React.RefObject<HTMLDivElement | null>;
+}
+
+export const Header: React.FC<HeaderProps> = ({
   children,
   className,
+  ref,
   ...restProps
 }) => {
   return (
-    <div className={`${styles.header} ${className}`} {...restProps}>
+    <div ref={ref} className={`${styles.header} ${className}`} {...restProps}>
       {children}
     </div>
   );

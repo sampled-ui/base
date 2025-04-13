@@ -17,6 +17,7 @@ interface NavigationProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "children"> {
   items: NavigationItem[];
   selected?: string;
+  ref?: React.RefObject<HTMLDivElement | null>;
 }
 
 const { Text } = Typography;
@@ -25,10 +26,11 @@ export const Navigation: React.FC<NavigationProps> = ({
   items,
   selected,
   className,
+  ref,
   ...restProps
 }) => {
   return (
-    <Spacing className={`${styles.navigation} ${className}`} {...restProps}>
+    <Spacing className={`${styles.navigation} ${className}`} ref={ref} {...restProps}>
       <Flex direction="column" gap="sm">
         {items.map((item, index) => {
           return (

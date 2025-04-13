@@ -20,6 +20,7 @@ interface MenuProps
   }[];
   trigger?: MenuTrigger;
   alignment?: MenuAlignmentPosition;
+  ref?: React.RefObject<HTMLDivElement | null>;
 }
 
 const defaultProps: Partial<MenuProps> = {
@@ -35,6 +36,7 @@ export const Menu: React.FC<MenuProps> = ({
   trigger,
   className,
   children,
+  ref,
   ...restProps
 }) => {
   alignment = alignment || defaultProps.alignment;
@@ -69,6 +71,7 @@ export const Menu: React.FC<MenuProps> = ({
 
   return (
     <div
+      ref={ref}
       style={{ position: "relative" }}
       onMouseEnter={() => {
         if (trigger === "hover") {

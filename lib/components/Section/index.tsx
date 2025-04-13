@@ -12,6 +12,7 @@ interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   id: string;
   divided?: boolean;
+  ref?: React.RefObject<HTMLDivElement | null>;
 }
 
 export const Section: React.FC<SectionProps> = ({
@@ -20,6 +21,7 @@ export const Section: React.FC<SectionProps> = ({
   divided,
   children,
   className,
+  ref,
   ...restProps
 }) => {
   const { hash } = window.location;
@@ -34,6 +36,7 @@ export const Section: React.FC<SectionProps> = ({
 
   return (
     <Flex
+      ref={ref}
       id={id}
       direction="column"
       align="start"

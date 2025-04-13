@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, RefObject } from "react";
 
 import classNames from "classnames";
 
@@ -12,6 +12,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
   image?: string;
   innerProps?: FlexProps;
+  ref?: RefObject<HTMLDivElement | null>;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -20,6 +21,7 @@ export const Card: React.FC<CardProps> = ({
   innerProps,
   className,
   children,
+  ref,
   ...restProps
 }) => {
   const imageElement = image ? (
@@ -30,7 +32,11 @@ export const Card: React.FC<CardProps> = ({
   ) : null;
 
   return (
-    <div className={classNames(styles.card, className)} {...restProps}>
+    <div
+      className={classNames(styles.card, className)}
+      ref={ref}
+      {...restProps}
+    >
       {imageElement}
       <Spacing gap="xl">
         <Flex gap="lg" direction="column" align="start" {...innerProps}>

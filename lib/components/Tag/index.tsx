@@ -12,6 +12,7 @@ interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: Omit<SizeUnits, "xxl" | "xl" | "xs">;
   variant?: TagVariant;
   color?: string;
+  ref?: React.RefObject<HTMLDivElement | null>;
 }
 
 const defaultProps = {
@@ -25,12 +26,14 @@ export const Tag: React.FC<TagProps> = ({
   variant,
   color,
   className,
+  ref,
   ...restProps
 }) => {
   size = size ?? defaultProps.size;
   variant = variant ?? (defaultProps.variant as TagVariant);
   return (
     <Typography.Text
+      ref={ref}
       className={classNames(styles.tag, className, {
         [styles.outlined]: variant === "outlined",
         [styles.filled]: variant === "filled",
@@ -39,9 +42,9 @@ export const Tag: React.FC<TagProps> = ({
         [styles.lg]: size === "lg",
       })}
       style={{
-        color: variant === "outlined" ? color ?? "gray" : "white",
+        color: variant === "outlined" ? (color ?? "gray") : "white",
         backgroundColor: variant === "outlined" ? "transparent" : color,
-        borderColor: variant === "outlined" ? color ?? "gray" : "initial",
+        borderColor: variant === "outlined" ? (color ?? "gray") : "initial",
       }}
       {...restProps}
     >

@@ -13,6 +13,7 @@ interface ShowcaseProps
   image: string;
   backgroundSize?: string;
   width?: string;
+  ref?: React.RefObject<HTMLDivElement | null>;
 }
 
 export const Showcase: React.FC<ShowcaseProps> = ({
@@ -22,10 +23,12 @@ export const Showcase: React.FC<ShowcaseProps> = ({
   backgroundSize,
   className,
   width,
+  ref,
   ...restProps
 }) => {
   return (
     <div
+      ref={ref}
       className={classNames(styles.showcase, className)}
       style={{
         height: "50vh",
