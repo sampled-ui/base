@@ -22,13 +22,13 @@ const ToastButton: React.FC<{ type: Variants; children: string }> = ({
   const message = ((type: Omit<Variants, "success" | "warning" | "danger">) => {
     switch (type) {
       case "success":
-        return "✅ Success Toast " + counter;
+        return "Success Toast " + counter;
       case "warning":
-        return "⚠️ Warning Toast " + counter;
+        return "Warning Toast " + counter;
       case "danger":
-        return "❌ Danger Toast " + counter;
+        return "Danger Toast " + counter;
       default:
-        return "✨ Sample UI Toast " + counter;
+        return "Sample UI Toast " + counter;
     }
   })(type);
 

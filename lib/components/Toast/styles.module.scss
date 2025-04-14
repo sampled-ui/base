@@ -2,11 +2,12 @@
 
 .list {
   position: absolute;
+  flex-direction: column;
 }
 
 .toast {
   width: max-content;
-  padding: $padding-md;
+  padding: $padding-lg;
   background-color: $color-primary;
   color: $color-secondary;
 
@@ -16,11 +17,9 @@
   text-align: center;
 
   border: $border;
-  border-width: 0.1rem;
-  border-radius: 2rem;
-  box-shadow:
-    $shadow-md,
-    rgba(0, 0, 0, 0.35) 0px -10px 36px -28px inset;
+  border-width: 0.2rem;
+  border-radius: $border-radius-sm;
+  box-shadow: $shadow-md;
 
   animation: fade 4s ease-in-out forwards;
 }

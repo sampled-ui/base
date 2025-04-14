@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 
 import classNames from "classnames";
 
@@ -11,15 +11,23 @@ import styles from "./styles.module.scss";
 export interface Toast {
   id: string;
   message: string;
+  icon?: JSX.Element;
   type?: Omit<Variants, "primary" | "secondary" | "disabled">;
 }
 
 interface ToastProviderProps extends React.HTMLAttributes<HTMLDivElement> {
+  icons?: {
+    success?: JSX.Element;
+    warning?: JSX.Element;
+    danger?: JSX.Element;
+    default?: JSX.Element;
+  };
   verticalAlignment?: "top" | "bottom";
   horizontalAlignment?: "left" | "right" | "center";
 }
 
 export const ToastProvider: React.FC<ToastProviderProps> = ({
+  icons,
   verticalAlignment = "top",
   horizontalAlignment = "center",
   children,
@@ -51,23 +59,29 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
           [styles.right]: horizontalAlignment === "right",
           [styles.center]: horizontalAlignment === "center",
         })}
-        style={{
-          flexDirection:
-            verticalAlignment === "top" ? "column" : "column-reverse",
-        }}
       >
-        {toasts.map((toast) => (
-          <div
-            key={toast.id}
-            className={classNames(styles.toast, {
-              [styles.success]: toast.type === "success",
-              [styles.warning]: toast.type === "warning",
-              [styles.danger]: toast.type === "danger",
-            })}
-          >
-            {toast.message}
-          </div>
-        ))}
+        {toasts.map((toast) => {
+          const defaultIcon = icons
+            ? toast.type
+              ? (icons as Record<string, JSX.Element>)[toast.type as string]
+              : icons.default
+            : null;
+          return (
+            <div
+              key={toast.id}
+              className={classNames(styles.toast, {
+                [styles.success]: toast.type === "success",
+                [styles.warning]: toast.type === "warning",
+                [styles.danger]: toast.type === "danger",
+              })}
+            >
+              <Flex gap="md">
+                {toast.icon ?? defaultIcon ?? null}
+                {toast.message}
+              </Flex>
+            </div>
+          );
+        })}
       </Flex>
     );
   };
