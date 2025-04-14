@@ -7,7 +7,13 @@ import { Typography } from "../Typography";
 
 import styles from "./styles.module.scss";
 
-type MenuAlignmentPosition = "top" | "bottom";
+type MenuAlignmentPosition =
+  | "top"
+  | "bottom"
+  | "top left"
+  | "top right"
+  | "bottom left"
+  | "bottom right";
 
 type MenuTrigger = "hover" | "click";
 
@@ -21,6 +27,13 @@ interface MenuProps
   trigger?: MenuTrigger;
   alignment?: MenuAlignmentPosition;
   ref?: React.RefObject<HTMLDivElement | null>;
+}
+
+interface Position {
+  left?: number;
+  right?: number;
+  top?: number;
+  bottom?: number;
 }
 
 const defaultProps: Partial<MenuProps> = {
@@ -45,9 +58,7 @@ export const Menu: React.FC<MenuProps> = ({
   const [open, setOpen] = useState(false);
   const innerRef = useRef<HTMLDivElement>(null);
   const [innerRect, setInnerRect] = useState<DOMRect | undefined>();
-  const [position, setPosition] = useState<
-    { left: number; bottom?: number; top?: number } | undefined
-  >();
+  const [position, setPosition] = useState<Position | undefined>();
 
   useEffect(() => {
     if (innerRef.current) {
@@ -58,14 +69,19 @@ export const Menu: React.FC<MenuProps> = ({
 
   useEffect(() => {
     if (innerRect) {
-      const left = innerRect.x;
-      if (alignment === "top") {
+      let position: Position = {};
+      if (alignment?.includes("top")) {
         const bottom = innerRect.height + 8;
-        setPosition({ left, bottom });
-      } else if (alignment === "bottom") {
+        position = { bottom };
+      } else if (alignment?.includes("bottom")) {
         const top = innerRect.height + 8;
-        setPosition({ left, top });
+        position = { top };
       }
+      if (alignment?.includes("left")) {
+        position = { ...position, right: 0 };
+      }
+
+      setPosition(position);
     }
   }, [alignment, innerRect]);
 
@@ -100,7 +116,7 @@ export const Menu: React.FC<MenuProps> = ({
         align="stretch"
         gap="sm"
         className={classNames(styles.menu, { [styles.open]: open }, className)}
-        style={{ bottom: position?.bottom, top: position?.top, left: 0 }}
+        style={{ ...position }}
         {...restProps}
       >
         {items.map((item) => (

@@ -48,6 +48,24 @@ const MenuSection: React.FC<MenuSectionProps> = () => {
           </Flex>
         </Column>
       </Row>
+      <Row>
+        <Column span={8}>
+          <Flex direction="column" align="start" gap="md">
+            <Typography.Heading level={5}>Right Aligned</Typography.Heading>
+            <Menu trigger="click" alignment="top right" items={menuItems}>
+              <Button>Click Me</Button>
+            </Menu>
+          </Flex>
+        </Column>
+        <Column span={8}>
+          <Flex direction="column" align="start" gap="md">
+            <Typography.Heading level={5}>Left Aligned</Typography.Heading>
+            <Menu trigger="click" alignment="top left" items={menuItems}>
+              <Button>Click Me</Button>
+            </Menu>
+          </Flex>
+        </Column>
+      </Row>
     </Section>
   );
 };

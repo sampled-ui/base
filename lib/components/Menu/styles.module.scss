@@ -4,6 +4,7 @@
   position: absolute;
   opacity: 0;
   visibility: hidden;
+  z-index: 99;
 
   width: calc(100% - 2 * $spacing-sm);
   min-width: 10rem;

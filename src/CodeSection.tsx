@@ -51,6 +51,7 @@ const CodeSection: React.FC<CodeSectionProps> = ({
         View Source
       </Typography.Link> */}
       <CodeMirror
+        editable={false}
         theme={"dark"}
         value={formattedCode}
         style={{
