@@ -14,9 +14,15 @@ import {
 interface MenuSectionProps {}
 
 const menuItems = [
-  { title: "Item 1", onClick: () => {} },
-  { title: "Item 2", onClick: () => {} },
-  { title: "Item 3", onClick: () => {}, icon: <span>🧪</span> },
+  { title: "Item 1", key: "1" },
+  { title: "Item 2", key: "2" },
+  { title: "Item Danger", danger: true, key: "3" },
+  {
+    title: "Item Disabled",
+    disabled: true,
+    key: "4",
+  },
+  { title: "Item Icon", icon: <span>🧪</span>, key: "5" },
 ];
 
 const MenuSection: React.FC<MenuSectionProps> = () => {

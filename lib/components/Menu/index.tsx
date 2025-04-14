@@ -22,6 +22,9 @@ export interface MenuItem {
   key: string;
   title: string;
   icon?: JSX.Element;
+  onClick?: () => void;
+  disabled?: boolean;
+  danger?: boolean;
 }
 
 export interface MenuProps
@@ -30,6 +33,7 @@ export interface MenuProps
     "style" | "onSelect" | "children"
   > {
   items: MenuItem[];
+  select?: boolean;
   onSelect?: (item: MenuItem) => void;
   defaultSelection?: string | string[];
   multiple?: boolean;
@@ -64,6 +68,7 @@ export const Menu: React.FC<MenuProps> = ({
   alignment,
   trigger,
   multiple,
+  select = false,
   onSelect,
   defaultSelection,
   size = "md",
@@ -149,8 +154,10 @@ export const Menu: React.FC<MenuProps> = ({
             className={classNames(styles.item, {
               [styles.selected]:
                 typeof selected === "string"
-                  ? selected === item.key
-                  : selected?.includes(item.key),
+                  ? selected === item.key && select
+                  : selected?.includes(item.key) && select,
+              [styles.disabled]: item.disabled,
+              [styles.danger]: item.danger,
               [styles.sm]: size === "sm",
               [styles.md]: size === "md",
               [styles.lg]: size === "lg",
@@ -159,20 +166,25 @@ export const Menu: React.FC<MenuProps> = ({
               if (onSelect) {
                 onSelect(item);
               }
-              if (!multiple) {
-                setSelected(item.key);
-                setOpen(false);
-              } else {
-                setSelected((prev) => {
-                  if (Array.isArray(prev)) {
-                    if (prev.includes(item.key)) {
-                      return prev.filter((key) => key !== item.key);
-                    } else {
-                      return [...prev, item.key];
+              if (item.onClick) {
+                item.onClick();
+              }
+              if (select) {
+                if (!multiple) {
+                  setSelected(item.key);
+                  setOpen(false);
+                } else {
+                  setSelected((prev) => {
+                    if (Array.isArray(prev)) {
+                      if (prev.includes(item.key)) {
+                        return prev.filter((key) => key !== item.key);
+                      } else {
+                        return [...prev, item.key];
+                      }
                     }
-                  }
-                  return [item.key];
-                });
+                    return [item.key];
+                  });
+                }
               }
             }}
           >

@@ -43,7 +43,19 @@
 
 .item:hover {
   background-color: $color-primary-dim;
-  opacity: 0.5;
+}
+
+.danger {
+  color: $color-error;
+}
+
+.disabled {
+  color: $color-tertiary;
+  cursor: not-allowed;
+}
+
+.disabled:hover {
+  background-color: initial;
 }
 
 .selected {
@@ -53,5 +65,4 @@
 
 .selected:hover {
   background-color: $color-accent;
-  opacity: 0.5;
 }

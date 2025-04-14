@@ -44,7 +44,7 @@ export const Select: React.FC<SelectProps> = ({
   }, []);
 
   return (
-    <Menu size={size} ref={ref} {...menu}>
+    <Menu size={size} ref={ref} select {...menu}>
       {({ selected, innerRef }) => (
         <div
           ref={innerRef}
