@@ -90,11 +90,27 @@ export const Menu: React.FC<MenuProps> = ({
   const [position, setPosition] = useState<Position | undefined>();
 
   useEffect(() => {
-    if (innerRef.current) {
+    const handleClick = () => {
+      if (trigger === "click") {
+        setOpen((prev) => !prev);
+      }
+    };
+
+    const node = innerRef.current;
+
+    if (node) {
       const rect = innerRef.current?.getBoundingClientRect();
       setInnerRect(rect);
+
+      node.addEventListener("click", handleClick);
     }
-  }, [innerRef]);
+
+    return () => {
+      if (node) {
+        node.removeEventListener("click", handleClick);
+      }
+    };
+  }, [innerRef, trigger]);
 
   useEffect(() => {
     if (innerRect) {
@@ -126,11 +142,6 @@ export const Menu: React.FC<MenuProps> = ({
       onMouseLeave={() => {
         if (trigger === "hover") {
           setOpen(false);
-        }
-      }}
-      onClick={() => {
-        if (trigger === "click") {
-          setOpen((prev) => !prev);
         }
       }}
       onBlur={() => {
@@ -171,22 +182,21 @@ export const Menu: React.FC<MenuProps> = ({
               }
               if (!select) {
                 setOpen(false);
-              } else {
-                if (!multiple) {
-                  setSelected(item.key);
-                  setOpen(false);
-                } else {
-                  setSelected((prev) => {
-                    if (Array.isArray(prev)) {
-                      if (prev.includes(item.key)) {
-                        return prev.filter((key) => key !== item.key);
-                      } else {
-                        return [...prev, item.key];
-                      }
+              }
+              if (!multiple && select) {
+                setSelected(item.key);
+                setOpen(false);
+              } else if (select) {
+                setSelected((prev) => {
+                  if (Array.isArray(prev)) {
+                    if (prev.includes(item.key)) {
+                      return prev.filter((key) => key !== item.key);
+                    } else {
+                      return [...prev, item.key];
                     }
-                    return [item.key];
-                  });
-                }
+                  }
+                  return [item.key];
+                });
               }
             }}
           >
