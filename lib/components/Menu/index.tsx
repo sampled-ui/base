@@ -169,7 +169,9 @@ export const Menu: React.FC<MenuProps> = ({
               if (item.onClick) {
                 item.onClick();
               }
-              if (select) {
+              if (!select) {
+                setOpen(false);
+              } else {
                 if (!multiple) {
                   setSelected(item.key);
                   setOpen(false);

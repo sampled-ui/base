@@ -31,7 +31,6 @@ export const Select: React.FC<SelectProps> = ({
   size = size ?? defaultProps.size;
 
   const renderSelected = useCallback((selected: MenuItem | MenuItem[]) => {
-    console.debug(selected);
     if (!selected) return null;
     if (Array.isArray(selected)) {
       return (
