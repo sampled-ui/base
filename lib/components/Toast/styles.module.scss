@@ -1,0 +1,70 @@
+@use "../../variables.scss" as *;
+
+.list {
+  position: absolute;
+}
+
+.toast {
+  width: max-content;
+  padding: $padding-md;
+  border-radius: 2rem;
+  background-color: $color-primary;
+  color: $color-secondary;
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  text-align: center;
+
+  box-shadow: $shadow-md;
+
+  animation: fade 4s ease-in-out forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+  5%,
+  95% {
+    opacity: 1;
+  }
+}
+
+.success {
+  background-color: $color-success;
+  color: $color-primary;
+}
+
+.warning {
+  background-color: $color-warning;
+  color: $color-primary;
+}
+
+.danger {
+  background-color: $color-error;
+  color: $color-primary;
+}
+
+.top {
+  top: $spacing-lg;
+}
+
+.bottom {
+  bottom: $spacing-lg;
+}
+
+.left {
+  left: $spacing-lg;
+}
+
+.right {
+  right: $spacing-lg;
+}
+
+.center {
+  left: 50%;
+  transform: translateX(-50%);
+}

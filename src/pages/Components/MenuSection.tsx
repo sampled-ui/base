@@ -21,7 +21,7 @@ const menuItems = [
 
 const MenuSection: React.FC<MenuSectionProps> = () => {
   return (
-    <Section title="Menu" id="menu">
+    <Section title="Menu" id="menu" divided>
       <Row>
         <Column span={8}>
           <Flex direction="column" align="start" gap="md">

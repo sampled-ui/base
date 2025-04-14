@@ -20,6 +20,7 @@ import InputSection from "./InputSection";
 import MenuSection from "./MenuSection";
 import ShowcaseSection from "./ShowcaseSection";
 import TagSection from "./TagSection";
+import ToastSection from "./ToastSection";
 import TypographySection from "./TypographySection";
 
 const { Heading, Paragraph } = Typography;
@@ -111,6 +112,7 @@ export const ComponentsPage: React.FC = () => {
           <TagSection />
           <ShowcaseSection />
           <MenuSection />
+          <ToastSection />
         </Spacing>
       </Layout>
     </Layout>

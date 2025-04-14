@@ -2,6 +2,7 @@ import { JSX, useEffect, useRef, useState } from "react";
 
 import classNames from "classnames";
 
+import { SizeUnits } from "../../units";
 import { Flex } from "../Flex";
 import { Typography } from "../Typography";
 
@@ -17,15 +18,30 @@ type MenuAlignmentPosition =
 
 type MenuTrigger = "hover" | "click";
 
-interface MenuProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "style"> {
-  items: {
-    title: string;
-    icon?: JSX.Element;
-    onClick: () => void;
-  }[];
+export interface MenuItem {
+  key: string;
+  title: string;
+  icon?: JSX.Element;
+}
+
+export interface MenuProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    "style" | "onSelect" | "children"
+  > {
+  items: MenuItem[];
+  onSelect?: (item: MenuItem) => void;
+  defaultSelection?: string | string[];
+  multiple?: boolean;
   trigger?: MenuTrigger;
   alignment?: MenuAlignmentPosition;
+  size?: Omit<SizeUnits, "xs" | "xl" | "xxl">;
+  children?:
+    | JSX.Element
+    | ((context: {
+        selected: MenuItem | MenuItem[] | undefined;
+        innerRef: React.RefObject<HTMLDivElement | null>;
+      }) => JSX.Element);
   ref?: React.RefObject<HTMLDivElement | null>;
 }
 
@@ -47,6 +63,10 @@ export const Menu: React.FC<MenuProps> = ({
   items,
   alignment,
   trigger,
+  multiple,
+  onSelect,
+  defaultSelection,
+  size = "md",
   className,
   children,
   ref,
@@ -54,6 +74,10 @@ export const Menu: React.FC<MenuProps> = ({
 }) => {
   alignment = alignment || defaultProps.alignment;
   trigger = trigger || defaultProps.trigger;
+
+  const [selected, setSelected] = useState<string | string[] | undefined>(
+    multiple ? (defaultSelection ?? []) : (defaultSelection ?? undefined)
+  );
 
   const [open, setOpen] = useState(false);
   const innerRef = useRef<HTMLDivElement>(null);
@@ -120,13 +144,54 @@ export const Menu: React.FC<MenuProps> = ({
         {...restProps}
       >
         {items.map((item) => (
-          <div className={styles.item} key={item.title} onClick={item.onClick}>
+          <div
+            key={item.key}
+            className={classNames(styles.item, {
+              [styles.selected]:
+                typeof selected === "string"
+                  ? selected === item.key
+                  : selected?.includes(item.key),
+              [styles.sm]: size === "sm",
+              [styles.md]: size === "md",
+              [styles.lg]: size === "lg",
+            })}
+            onClick={() => {
+              if (onSelect) {
+                onSelect(item);
+              }
+              if (!multiple) {
+                setSelected(item.key);
+                setOpen(false);
+              } else {
+                setSelected((prev) => {
+                  if (Array.isArray(prev)) {
+                    if (prev.includes(item.key)) {
+                      return prev.filter((key) => key !== item.key);
+                    } else {
+                      return [...prev, item.key];
+                    }
+                  }
+                  return [item.key];
+                });
+              }
+            }}
+          >
             {item.icon ?? null}
-            <Text size="md">{item.title}</Text>
+            <Text size={size}>{item.title}</Text>
           </div>
         ))}
       </Flex>
-      <div ref={innerRef}>{children}</div>
+      <div ref={innerRef}>
+        {typeof children === "function"
+          ? children({
+              selected:
+                typeof selected === "string"
+                  ? items.find(({ key }) => selected === key)
+                  : items.filter(({ key }) => selected?.includes(key)),
+              innerRef,
+            })
+          : children}
+      </div>
     </div>
   );
 };

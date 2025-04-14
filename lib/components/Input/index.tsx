@@ -25,9 +25,9 @@ export const Input: React.FC<InputProps> = ({
     <input
       ref={ref}
       className={`${className} ${classNames(styles.input, {
-        [styles.size_sm]: size === "sm",
-        [styles.size_md]: size === "md",
-        [styles.size_lg]: size === "lg",
+        [styles.sm]: size === "sm",
+        [styles.md]: size === "md",
+        [styles.lg]: size === "lg",
       })}`}
       {...restProps}
     />

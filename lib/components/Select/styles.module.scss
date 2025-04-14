@@ -1,7 +1,7 @@
 @use "../../variables" as *;
 
-.input {
-  all: unset;
+.select {
+  width: 10rem;
   font-family: $font-primary;
   border: $border;
 
@@ -10,28 +10,28 @@
   transition-timing-function: $transition-function;
 }
 
-.input:focus {
+.select:focus {
   border-color: $color-accent;
   box-shadow: $shadow-accent-sm;
 }
 
 .sm {
-  border-radius: $border-radius-xs;
-  padding: $padding-xs;
+  border-radius: $border-radius-sm;
+  padding: $padding-sm;
   font-size: $font-size-xs;
   line-height: $line-height-xs;
 }
 
 .md {
-  border-radius: $border-radius-sm;
-  padding: $padding-sm;
+  border-radius: $border-radius-md;
+  padding: $padding-md;
   font-size: $font-size-sm;
   line-height: $line-height-sm;
 }
 
 .lg {
   border-radius: $border-radius-md;
-  padding: $padding-md;
+  padding: $padding-lg;
   font-size: $font-size-md;
   line-height: $line-height-sm;
 }

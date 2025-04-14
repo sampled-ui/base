@@ -43,4 +43,15 @@
 
 .item:hover {
   background-color: $color-primary-dim;
+  opacity: 0.5;
+}
+
+.selected {
+  background-color: $color-accent;
+  color: $color-primary;
+}
+
+.selected:hover {
+  background-color: $color-accent;
+  opacity: 0.5;
 }

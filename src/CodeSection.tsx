@@ -25,7 +25,6 @@ const Example: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
 const CodeSection: React.FC<CodeSectionProps> = ({
   title,
   id,
-  src,
   children,
 }) => {
   const [formattedCode, setFormattedCode] = useState("");
