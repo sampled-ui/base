@@ -7,15 +7,20 @@
 .toast {
   width: max-content;
   padding: $padding-md;
-  border-radius: 2rem;
   background-color: $color-primary;
   color: $color-secondary;
+
   font-family: $font-primary;
   font-size: $font-size-sm;
   line-height: $line-height-sm;
   text-align: center;
 
-  box-shadow: $shadow-md;
+  border: $border;
+  border-width: 0.1rem;
+  border-radius: 2rem;
+  box-shadow:
+    $shadow-md,
+    rgba(0, 0, 0, 0.35) 0px -10px 36px -28px inset;
 
   animation: fade 4s ease-in-out forwards;
 }
@@ -34,18 +39,15 @@
 }
 
 .success {
-  background-color: $color-success;
-  color: $color-primary;
+  border-color: $color-success;
 }
 
 .warning {
-  background-color: $color-warning;
-  color: $color-primary;
+  border-color: $color-warning;
 }
 
 .danger {
-  background-color: $color-error;
-  color: $color-primary;
+  border-color: $color-error;
 }
 
 .top {

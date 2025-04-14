@@ -11,7 +11,7 @@ import styles from "./styles.module.scss";
 export interface Toast {
   id: string;
   message: string;
-  type?: Omit<Variants, "primary" | "secondary">;
+  type?: Omit<Variants, "primary" | "secondary" | "disabled">;
 }
 
 interface ToastProviderProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -60,11 +60,9 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
           <div
             key={toast.id}
             className={classNames(styles.toast, {
-              [styles.primary]: toast.type === "primary",
-              [styles.secondary]: toast.type === "secondary",
               [styles.success]: toast.type === "success",
               [styles.warning]: toast.type === "warning",
-              [styles.info]: toast.type === "danger",
+              [styles.danger]: toast.type === "danger",
             })}
           >
             {toast.message}

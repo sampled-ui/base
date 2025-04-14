@@ -19,11 +19,24 @@ const ToastButton: React.FC<{ type: Variants; children: string }> = ({
 }) => {
   const { toast } = useToast();
   const [counter, setCounter] = useState(1);
+  const message = ((type: Omit<Variants, "success" | "warning" | "danger">) => {
+    switch (type) {
+      case "success":
+        return "✅ Success Toast " + counter;
+      case "warning":
+        return "⚠️ Warning Toast " + counter;
+      case "danger":
+        return "❌ Danger Toast " + counter;
+      default:
+        return "✨ Sample UI Toast " + counter;
+    }
+  })(type);
+
   return (
     <Button
       variant={type}
       onClick={() => {
-        toast({ message: "✨ Sample UI Toast " + counter, type });
+        toast({ message, type });
         setCounter(counter + 1);
       }}
     >
@@ -86,6 +99,8 @@ const ToastSection: React.FC<ToastSectionProps> = () => {
         <Flex gap="md">
           <ToastButton type="primary">Normal Toast</ToastButton>
           <ToastButton type="success">Success Toast</ToastButton>
+          <ToastButton type="danger">Danger Toast</ToastButton>
+          <ToastButton type="warning">Warning Toast</ToastButton>
         </Flex>
       </ToastProvider>
     </Section>
