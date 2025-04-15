@@ -75,7 +75,7 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
                 [styles.danger]: toast.type === "danger",
               })}
             >
-              <Flex gap="md">
+              <Flex gap="sm">
                 {toast.icon ?? defaultIcon ?? null}
                 {toast.message}
               </Flex>

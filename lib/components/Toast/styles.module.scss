@@ -59,10 +59,12 @@
 
 .left {
   left: $spacing-lg;
+  align-items: flex-start;
 }
 
 .right {
   right: $spacing-lg;
+  align-items: flex-end;
 }
 
 .center {

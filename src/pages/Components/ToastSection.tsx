@@ -95,7 +95,14 @@ const ToastSection: React.FC<ToastSectionProps> = () => {
           />
         </Flex>
       </Flex>
-      <ToastProvider {...toasterProps}>
+      <ToastProvider
+        {...toasterProps}
+        icons={{
+          success: <div>✅</div>,
+          danger: <div>❌</div>,
+          warning: <div>⚠️</div>,
+        }}
+      >
         <Flex gap="md">
           <ToastButton type="primary">Normal Toast</ToastButton>
           <ToastButton type="success">Success Toast</ToastButton>
