@@ -1,19 +1,15 @@
 import React from "react";
 
-import { Button, Flex, Typography } from "../../../lib/main";
-import CodeSection from "../../CodeSection";
+import { Button, Flex, Typography } from "../../../../lib/main";
+import { Section } from "../../../components/Section";
 
 interface ButtonSectionProps {}
 
-const { Heading, Paragraph } = Typography;
+const { Heading } = Typography;
 
-const ButtonSection: React.FC<ButtonSectionProps> = () => {
+const ButtonExample = () => {
   return (
-    <CodeSection title="Button" id="button">
-      <Paragraph>
-        A simple button component with basic variants. It uses the same props as
-        the regular HTML button element.
-      </Paragraph>
+    <>
       <Flex gap="md">
         <Button>Primary</Button>
         <Button variant="secondary">Secondary</Button>
@@ -29,8 +25,12 @@ const ButtonSection: React.FC<ButtonSectionProps> = () => {
         <Button size="lg">Large</Button>
         <Button size="md">Medium</Button>
       </Flex>
-    </CodeSection>
+    </>
   );
+};
+
+const ButtonSection: React.FC<ButtonSectionProps> = () => {
+  return <Section title="Button" id="button" codeExample={ButtonExample} />;
 };
 
 export default ButtonSection;

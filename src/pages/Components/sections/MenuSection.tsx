@@ -7,9 +7,9 @@ import {
   Input,
   Menu,
   Row,
-  Section,
   Typography,
-} from "../../../lib/main";
+} from "../../../../lib/main";
+import { Section } from "../../../components/Section";
 
 interface MenuSectionProps {}
 
@@ -25,9 +25,9 @@ const menuItems = [
   { title: "Item Icon", icon: <span>🧪</span>, key: "5" },
 ];
 
-const MenuSection: React.FC<MenuSectionProps> = () => {
+const MenuExample = () => {
   return (
-    <Section title="Menu" id="menu" divided>
+    <>
       <Row>
         <Column span={8}>
           <Flex direction="column" align="start" gap="md">
@@ -72,8 +72,12 @@ const MenuSection: React.FC<MenuSectionProps> = () => {
           </Flex>
         </Column>
       </Row>
-    </Section>
+    </>
   );
+};
+
+const MenuSection: React.FC<MenuSectionProps> = () => {
+  return <Section title="Menu" id="menu" divided codeExample={MenuExample} />;
 };
 
 export default MenuSection;

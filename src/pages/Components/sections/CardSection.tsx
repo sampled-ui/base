@@ -1,13 +1,14 @@
 import React from "react";
 
-import { Paragraph } from "../../../lib/components/Typography/Paragraph";
-import { Card, Section } from "../../../lib/main";
+import { Paragraph } from "../../../../lib/components/Typography/Paragraph";
+import { Card } from "../../../../lib/main";
+import { Section } from "../../../components/Section";
 
 interface CardSectionProps {}
 
-const CardSection: React.FC<CardSectionProps> = () => {
+const CardExample = () => {
   return (
-    <Section title="Card" id="card" divided>
+    <>
       <Card title="Card title">
         <Paragraph size="md">
           This is a card body text but you can really render anything you want
@@ -20,8 +21,12 @@ const CardSection: React.FC<CardSectionProps> = () => {
           in here.
         </Paragraph>
       </Card>
-    </Section>
+    </>
   );
+};
+
+const CardSection: React.FC<CardSectionProps> = () => {
+  return <Section title="Card" id="card" divided codeExample={CardExample} />;
 };
 
 export default CardSection;

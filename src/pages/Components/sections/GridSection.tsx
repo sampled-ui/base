@@ -1,18 +1,16 @@
 import React from "react";
 
-import { Paragraph } from "../../../lib/components/Typography/Paragraph";
-import { Column, Row, Section, Spacing, Typography } from "../../../lib/main";
+import { Paragraph } from "../../../../lib/components/Typography/Paragraph";
+import { Column, Row, Spacing, Typography } from "../../../../lib/main";
+import { Section } from "../../../components/Section";
 
 interface GridSectionProps {}
 
 const { Text } = Typography;
 
-const GridSection: React.FC<GridSectionProps> = () => {
+const GridExample = () => {
   return (
-    <Section title="Grid" id="grid" divided>
-      <Paragraph>
-        Simple row and column components that allow you to create a grid layout.
-      </Paragraph>
+    <>
       <Row>
         <Column span={24}>
           <Spacing gap="sm" style={{ background: "gainsboro" }}>
@@ -144,8 +142,12 @@ const GridSection: React.FC<GridSectionProps> = () => {
           </Spacing>
         </Column>
       </Row>
-    </Section>
+    </>
   );
+};
+
+const GridSection: React.FC<GridSectionProps> = () => {
+  return <Section title="Grid" id="grid" divided codeExample={GridExample} />;
 };
 
 export default GridSection;

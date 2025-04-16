@@ -7,23 +7,24 @@ import {
   Flex,
   Layout,
   Navigation,
-  Section,
   Sidebar,
   Spacing,
   Typography,
 } from "../../../lib/main";
+import { Section } from "../../components/Section";
 
-import ButtonSection from "./ButtonSection";
-import CardSection from "./CardSection";
-import GridSection from "./GridSection";
-import InputSection from "./InputSection";
-import MenuSection from "./MenuSection";
-import ShowcaseSection from "./ShowcaseSection";
-import TagSection from "./TagSection";
-import ToastSection from "./ToastSection";
-import TypographySection from "./TypographySection";
+import ButtonSection from "./sections/ButtonSection";
+import CardSection from "./sections/CardSection";
+import GridSection from "./sections/GridSection";
+import InputSection from "./sections/InputSection";
+import MenuSection from "./sections/MenuSection";
+import ShowcaseSection from "./sections/ShowcaseSection";
+import TabsSection from "./sections/TabsSection";
+import TagSection from "./sections/TagSection";
+import ToastSection from "./sections/ToastSection";
+import TypographySection from "./sections/TypographySection";
 
-const { Heading, Paragraph } = Typography;
+const { Heading } = Typography;
 
 const useGetSelectedNavItem = (
   navItems: { key: string; title: string; onClick: () => void }[],
@@ -81,6 +82,21 @@ export const ComponentsPage: React.FC = () => {
       title: "Showcase",
       onClick: () => navigate("#showcase"),
     },
+    {
+      key: "menu",
+      title: "Menu",
+      onClick: () => navigate("#menu"),
+    },
+    {
+      key: "toast",
+      title: "Toast",
+      onClick: () => navigate("#toast"),
+    },
+    {
+      key: "tabs",
+      title: "Tabs",
+      onClick: () => navigate("#tabs"),
+    },
   ];
 
   const selected = useGetSelectedNavItem(navItems, location);
@@ -96,14 +112,7 @@ export const ComponentsPage: React.FC = () => {
             <Heading level={1}>🧪 Components</Heading>
             <Divider style={{ marginBottom: "initial" }} />
           </Flex>
-          <Section title="Overview" id="overview" divided>
-            <Paragraph>
-              This page showcases the different components that are available
-              for use in the Sampled UI library. The components are built using
-              the simplest implementation possible to ensure that they are easy
-              to customize and use.
-            </Paragraph>
-          </Section>
+          <Section title="Overview" id="overview" divided />
           <ButtonSection />
           <InputSection />
           <TypographySection />
@@ -113,6 +122,7 @@ export const ComponentsPage: React.FC = () => {
           <ShowcaseSection />
           <MenuSection />
           <ToastSection />
+          <TabsSection />
         </Spacing>
       </Layout>
     </Layout>

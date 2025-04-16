@@ -1,0 +1,39 @@
+@use "../../variables.scss" as *;
+
+.accordion {
+  border: $border;
+  border-radius: $border-radius-sm;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.item {
+  cursor: pointer;
+  width: 100%;
+}
+
+.item:hover {
+  background-color: $color-primary-dim;
+}
+
+.item.selected {
+  height: max-content;
+}
+
+.title {
+  padding: $padding-md;
+}
+
+.content {
+  width: 100%;
+  opacity: 0;
+  height: 0px;
+  overflow: hidden;
+  transition-property: height, opacity;
+  transition-duration: $transition-fast;
+}
+
+.content.selected {
+  opacity: 1;
+  height: fit-content;
+}

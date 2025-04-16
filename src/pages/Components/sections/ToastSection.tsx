@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import {
   Button,
   Flex,
-  Section,
   Select,
   ToastProvider,
   Typography,
   Variants,
   useToast,
-} from "../../../lib/main";
+} from "../../../../lib/main";
+import { Section } from "../../../components/Section";
 
 interface ToastSectionProps {}
 
@@ -45,6 +45,33 @@ const ToastButton: React.FC<{ type: Variants; children: string }> = ({
   );
 };
 
+const ToastExample = (
+  toasterProps:
+    | {
+        verticalAlignment: "top" | "bottom";
+        horizontalAlignment: "left" | "right" | "center";
+      }
+    | undefined
+) => {
+  return (
+    <ToastProvider
+      {...toasterProps}
+      icons={{
+        success: <div>✅</div>,
+        danger: <div>❌</div>,
+        warning: <div>⚠️</div>,
+      }}
+    >
+      <Flex gap="md">
+        <ToastButton type="primary">Normal Toast</ToastButton>
+        <ToastButton type="success">Success Toast</ToastButton>
+        <ToastButton type="danger">Danger Toast</ToastButton>
+        <ToastButton type="warning">Warning Toast</ToastButton>
+      </Flex>
+    </ToastProvider>
+  );
+};
+
 const ToastSection: React.FC<ToastSectionProps> = () => {
   const [verticalAlignment, setVerticalAlignment] = useState<"top" | "bottom">(
     "top"
@@ -53,10 +80,14 @@ const ToastSection: React.FC<ToastSectionProps> = () => {
     "left" | "right" | "center"
   >("center");
 
-  const toasterProps = { verticalAlignment, horizontalAlignment };
-
   return (
-    <Section title="Toast" id="toast" divided>
+    <Section
+      title="Toast"
+      id="toast"
+      divided
+      codeExample={ToastExample}
+      codeExampleProps={{ verticalAlignment, horizontalAlignment }}
+    >
       <Flex gap="md">
         <Flex direction="column" gap="sm" align="start">
           <Typography.Text bold>Vertical Alignment</Typography.Text>
@@ -95,21 +126,6 @@ const ToastSection: React.FC<ToastSectionProps> = () => {
           />
         </Flex>
       </Flex>
-      <ToastProvider
-        {...toasterProps}
-        icons={{
-          success: <div>✅</div>,
-          danger: <div>❌</div>,
-          warning: <div>⚠️</div>,
-        }}
-      >
-        <Flex gap="md">
-          <ToastButton type="primary">Normal Toast</ToastButton>
-          <ToastButton type="success">Success Toast</ToastButton>
-          <ToastButton type="danger">Danger Toast</ToastButton>
-          <ToastButton type="warning">Warning Toast</ToastButton>
-        </Flex>
-      </ToastProvider>
     </Section>
   );
 };
