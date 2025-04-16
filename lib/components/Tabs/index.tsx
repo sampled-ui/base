@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import classNames from "classnames";
 
 import { Flex } from "../Flex";
@@ -7,21 +5,27 @@ import { Typography } from "../Typography";
 
 import styles from "./styles.module.scss";
 
-interface TabsProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "onSelect"> {
-  items: {
-    key: string;
-    title: string;
-    onClick?: () => void;
-  }[];
-  defaultSelection?: string;
-  onSelect?: (key: string) => void;
+interface TabItem {
+  key: string;
+  title: string;
+  onClick?: () => void;
+}
+
+interface TabsProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "onSelect"> {
+  items: TabItem[];
+  selected?: string;
+  onSelect?: (item: TabItem) => void;
   ref?: React.RefObject<HTMLDivElement | null>;
 }
 
-export const Tabs: React.FC<TabsProps> = ({ items, defaultSelection, onSelect, className, ref }) => {
-  const [selected, setSelected] = useState<string | undefined>(
-    defaultSelection
-  );
+export const Tabs: React.FC<TabsProps> = ({
+  items,
+  selected,
+  onSelect,
+  className,
+  ref,
+}) => {
   return (
     <Flex gap="md" className={classNames(styles.tabs, className)} ref={ref}>
       {items.map((item) => (
@@ -32,9 +36,8 @@ export const Tabs: React.FC<TabsProps> = ({ items, defaultSelection, onSelect, c
           variant={item.key === selected ? "primary" : "secondary"}
           key={item.key}
           onClick={() => {
-            setSelected(item.key);
             item.onClick?.();
-            onSelect?.(item.key);
+            onSelect?.(item);
           }}
         >
           {item.title}

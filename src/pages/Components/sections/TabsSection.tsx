@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Tabs } from "../../../../lib/main";
 import { Section } from "../../../components/Section";
 
 interface TabsSectionProps {}
 
-const TabsExample = () => {
+const TabsExample = (
+  props:
+    | {
+        selected: string;
+        onSelect: (item: { key: string }) => void;
+      }
+    | undefined
+) => {
   return (
     <Tabs
       items={[
@@ -13,14 +20,23 @@ const TabsExample = () => {
         { key: "tab2", title: "Tab 2" },
         { key: "tab3", title: "Tab 3" },
       ]}
-      defaultSelection="tab1"
-      onSelect={(key) => console.log(`Selected tab: ${key}`)}
+      {...props}
     />
   );
 };
 
 const TabsSection: React.FC<TabsSectionProps> = () => {
-  return <Section title="Tabs" id="tabs" divided codeExample={TabsExample} />;
+  const [selected, setSelected] = useState("tab1");
+
+  return (
+    <Section
+      title="Tabs"
+      id="tabs"
+      divided
+      codeExample={TabsExample}
+      codeExampleProps={{ selected, onSelect: (item) => setSelected(item.key) }}
+    />
+  );
 };
 
 export default TabsSection;
