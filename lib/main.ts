@@ -7,6 +7,7 @@ export { Input } from "./components/Input";
 export { Header, Layout, Sidebar } from "./components/Layout";
 export * from "./components/Menu";
 export { Navigation } from "./components/Navigation";
+export { Progress } from "./components/Progress";
 export { Select } from "./components/Select";
 export { Showcase } from "./components/Showcase";
 export { Skeleton } from "./components/Skeleton";

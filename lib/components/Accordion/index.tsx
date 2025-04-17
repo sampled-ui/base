@@ -44,6 +44,7 @@ const Accordion: React.FC<AccordionProps> = ({
     >
       {items.map((item) => (
         <div
+          key={item.key}
           className={classNames(styles.item, {
             [styles.selected]: selection.includes(item.key),
           })}

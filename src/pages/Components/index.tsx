@@ -18,6 +18,7 @@ import CardSection from "./sections/CardSection";
 import GridSection from "./sections/GridSection";
 import InputSection from "./sections/InputSection";
 import MenuSection from "./sections/MenuSection";
+import ProgressSection from "./sections/ProgressSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import SkeletonSection from "./sections/SkeletonSection";
 import TabsSection from "./sections/TabsSection";
@@ -103,6 +104,11 @@ export const ComponentsPage: React.FC = () => {
       title: "Skeleton",
       onClick: () => navigate("#skeleton"),
     },
+    {
+      key: "progress",
+      title: "Progress",
+      onClick: () => navigate("#progress"),
+    },
   ];
 
   const selected = useGetSelectedNavItem(navItems, location);
@@ -130,6 +136,7 @@ export const ComponentsPage: React.FC = () => {
           <ToastSection />
           <TabsSection />
           <SkeletonSection />
+          <ProgressSection />
         </Spacing>
       </Layout>
     </Layout>

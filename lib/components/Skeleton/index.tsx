@@ -16,12 +16,14 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   style,
   className,
   ref,
+  ...restProps
 }) => {
   return (
     <div
       className={classNames(styles.skeleton, className)}
       style={{ height, width, ...(style ?? {}) }}
       ref={ref}
+      {...restProps}
     />
   );
 };

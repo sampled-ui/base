@@ -30,14 +30,13 @@
   );
   transform: translateX(-100%);
 
-  animation-name: react-loading-skeleton;
+  animation-name: loading-skeleton;
   animation-direction: normal;
   animation-duration: 2s;
-  animation-timing-function: $transition-fast;
   animation-iteration-count: infinite;
 }
 
-@keyframes react-loading-skeleton {
+@keyframes loading-skeleton {
   100% {
     transform: translateX(100%);
   }
