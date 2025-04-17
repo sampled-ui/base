@@ -47,4 +47,9 @@ export const Intros = {
     dynamic and interactive tabbed interfaces, making it easy to switch between different sections while 
     keeping the layout clean and organized.
   `,
+  skeleton: `
+    Skeleton loaders provide a placeholder for content while it is loading. This library offers skeleton 
+    components that can be used to improve perceived performance and enhance the user experience during 
+    content loading.
+  `,
 };

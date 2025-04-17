@@ -1,0 +1,44 @@
+@use "../../variables.scss" as *;
+
+.skeleton {
+  background-color: $color-primary-dim;
+
+  height: 2rem;
+  width: 10rem;
+  border-radius: $border-radius-xs;
+  display: inline-flex;
+  line-height: 1;
+
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+}
+
+.skeleton:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    90deg,
+    $color-primary-dim 0%,
+    $color-primary 50%,
+    $color-primary-dim 100%
+  );
+  transform: translateX(-100%);
+
+  animation-name: react-loading-skeleton;
+  animation-direction: normal;
+  animation-duration: 2s;
+  animation-timing-function: $transition-fast;
+  animation-iteration-count: infinite;
+}
+
+@keyframes react-loading-skeleton {
+  100% {
+    transform: translateX(100%);
+  }
+}

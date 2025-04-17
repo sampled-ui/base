@@ -9,6 +9,7 @@ export * from "./components/Menu";
 export { Navigation } from "./components/Navigation";
 export { Select } from "./components/Select";
 export { Showcase } from "./components/Showcase";
+export { Skeleton } from "./components/Skeleton";
 export { Spacing } from "./components/Spacing";
 export { Tabs } from "./components/Tabs";
 export { Tag } from "./components/Tag";
