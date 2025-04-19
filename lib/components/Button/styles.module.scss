@@ -1,4 +1,4 @@
-@use "../../variables" as *;
+@use "../../style" as *;
 
 .button {
   all: unset;
@@ -9,29 +9,30 @@
   text-align: center;
   font-family: $font-primary;
   font-size: $font-size-sm;
+  font-weight: 500;
   line-height: $line-height-sm;
 
   padding: $padding-sm;
 
   border-radius: $border-radius-sm;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: $shadow-sm;
 
-  transition-property: background-color box-shadow;
+  transition-property: background-color, box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.2s;
 }
 
 .primary {
-  background-color: $color-secondary;
   color: $color-primary;
+  background-color: $color-accent;
 }
 
 .primary:hover {
-  background-color: hsl(0, 0%, 20%);
+  box-shadow: $shadow-accent-sm;
 }
 
 .primary:active {
-  background-color: hsl(0, 0%, 30%);
+  background-color: hsl(205, 100%, 36%);
   box-shadow: initial;
 }
 
@@ -41,11 +42,11 @@
 }
 
 .secondary:hover {
-  background-color: hsl(0, 0%, 98%);
+  background-color: hsl(0, 0%, 96%);
 }
 
 .secondary:active {
-  background-color: hsl(0, 0%, 96%);
+  background-color: hsl(0, 0%, 92%);
   box-shadow: initial;
 }
 
@@ -55,11 +56,11 @@
 }
 
 .danger:hover {
-  background-color: hsl(0, 100%, 48%);
+  background-color: hsl(0, 100%, 41%);
 }
 
 .danger:active {
-  background-color: hsl(0, 100%, 40%);
+  background-color: hsl(0, 100%, 38%);
   box-shadow: initial;
 }
 
@@ -69,11 +70,11 @@
 }
 
 .success:hover {
-  background-color: hsl(120, 100%, 38%);
+  background-color: hsl(120, 100%, 35%);
 }
 
 .success:active {
-  background-color: hsl(120, 100%, 30%);
+  background-color: hsl(120, 100%, 32%);
   box-shadow: initial;
 }
 
@@ -83,7 +84,7 @@
 }
 
 .warning:hover {
-  background-color: hsl(40, 100%, 48%);
+  background-color: hsl(40, 100%, 44%);
 }
 
 .warning:active {
@@ -92,9 +93,10 @@
 }
 
 .ghost {
+  border: initial;
   background-color: initial;
   color: $color-secondary;
-  box-shadow: initial;
+  box-shadow: initial !important;
 }
 
 .ghost:hover {
@@ -108,6 +110,7 @@
 .disabled {
   cursor: not-allowed;
   opacity: 0.4;
+  color: $color-secondary;
 }
 
 .md {
@@ -126,4 +129,18 @@
   padding: $padding-lg;
   font-size: $font-size-xl;
   line-height: $line-height-xl;
+}
+
+@media (prefers-color-scheme: dark) {
+  .primary, .success, .danger, .warning {
+    color: $color-secondary;
+  }
+
+  .secondary:hover, .ghost:hover {
+    background-color: hsl(0, 0%, 11%);
+  }
+
+  .secondary:active, .ghost:active {
+    background-color: hsl(0, 0%, 8%);
+  }
 }

@@ -1,8 +1,8 @@
-@use "../../variables" as *;
+@use "../../style" as *;
 
 .hr {
     width: 100%;
     margin: $spacing-md 0;
     border-style: solid;
-    border-color: $color-primary-dim;
+    border-color: $color-background-dim;
 }

@@ -32,7 +32,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({
       className={classNames(styles.showcase, className)}
       style={{
         height: "50vh",
-        background: `linear-gradient(rgba(0,0,0,0) 0,rgba(0,0,0,0.5) 50% 50%, rgb(0,0,0) 90% 100%), url(${image})`,
+        background: `var(--color-gradient), url(${image})`,
         ...(backgroundSize ? { backgroundSize } : {}),
         ...(width ? { width } : {}),
         ...restProps.style,

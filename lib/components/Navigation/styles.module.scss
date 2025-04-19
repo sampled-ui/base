@@ -1,4 +1,4 @@
-@use "../../variables" as *;
+@use "../../style" as *;
 
 .navigation {
   display: flex;
@@ -13,7 +13,7 @@
 .item:hover {
   cursor: pointer;
   border-radius: $border-radius-sm;
-  background-color: hsl(0, 0%, 95%);
+  background-color: $color-background-dim;
 }
 
 .selected {

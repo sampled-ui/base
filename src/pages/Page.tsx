@@ -12,7 +12,7 @@ export const Page = () => {
         <img
           onClick={() => navigate("/")}
           style={{ padding: "0 1.5rem", maxHeight: "2rem", cursor: "pointer" }}
-          src="./wordmark-logo.png"
+          src="./wordmark-logo.svg"
         />
         <Flex
           align="center"

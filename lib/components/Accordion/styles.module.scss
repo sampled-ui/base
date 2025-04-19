@@ -1,4 +1,4 @@
-@use "../../variables.scss" as *;
+@use "../../style.scss" as *;
 
 .accordion {
   border: $border;
@@ -13,7 +13,7 @@
 }
 
 .item:hover {
-  background-color: $color-primary-dim;
+  background-color: $color-background-dim;
 }
 
 .item.selected {

@@ -1,4 +1,4 @@
-@use "../../variables.scss" as *;
+@use "../../style.scss" as *;
 
 .list {
   position: absolute;
@@ -8,7 +8,7 @@
 .toast {
   width: max-content;
   padding: $padding-lg;
-  background-color: $color-primary;
+  background-color: $color-background;
   color: $color-secondary;
 
   font-family: $font-primary;
@@ -19,7 +19,7 @@
   border: $border;
   border-width: 0.2rem;
   border-radius: $border-radius-sm;
-  box-shadow: $shadow-md;
+  box-shadow: $shadow-sm;
 
   animation: fade 4s ease-in-out forwards;
 }

@@ -11,7 +11,7 @@ const ShowcaseExample = () => {
     <Showcase
       title="Sampled UI"
       subtitle={<Tag label="Design System" variant="filled" color="gray" />}
-      image="./wordmark-logo.png"
+      image="https://picsum.photos/1000"
       width="calc(100% - 3rem)"
     />
   );

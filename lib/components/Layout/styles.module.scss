@@ -1,9 +1,11 @@
-@use "../../variables" as *;
+@use "../../style" as *;
 
 .layout {
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  background-color: $color-background;
+  color: $color-secondary;
 
   .header {
     width: 100%;

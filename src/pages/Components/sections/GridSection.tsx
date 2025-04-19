@@ -18,6 +18,7 @@ const GridExample = () => {
               style={{
                 width: "100%",
                 textAlign: "center",
+                color: "black",
               }}
             >
               24 columns wide
@@ -32,6 +33,7 @@ const GridExample = () => {
               style={{
                 width: "100%",
                 textAlign: "center",
+                color: "black",
               }}
             >
               12 columns wide
@@ -44,6 +46,7 @@ const GridExample = () => {
               style={{
                 width: "100%",
                 textAlign: "center",
+                color: "black",
               }}
             >
               12 columns wide
@@ -58,6 +61,7 @@ const GridExample = () => {
               style={{
                 width: "100%",
                 textAlign: "center",
+                color: "black",
               }}
             >
               8 columns wide
@@ -70,6 +74,7 @@ const GridExample = () => {
               style={{
                 width: "100%",
                 textAlign: "center",
+                color: "black",
               }}
             >
               8 columns wide
@@ -82,6 +87,7 @@ const GridExample = () => {
               style={{
                 width: "100%",
                 textAlign: "center",
+                color: "black",
               }}
             >
               8 columns wide
@@ -99,6 +105,7 @@ const GridExample = () => {
               style={{
                 width: "100%",
                 textAlign: "center",
+                color: "black",
               }}
             >
               6 columns
@@ -111,6 +118,7 @@ const GridExample = () => {
               style={{
                 width: "100%",
                 textAlign: "center",
+                color: "black",
               }}
             >
               6 columns
@@ -123,6 +131,7 @@ const GridExample = () => {
               style={{
                 width: "100%",
                 textAlign: "center",
+                color: "black",
               }}
             >
               6 columns
@@ -135,6 +144,7 @@ const GridExample = () => {
               style={{
                 width: "100%",
                 textAlign: "center",
+                color: "black",
               }}
             >
               6 columns

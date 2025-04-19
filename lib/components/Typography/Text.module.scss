@@ -1,4 +1,4 @@
-@use "../../variables" as *;
+@use "../../style" as *;
 
 .container {
   font-family: $font-primary;
@@ -68,13 +68,19 @@
   padding: 0.1rem $spacing-xs;
   border: $border;
   border-radius: 0.2rem;
-  background-color: hsl(0, 0%, 95%);
+  background-color: $color-primary;
   font-size: $font-size-xs;
   font-family: $font-mono;
   line-height: $line-height-xs;
 }
 
 .keyboard {
-  background-color: hsl(0, 0%, 98%);
+  background-color: $color-primary;
   box-shadow: $shadow-sm;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mark {
+    background-color: hsl(40, 100%, 20%);
+  }
 }

@@ -1,7 +1,7 @@
-@use "../../variables.scss" as *;
+@use "../../style.scss" as *;
 
 .skeleton {
-  background-color: $color-primary-dim;
+  background-color: $color-background-dim;
 
   height: 2rem;
   width: 10rem;
@@ -24,9 +24,9 @@
   background-repeat: no-repeat;
   background-image: linear-gradient(
     90deg,
-    $color-primary-dim 0%,
-    $color-primary 50%,
-    $color-primary-dim 100%
+    $color-background-dim 0%,
+    $color-background 50%,
+    $color-background-dim 100%
   );
   transform: translateX(-100%);
 

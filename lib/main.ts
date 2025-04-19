@@ -18,3 +18,7 @@ export * from "./components/Toast";
 export { Typography } from "./components/Typography";
 
 export * from "./units";
+
+import "./theme.css";
+import "./variables.css";
+

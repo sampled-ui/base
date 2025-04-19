@@ -1,4 +1,4 @@
-@use "../../variables" as *;
+@use "../../style" as *;
 
 .showcase {
   position: static;
@@ -20,5 +20,11 @@
 }
 
 .title {
-    font-weight: bolder;
+  font-weight: bolder;
+}
+
+@media (prefers-color-scheme: dark) {
+  .showcase {
+    color: $color-secondary;
+  }
 }
