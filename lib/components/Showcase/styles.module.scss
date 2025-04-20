@@ -5,18 +5,14 @@
   height: 12rem;
   max-width: 100%;
   padding: $spacing-lg;
-  border-radius: $border-radius-md;
-  background-blend-mode: darken;
+  background-blend-mode: lighten;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  border: $border;
-  color: $color-primary;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   align-items: start;
   justify-content: end;
-  box-shadow: $shadow-sm;
 }
 
 .title {
@@ -25,6 +21,6 @@
 
 @media (prefers-color-scheme: dark) {
   .showcase {
-    color: $color-secondary;
+    background-blend-mode: darken;
   }
 }
