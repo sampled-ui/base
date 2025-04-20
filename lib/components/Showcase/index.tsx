@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { CSSProperties, JSX } from "react";
 
 import classNames from "classnames";
 
@@ -14,6 +14,7 @@ interface ShowcaseProps
   backgroundSize?: string;
   width?: string;
   ref?: React.RefObject<HTMLDivElement | null>;
+  style?: CSSProperties
 }
 
 export const Showcase: React.FC<ShowcaseProps> = ({
@@ -24,6 +25,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({
   className,
   width,
   ref,
+  style,
   ...restProps
 }) => {
   return (
@@ -35,7 +37,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({
         background: `var(--color-gradient), url(${image})`,
         ...(backgroundSize ? { backgroundSize } : {}),
         ...(width ? { width } : {}),
-        ...restProps.style,
+        ...style,
       }}
       {...restProps}
     >
