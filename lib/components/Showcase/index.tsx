@@ -14,7 +14,7 @@ interface ShowcaseProps
   backgroundSize?: string;
   width?: string;
   ref?: React.RefObject<HTMLDivElement | null>;
-  style?: CSSProperties
+  style?: CSSProperties;
 }
 
 export const Showcase: React.FC<ShowcaseProps> = ({
@@ -35,7 +35,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({
       style={{
         height: "50vh",
         background: `var(--color-gradient), url(${image})`,
-        ...(backgroundSize ? { backgroundSize } : {}),
+        ...{ backgroundSize: backgroundSize ?? "cover" },
         ...(width ? { width } : {}),
         ...style,
       }}

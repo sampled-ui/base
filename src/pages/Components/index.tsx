@@ -119,7 +119,7 @@ export const ComponentsPage: React.FC = () => {
         <Navigation selected={selected} items={navItems} />
       </Sidebar>
       <Layout ref={innerLayoutRef}>
-        <Spacing gap="xl">
+        <Spacing gap="xl" style={{ maxWidth: "58rem", margin: "auto" }}>
           <Flex direction="column" align="start">
             <Heading level={1}>🧪 Components</Heading>
             <Divider style={{ marginBottom: "initial" }} />
