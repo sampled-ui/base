@@ -11,6 +11,7 @@ interface ShowcaseProps
   title: string | JSX.Element;
   subtitle: string | JSX.Element | JSX.Element[];
   image: string;
+  color?: string;
   backgroundSize?: string;
   width?: string;
   ref?: React.RefObject<HTMLDivElement | null>;
@@ -21,6 +22,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({
   title,
   subtitle,
   image,
+  color,
   backgroundSize,
   className,
   width,
@@ -34,7 +36,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({
       className={classNames(styles.showcase, className)}
       style={{
         height: "50vh",
-        background: `var(--color-gradient), url(${image})`,
+        background: `${color ?? "var(--color-gradient)"}, url(${image})`,
         ...{ backgroundSize: backgroundSize ?? "cover" },
         ...(width ? { width } : {}),
         ...style,
