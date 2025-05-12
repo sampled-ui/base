@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Card, Spacing } from "../../main";
 import { Flex } from "../Flex";
 import { Typography } from "../Typography";

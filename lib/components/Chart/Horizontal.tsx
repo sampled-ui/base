@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import { CSSProperties } from "react";
 
 import { Card } from "../Card";
 import { Flex } from "../Flex";
@@ -7,7 +7,7 @@ import { Typography } from "../Typography";
 import styles from "./styles.module.scss";
 
 interface HorizontalBarChartProps {
-  axis: { label: string; value: number, style?: CSSProperties }[];
+  axis: { label: string; value: number; style?: CSSProperties }[];
   unit?: string;
 }
 
