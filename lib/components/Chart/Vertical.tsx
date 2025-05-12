@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 import { Card } from "../Card";
 import { Flex } from "../Flex";
@@ -7,7 +7,7 @@ import { Typography } from "../Typography";
 import styles from "./styles.module.scss";
 
 interface BarChartProps {
-  axis: { label: string; value: number }[];
+  axis: { label: string; value: number; style?: CSSProperties }[];
   unit?: string;
 }
 
@@ -39,6 +39,7 @@ export const BarChart: React.FC<BarChartProps> = ({ axis, unit }) => {
                       left: "50%",
                       transform: "translateX(-50%)",
                       width: "max-content",
+                      ...(item.style ?? {}),
                     }}
                   >
                     {item.value} {unit ?? null}

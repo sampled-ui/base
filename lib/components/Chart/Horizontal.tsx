@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 import { Card } from "../Card";
 import { Flex } from "../Flex";
@@ -7,7 +7,7 @@ import { Typography } from "../Typography";
 import styles from "./styles.module.scss";
 
 interface HorizontalBarChartProps {
-  axis: { label: string; value: number }[];
+  axis: { label: string; value: number, style?: CSSProperties }[];
   unit?: string;
 }
 
@@ -37,6 +37,7 @@ export const HorizontalBarChart: React.FC<HorizontalBarChartProps> = ({
                   className={styles.bar}
                   style={{
                     width: `${percent}%`,
+                    ...(item.style ?? {}),
                   }}
                 >
                   <Typography.Text className={styles.unit}>
