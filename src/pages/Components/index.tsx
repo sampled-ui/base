@@ -15,6 +15,7 @@ import { Section } from "../../components/Section";
 
 import ButtonSection from "./sections/ButtonSection";
 import CardSection from "./sections/CardSection";
+import ChartSection from "./sections/ChartSection";
 import GridSection from "./sections/GridSection";
 import InputSection from "./sections/InputSection";
 import MenuSection from "./sections/MenuSection";
@@ -144,6 +145,7 @@ export const ComponentsPage: React.FC = () => {
           <SkeletonSection />
           <ProgressSection />
           <StatisticSection />
+          <ChartSection />
         </Spacing>
       </Layout>
     </Layout>

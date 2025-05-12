@@ -1,5 +1,6 @@
 export { Button } from "./components/Button";
 export { Card } from "./components/Card";
+export * from "./components/Chart/Horizontal";
 export { Divider } from "./components/Divider";
 export { Flex } from "./components/Flex";
 export { Column, Row } from "./components/Grid";
@@ -12,6 +13,7 @@ export { Select } from "./components/Select";
 export { Showcase } from "./components/Showcase";
 export { Skeleton } from "./components/Skeleton";
 export { Spacing } from "./components/Spacing";
+export { Statistic } from "./components/Statistic";
 export { Tabs } from "./components/Tabs";
 export { Tag } from "./components/Tag";
 export * from "./components/Toast";
