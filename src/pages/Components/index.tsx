@@ -21,6 +21,7 @@ import MenuSection from "./sections/MenuSection";
 import ProgressSection from "./sections/ProgressSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import SkeletonSection from "./sections/SkeletonSection";
+import { StatisticSection } from "./sections/StatisticSection";
 import TabsSection from "./sections/TabsSection";
 import TagSection from "./sections/TagSection";
 import ToastSection from "./sections/ToastSection";
@@ -109,13 +110,18 @@ export const ComponentsPage: React.FC = () => {
       title: "Progress",
       onClick: () => navigate("#progress"),
     },
+    {
+      key: "statistic",
+      title: "Statistic",
+      onClick: () => navigate("#statistic"),
+    },
   ];
 
   const selected = useGetSelectedNavItem(navItems, location);
 
   return (
     <Layout style={{ height: "calc(100% - 4rem)" }}>
-      <Sidebar style={{ width: "20rem" }}>
+      <Sidebar style={{ width: "20rem", height: "100%", overflowY: "auto" }}>
         <Navigation selected={selected} items={navItems} />
       </Sidebar>
       <Layout ref={innerLayoutRef}>
@@ -137,6 +143,7 @@ export const ComponentsPage: React.FC = () => {
           <TabsSection />
           <SkeletonSection />
           <ProgressSection />
+          <StatisticSection />
         </Spacing>
       </Layout>
     </Layout>

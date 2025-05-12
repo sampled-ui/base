@@ -24,6 +24,11 @@
   line-height: $line-height-lg;
 }
 
+.xl {
+  font-size: $font-size-xl;
+  line-height: $line-height-xl;
+}
+
 .secondary {
   color: hsl(0, 0%, 60%);
 }

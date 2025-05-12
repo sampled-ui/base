@@ -6,7 +6,7 @@ import styles from "./Text.module.scss";
 
 export interface TextProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: Omit<Variants, "primary">;
-  size?: Omit<SizeUnits, "xl" | "xxl">;
+  size?: Omit<SizeUnits, "xxl">;
   disabled?: boolean;
   underline?: boolean;
   deleted?: boolean;
@@ -52,6 +52,7 @@ export const Text: React.FC<TextProps> = ({
         [styles.sm]: size === "sm",
         [styles.md]: size === "md",
         [styles.lg]: size === "lg",
+        [styles.xl]: size === "xl",
         [styles.disabled]: disabled,
         [styles.underline]: underline,
         [styles.deleted]: deleted,
