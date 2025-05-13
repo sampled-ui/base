@@ -1,7 +1,13 @@
 import React from "react";
 
-import { BarChart, HorizontalBarChart } from "../../../../lib/components/Chart";
-import { Column, Flex, Row, Typography } from "../../../../lib/main";
+import {
+  BarChart,
+  Column,
+  Flex,
+  HorizontalBarChart,
+  Row,
+  Typography,
+} from "../../../../lib/main";
 import { Section } from "../../../components/Section";
 
 const ChartExample = () => {

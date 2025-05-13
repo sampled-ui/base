@@ -1,6 +1,6 @@
 export { Button } from "./components/Button";
 export { Card } from "./components/Card";
-export * from "./components/Chart/Horizontal";
+export * from "./components/Chart";
 export { Divider } from "./components/Divider";
 export { Flex } from "./components/Flex";
 export { Column, Row } from "./components/Grid";
