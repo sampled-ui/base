@@ -12,6 +12,12 @@ const ChartExample = () => {
     { label: "Spotify", value: 25 },
     { label: "HBO Max", value: 5 },
     { label: "Disney+", value: 30 },
+    { label: "YouTube", value: 12 },
+    { label: "Hulu", value: 18 },
+    { label: "Paramount+", value: 8 },
+    { label: "Peacock", value: 22 },
+    { label: "Discovery+", value: 14 },
+    { label: "Apple TV+", value: 16 },
   ];
   return (
     <Flex style={{ width: "100%" }} direction="column" gap="md" align="start">

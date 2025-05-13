@@ -14,8 +14,14 @@ interface BarChartProps {
 export const BarChart: React.FC<BarChartProps> = ({ axis, unit }) => {
   const maxValue = Math.max(...axis.map((item) => item.value));
   return (
-    <Card style={{ width: "100%" }}>
-      <Flex className={styles.chart} gap="sm" justify="end" align="end">
+    <Card style={{ width: "100%", overflowX: "auto" }}>
+      <Flex
+        className={styles.chart}
+        gap="sm"
+        justify="end"
+        align="end"
+        style={{ width: "max-content" }}
+      >
         {axis.map((item) => {
           const percent = (item.value / maxValue) * 100;
           return (
@@ -51,7 +57,7 @@ export const BarChart: React.FC<BarChartProps> = ({ axis, unit }) => {
                 title={item.label}
                 size="xs"
                 style={{
-                  width: "3rem",
+                  width: "4rem",
                   minWidth: "initial",
                   height: "1rem",
                 }}
