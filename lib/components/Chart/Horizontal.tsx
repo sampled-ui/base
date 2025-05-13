@@ -19,7 +19,7 @@ export const HorizontalBarChart: React.FC<HorizontalBarChartProps> = ({
   return (
     <Card style={{ width: "100%", maxHeight: "22rem", overflowY: "auto" }}>
       <Flex className={styles.chart} gap="md" direction="column" align="start">
-        {axis.map((item) => {
+        {axis.map((item, index) => {
           const percent = (item.value / maxValue) * 100;
           return (
             <Flex
@@ -28,6 +28,7 @@ export const HorizontalBarChart: React.FC<HorizontalBarChartProps> = ({
               justify="start"
               align="center"
               className={styles.item}
+              key={index}
             >
               <Typography.Text className={styles.label} title={item.label}>
                 {item.label}

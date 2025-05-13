@@ -22,7 +22,7 @@ export const BarChart: React.FC<BarChartProps> = ({ axis, unit }) => {
         align="end"
         style={{ width: "max-content" }}
       >
-        {axis.map((item) => {
+        {axis.map((item, index) => {
           const percent = (item.value / maxValue) * 100;
           return (
             <Flex
@@ -30,6 +30,7 @@ export const BarChart: React.FC<BarChartProps> = ({ axis, unit }) => {
               direction="column"
               gap="sm"
               className={styles.item}
+              key={index}
             >
               <div className={styles.axis}>
                 <div
