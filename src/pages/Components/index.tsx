@@ -116,6 +116,11 @@ export const ComponentsPage: React.FC = () => {
       title: "Statistic",
       onClick: () => navigate("#statistic"),
     },
+    {
+      key: "chart",
+      title: "Chart",
+      onClick: () => navigate("#chart"),
+    },
   ];
 
   const selected = useGetSelectedNavItem(navItems, location);

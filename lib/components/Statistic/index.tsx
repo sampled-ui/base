@@ -1,5 +1,6 @@
-import { Card, Spacing } from "../../main";
+import { Card } from "../Card";
 import { Flex } from "../Flex";
+import { Spacing } from "../Spacing";
 import { Typography } from "../Typography";
 import { TextProps } from "../Typography/Text";
 
@@ -16,7 +17,7 @@ export const Statistic: React.FC<StatisticProps> = ({
   label,
   value,
   variant,
-  icon
+  icon,
 }) => {
   variant = variant || "primary";
 
