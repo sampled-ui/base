@@ -9,13 +9,13 @@ import styles from "./styles.module.scss";
 interface BarChartProps {
   axis: { label: string; value: number; style?: CSSProperties }[];
   unit?: string;
-  formatLabel?: (value: number) => ReactNode;
+  formatValue?: (value: number) => ReactNode;
 }
 
 export const BarChart: React.FC<BarChartProps> = ({
   axis,
   unit,
-  formatLabel,
+  formatValue,
 }) => {
   const maxValue = Math.max(...axis.map((item) => item.value));
   return (
@@ -44,8 +44,8 @@ export const BarChart: React.FC<BarChartProps> = ({
                     height: `calc(${percent} * 0.2rem)`,
                   }}
                 >
-                  {formatLabel ? (
-                    formatLabel(item.value)
+                  {formatValue ? (
+                    <div className={styles.unit}>{formatValue(item.value)}</div>
                   ) : (
                     <Typography.Text
                       className={styles.unit}

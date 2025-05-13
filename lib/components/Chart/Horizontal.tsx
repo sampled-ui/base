@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 import { Card } from "../Card";
 import { Flex } from "../Flex";
@@ -9,11 +9,13 @@ import styles from "./styles.module.scss";
 interface HorizontalBarChartProps {
   axis: { label: string; value: number; style?: CSSProperties }[];
   unit?: string;
+  formatValue?: (value: number) => ReactNode;
 }
 
 export const HorizontalBarChart: React.FC<HorizontalBarChartProps> = ({
   axis,
   unit,
+  formatValue,
 }) => {
   const maxValue = Math.max(...axis.map((item) => item.value));
   return (
@@ -41,9 +43,13 @@ export const HorizontalBarChart: React.FC<HorizontalBarChartProps> = ({
                     ...(item.style ?? {}),
                   }}
                 >
-                  <Typography.Text className={styles.unit}>
-                    {item.value} {unit ?? null}
-                  </Typography.Text>
+                  {formatValue ? (
+                    <div className={styles.unit}>{formatValue(item.value)}</div>
+                  ) : (
+                    <Typography.Text className={styles.unit}>
+                      {item.value} {unit ?? null}
+                    </Typography.Text>
+                  )}
                 </div>
               </div>
             </Flex>
