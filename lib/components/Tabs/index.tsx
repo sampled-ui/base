@@ -25,9 +25,15 @@ export const Tabs: React.FC<TabsProps> = ({
   onSelect,
   className,
   ref,
+  ...restProps
 }) => {
   return (
-    <Flex gap="md" className={classNames(styles.tabs, className)} ref={ref}>
+    <Flex
+      gap="md"
+      className={classNames(styles.tabs, className)}
+      ref={ref}
+      {...restProps}
+    >
       {items.map((item) => (
         <Typography.Text
           bold
