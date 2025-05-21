@@ -20,8 +20,8 @@ export const Column: React.FC<ColumnProps> = ({
       ref={ref}
       className={classNames(styles.column, className)}
       style={{
-        gridColumn: `span ${span} / span ${span}`,
         ...(style ?? {}),
+        gridColumn: `span ${span} / span ${span}`,
       }}
       {...restProps}
     >
