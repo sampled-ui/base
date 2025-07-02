@@ -8,7 +8,8 @@
 
   width: calc(100% - 2 * $spacing-sm);
   min-width: 10rem;
-  max-height: 250px;
+  max-height: 200px;
+  overflow-y: auto;
 
   padding: $spacing-sm $spacing-sm;
 
