@@ -25,6 +25,7 @@ export interface MenuItem {
   onClick?: () => void;
   disabled?: boolean;
   danger?: boolean;
+  ref: (node: HTMLDivElement | null) => void;
 }
 
 export interface MenuProps
