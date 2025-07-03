@@ -25,7 +25,7 @@ export interface MenuItem {
   onClick?: () => void;
   disabled?: boolean;
   danger?: boolean;
-  ref: (node: HTMLDivElement | null) => void;
+  ref?: (node: HTMLDivElement | null) => void;
 }
 
 export interface MenuProps
@@ -174,6 +174,7 @@ export const Menu: React.FC<MenuProps> = ({
               [styles.md]: size === "md",
               [styles.lg]: size === "lg",
             })}
+            ref={item.ref}
             onClick={() => {
               if (onSelect) {
                 onSelect(item);
