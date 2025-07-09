@@ -113,6 +113,12 @@
   color: $color-secondary;
 }
 
+.xs {
+  padding: $padding-xs;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+}
+
 .md {
   padding: $padding-sm;
   font-size: $font-size-md;

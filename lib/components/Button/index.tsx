@@ -7,12 +7,13 @@ import styles from "./styles.module.scss";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variants;
   ghost?: boolean;
-  size?: Omit<SizeUnits, "xs" | "xxl">;
+  size?: Omit<SizeUnits, "xxl">;
   ref?: React.RefObject<HTMLButtonElement | null>;
 }
 
 const defaultProps: Partial<ButtonProps> = {
   variant: "primary",
+  size: "sm",
 };
 
 export const Button: React.FC<ButtonProps> = ({
@@ -32,7 +33,7 @@ export const Button: React.FC<ButtonProps> = ({
         [styles.success]: variant === "success",
         [styles.warning]: variant === "warning",
         [styles.disabled]: variant === "disabled",
-        [styles.sm]: size === "sm",
+        [styles.xs]: size === "xs",
         [styles.md]: size === "md",
         [styles.lg]: size === "lg",
         [styles.xl]: size === "xl",

@@ -24,6 +24,7 @@ const ButtonExample = () => {
         <Button size="xl">Extra Large</Button>
         <Button size="lg">Large</Button>
         <Button size="md">Medium</Button>
+        <Button size="xs">Extra Small</Button>
       </Flex>
     </>
   );
