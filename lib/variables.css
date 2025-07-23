@@ -61,6 +61,9 @@
   --shadow-sm: var(--color-shadow-sm) 0px 1px 4px;
   --shadow-md: var(--color-shadow-md) 0px 7px 29px 0px;
   --shadow-accent-sm: var(--color-shadow-accent) 0px 1px 8px;
+  --shadow-success-sm: var(--color-shadow-success) 0px 1px 8px;
+  --shadow-error-sm: var(--color-shadow-error) 0px 1px 8px;
+  --shadow-warning-sm: var(--color-shadow-warning) 0px 1px 8px;
 
   /* Opacity */
   --opacity-dim: 0.8;

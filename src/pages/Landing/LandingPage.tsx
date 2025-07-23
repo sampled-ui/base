@@ -20,7 +20,6 @@ import {
   Spacing,
   Typography,
 } from "../../../lib/main";
-import ComponentsExample from "../../components/ComponentsExample";
 
 const { Heading, Paragraph, Text } = Typography;
 

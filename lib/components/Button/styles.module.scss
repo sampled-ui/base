@@ -56,7 +56,7 @@
 }
 
 .danger:hover {
-  background-color: hsl(0, 100%, 41%);
+  box-shadow: $shadow-error-sm;
 }
 
 .danger:active {
@@ -70,7 +70,7 @@
 }
 
 .success:hover {
-  background-color: hsl(120, 100%, 35%);
+  box-shadow: $shadow-success-sm;
 }
 
 .success:active {
@@ -84,7 +84,7 @@
 }
 
 .warning:hover {
-  background-color: hsl(40, 100%, 44%);
+  box-shadow: $shadow-warning-sm;
 }
 
 .warning:active {
