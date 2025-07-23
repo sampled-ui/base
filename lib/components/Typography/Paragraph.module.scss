@@ -1,6 +1,10 @@
 @use "../../style" as *;
 
 .paragraph {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
   margin-top: initial;
   margin-bottom: $spacing-sm;
   font-family: $font-primary;
