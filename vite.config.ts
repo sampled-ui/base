@@ -7,12 +7,11 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 
-// https://vite.dev/config/
-export default defineConfig({
+const config = defineConfig({
   plugins: [
     react(),
     libInjectCss(),
-    dts({ include: ["lib"], tsconfigPath: "./tsconfig.build.json" }),
+    dts({ include: ["src", "lib"], tsconfigPath: "./tsconfig.build.json" }),
   ],
   build: {
     copyPublicDir: false,
@@ -43,3 +42,10 @@ export default defineConfig({
     },
   },
 });
+
+if (process.argv.includes("--app")) {
+  // Remove the console logs in production builds
+  delete config.build;
+}
+
+export default config;
