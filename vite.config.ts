@@ -46,7 +46,7 @@ let config = defineConfig({
 if (process.argv.includes("--app")) {
   config = defineConfig({
     base: "/base/",
-    plugins: [react()],
+    plugins: [react({ include: "src" })],
   });
 }
 
