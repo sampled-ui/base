@@ -15,7 +15,7 @@
 
   border: $border;
   border-radius: $border-radius-sm;
-  background-color: $color-background;
+  background: $color-background;
 
   transition-property: opacity, visibility;
   transition-duration: $transition-fast;
@@ -36,15 +36,15 @@
   cursor: pointer;
   padding: $padding-sm;
 
-  border-radius: $border-radius-sm;
+  border-radius: $border-radius-xs;
 
-  transition-property: background-color;
+  transition-property: background;
   transition-duration: $transition-fast;
   transition-timing-function: $transition-function;
 }
 
 .item:hover {
-  background-color: $color-background-dim;
+  background: $color-background-dim;
 }
 
 .danger {
@@ -57,14 +57,14 @@
 }
 
 .disabled:hover {
-  background-color: initial;
+  background: initial;
 }
 
 .selected {
-  background-color: $color-accent;
+  background: $color-accent;
   color: $color-primary;
 }
 
 .selected:hover {
-  background-color: $color-accent;
+  background: $color-accent;
 }

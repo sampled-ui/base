@@ -9,7 +9,7 @@
   text-align: center;
   font-family: $font-primary;
   font-size: $font-size-sm;
-  font-weight: 500;
+  font-weight: $font-weight-bold;
   line-height: $line-height-sm;
 
   padding: $padding-sm;
@@ -17,14 +17,14 @@
   border-radius: $border-radius-sm;
   box-shadow: $shadow-sm;
 
-  transition-property: background-color, box-shadow;
+  transition-property: background, box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.2s;
 }
 
 .primary {
   color: $color-primary;
-  background-color: $color-accent;
+  background: $color-accent;
 }
 
 .primary:hover {
@@ -32,26 +32,26 @@
 }
 
 .primary:active {
-  background-color: hsl(205, 100%, 36%);
+  background: hsl(205, 100%, 36%);
   box-shadow: initial;
 }
 
 .secondary {
-  background-color: $color-primary;
+  background: $color-primary;
   color: $color-secondary;
 }
 
 .secondary:hover {
-  background-color: hsl(0, 0%, 96%);
+  background: hsl(0, 0%, 96%);
 }
 
 .secondary:active {
-  background-color: hsl(0, 0%, 92%);
+  background: hsl(0, 0%, 92%);
   box-shadow: initial;
 }
 
 .danger {
-  background-color: $color-error;
+  background: $color-error;
   color: $color-primary;
 }
 
@@ -60,12 +60,12 @@
 }
 
 .danger:active {
-  background-color: hsl(0, 100%, 38%);
+  background: hsl(0, 100%, 38%);
   box-shadow: initial;
 }
 
 .success {
-  background-color: $color-success;
+  background: $color-success;
   color: $color-primary;
 }
 
@@ -74,12 +74,12 @@
 }
 
 .success:active {
-  background-color: hsl(120, 100%, 32%);
+  background: hsl(120, 100%, 32%);
   box-shadow: initial;
 }
 
 .warning {
-  background-color: $color-warning;
+  background: $color-warning;
   color: $color-primary;
 }
 
@@ -88,23 +88,23 @@
 }
 
 .warning:active {
-  background-color: hsl(40, 100%, 40%);
+  background: hsl(40, 100%, 40%);
   box-shadow: initial;
 }
 
 .ghost {
   border: initial;
-  background-color: initial;
+  background: initial;
   color: $color-secondary;
   box-shadow: initial !important;
 }
 
 .ghost:hover {
-  background-color: hsl(0, 0%, 96%);
+  background: hsl(0, 0%, 96%);
 }
 
 .ghost:active {
-  background-color: hsl(0, 0%, 92%);
+  background: hsl(0, 0%, 92%);
 }
 
 .disabled {
@@ -143,10 +143,10 @@
   }
 
   .secondary:hover, .ghost:hover {
-    background-color: hsl(0, 0%, 11%);
+    background: hsl(0, 0%, 11%);
   }
 
   .secondary:active, .ghost:active {
-    background-color: hsl(0, 0%, 8%);
+    background: hsl(0, 0%, 8%);
   }
 }

@@ -24,7 +24,7 @@ const TypographyExample = () => {
           <Text disabled>Sampled UI (disabled)</Text>
           <Text mark>Sampled UI (mark)</Text>
           <Text code>Sampled UI (code)</Text>
-          <Text keyboard>Sampled UI (keyboard)</Text>
+          <Text keyboard>Sampled UI (key)</Text>
           <Text underline>Sampled UI (underline)</Text>
           <Text deleted>Sampled UI (delete)</Text>
           <Text bold>Sampled UI (bold)</Text>

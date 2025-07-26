@@ -6,7 +6,7 @@ export const Intros = {
   `,
   button: `
     Buttons are essential for user interaction. This library offers a variety of button styles, sizes, 
-    and states to suit different use cases, from primary actions to secondary options and more.
+    and states to suit different use cases.
   `,
   input: `
     Input fields are crucial for collecting user data. This library includes a range of input components, 
@@ -32,15 +32,15 @@ export const Intros = {
   `,
   showcase: `
     The showcase section demonstrates how to combine multiple components to create cohesive and functional 
-    user interfaces. Learn how to mix and match components to build complex layouts effortlessly.
+    user interfaces.
   `,
   menu: `
     Menus are essential for navigation and organizing content. This library's menu components support various 
-    layouts, including vertical, horizontal, and dropdown menus, to create intuitive navigation experiences.
+    layouts, including vertical, and dropdown menus, to create intuitive navigation experiences.
   `,
   toast: `
     Toast notifications provide quick feedback to users in a non-intrusive way. Use these components to display 
-    success messages, warnings, or errors while maintaining a seamless user experience.
+    success messages, warnings, or errors.
   `,
   tabs: `
     Tabs are an effective way to organize content into separate views. These components allow you to create 
@@ -48,8 +48,12 @@ export const Intros = {
     keeping the layout clean and organized.
   `,
   skeleton: `
-    Skeleton loaders provide a placeholder for content while it is loading. This library offers skeleton 
-    components that can be used to improve perceived performance and enhance the user experience during 
+    Skeleton loaders provide a placeholder for content while it is loading. This 
+    component can be used to improve perceived performance and enhance the user experience during 
     content loading.
+  `,
+  theming: `
+    Theming allows you to customize the appearance of components to match your brand or design preferences. 
+    This library supports theming through CSS variables.
   `,
 };

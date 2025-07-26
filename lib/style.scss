@@ -7,6 +7,8 @@ $breakpoint-xl: var(--breakpoint-xl);
 // Font
 $font-primary: var(--font-primary);
 $font-mono: var(--font-mono);
+$font-weight: var(--font-weight);
+$font-weight-bold: var(--font-weight-bold);
 
 // Font size
 $font-size-xs: var(--font-size-xs);
@@ -68,6 +70,11 @@ $color-warning: var(--color-warning);
 
 $color-background: var(--color-background);
 $color-background-dim: var(--color-background-dim);
+
+$color-shadow-accent: var(--color-shadow-accent);
+$color-shadow-success: var(--color-shadow-success);
+$color-shadow-error: var(--color-shadow-error);
+$color-shadow-warning: var(--color-shadow-warning);
 
 // Shadows
 $shadow-sm: var(--shadow-sm);

@@ -16,6 +16,8 @@ export { Spacing } from "./components/Spacing";
 export { Statistic } from "./components/Statistic";
 export { Tabs } from "./components/Tabs";
 export { Tag } from "./components/Tag";
+export { ThemeProvider } from "./components/Theming";
+export { ThemeContext, useThemeContext } from "./components/Theming/hooks";
 export * from "./components/Toast";
 export { Typography } from "./components/Typography";
 

@@ -12,10 +12,12 @@
 
 .item:hover {
   cursor: pointer;
-  border-radius: $border-radius-sm;
-  background-color: $color-background-dim;
+  border-radius: $border-radius-xs;
+  background: $color-background-dim;
 }
 
 .selected {
-  font-weight: bold;
+  * {
+    font-weight: $font-weight-bold !important;
+  }
 }

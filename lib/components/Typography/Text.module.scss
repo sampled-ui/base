@@ -2,6 +2,7 @@
 
 .container {
   font-family: $font-primary;
+  font-weight: $font-weight;
 }
 
 .xs {
@@ -62,30 +63,43 @@
 }
 
 .bold {
-  font-weight: 500;
+  font-weight: $font-weight-bold;
 }
 
 .mark {
-  background-color: hsl(40, 100%, 70%);
+  background: hsl(40, 100%, 70%);
 }
 
 .code {
-  padding: 0.1rem $spacing-xs;
+  cursor: pointer;
+  padding: $spacing-xs $spacing-xs;
   border: $border;
   border-radius: 0.2rem;
-  background-color: $color-primary;
+  background: $color-background-dim;
   font-size: $font-size-xs;
   font-family: $font-mono;
   line-height: $line-height-xs;
+  position: relative;
+}
+
+.code:hover::before {
+  color: $color-tertiary !important;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: calc(100% + $spacing-sm);
+  content: "Click to copy";
+  color: $color-tertiary;
 }
 
 .keyboard {
-  background-color: $color-primary;
+  padding: $spacing-xs $spacing-xs;
+  background: $color-primary;
   box-shadow: $shadow-sm;
 }
 
 @media (prefers-color-scheme: dark) {
   .mark {
-    background-color: hsl(40, 100%, 20%);
+    background: hsl(40, 100%, 20%);
   }
 }

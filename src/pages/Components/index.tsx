@@ -25,6 +25,7 @@ import SkeletonSection from "./sections/SkeletonSection";
 import { StatisticSection } from "./sections/StatisticSection";
 import TabsSection from "./sections/TabsSection";
 import TagSection from "./sections/TagSection";
+import { ThemingSection } from "./sections/ThemingSection";
 import ToastSection from "./sections/ToastSection";
 import TypographySection from "./sections/TypographySection";
 
@@ -54,6 +55,11 @@ export const ComponentsPage: React.FC = () => {
         navigate("#");
         innerLayoutRef.current?.scrollTo({ top: 0, behavior: "smooth" });
       },
+    },
+    {
+      key: "theming",
+      title: "Theming",
+      onClick: () => navigate("#theming"),
     },
     {
       key: "button",
@@ -133,10 +139,11 @@ export const ComponentsPage: React.FC = () => {
       <Layout ref={innerLayoutRef}>
         <Spacing gap="xl" style={{ maxWidth: "58rem", margin: "auto" }}>
           <Flex direction="column" align="start">
-            <Heading level={1}>🧪 Components</Heading>
+            <Heading level={1}>📦 Components</Heading>
             <Divider style={{ marginBottom: "initial" }} />
           </Flex>
           <Section title="Overview" id="overview" divided />
+          <ThemingSection />
           <ButtonSection />
           <InputSection />
           <TypographySection />

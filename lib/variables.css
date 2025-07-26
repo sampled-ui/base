@@ -8,6 +8,8 @@
   /* Font */
   --font-primary: "Helvetica Neue", sans-serif;
   --font-mono: monospace;
+  --font-weight: 400;
+  --font-weight-bold: 500;
 
   /* Font size */
   --font-size-xs: 0.8rem;
@@ -23,11 +25,11 @@
   --heading-size-xl: 3rem;
 
   /* Line height */
-  --line-height-xs: 1rem;
-  --line-height-sm: 1.2rem;
-  --line-height-md: 1.5rem;
-  --line-height-lg: 1.7rem;
-  --line-height-xl: 2rem;
+  --line-height-xs: 0.8rem;
+  --line-height-sm: 1rem;
+  --line-height-md: 1.1rem;
+  --line-height-lg: 1.3rem;
+  --line-height-xl: 1.6rem;
 
   --heading-line-height-xs: 1.7rem;
   --heading-line-height-sm: 2rem;
