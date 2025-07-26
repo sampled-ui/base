@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "vite",
     "build": "rimraf dist && tsc --p ./tsconfig.build.json && vite build",
-    "build:app": "rimraf dist && yarn vite build --app",
+    "build:app": "yarn vite build --app",
     "lint": "eslint .",
     "preview": "vite preview",
     "prepublishOnly": "yarn build"
