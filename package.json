@@ -8,6 +8,7 @@
     "dist"
   ],
   "license": "MIT",
+  "homepage": "https://sampled-ui.github.io/base/",
   "scripts": {
     "dev": "vite",
     "build": "rimraf dist && tsc --p ./tsconfig.build.json && vite build",

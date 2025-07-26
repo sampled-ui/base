@@ -46,6 +46,7 @@ const config = defineConfig({
 if (process.argv.includes("--app")) {
   // Remove the console logs in production builds
   delete config.build;
+  config.base = "/base/";
 }
 
 export default config;
