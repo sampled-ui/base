@@ -32,6 +32,17 @@ export const DevelopmentPage: React.FC = () => {
             <Text size="md">Using yarn:</Text>
             <Text code>yarn add @sampled-ui/base</Text>
             <Spacing gap="md" />
+            <Heading level={4}>Components</Heading>
+            <Paragraph size="md">Import components in your project:</Paragraph>
+            <Text
+              code
+              style={{ width: "fit-content" }}
+            >{`import { Button, Card, Typography } from '@sampled-ui/base';`}</Text>
+            <Spacing gap="md" />
+            <Paragraph size="md">
+              For more details and usage examples, visit the Components page.
+            </Paragraph>
+            <Spacing gap="md" />
             <Heading level={4}>Theming</Heading>
             <Paragraph size="md">
               Wrap your app in the ThemeProvider component to apply theme
@@ -51,17 +62,6 @@ export const DevelopmentPage: React.FC = () => {
               style={{ width: "fit-content" }}
               // eslint-disable-next-line max-len
             >{`import { useThemeContext } from '@sampled-ui/base';\n\nexport const useTheme = () => {\n  const { setTheme } = useThemeContext();\n  setTheme({ "--color-accent": "green" });\n};`}</Text>
-            <Spacing gap="md" />
-            <Heading level={4}>Components</Heading>
-            <Paragraph size="md">Import components in your project:</Paragraph>
-            <Text
-              code
-              style={{ width: "fit-content" }}
-            >{`import { Button, Card, Typography } from '@sampled-ui/base';`}</Text>
-            <Spacing gap="md" />
-            <Paragraph size="md">
-              For more details and usage examples, visit the Components page.
-            </Paragraph>
           </Flex>
         </Flex>
       </Spacing>

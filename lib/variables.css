@@ -25,11 +25,11 @@
   --heading-size-xl: 3rem;
 
   /* Line height */
-  --line-height-xs: 0.8rem;
-  --line-height-sm: 1rem;
-  --line-height-md: 1.1rem;
-  --line-height-lg: 1.3rem;
-  --line-height-xl: 1.6rem;
+  --line-height-xs: 1rem;
+  --line-height-sm: 1.2rem;
+  --line-height-md: 1.35rem;
+  --line-height-lg: 1.5rem;
+  --line-height-xl: 1.7rem;
 
   --heading-line-height-xs: 1.7rem;
   --heading-line-height-sm: 2rem;

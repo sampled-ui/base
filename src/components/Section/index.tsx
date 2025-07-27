@@ -58,7 +58,7 @@ export function Section<T>({
       <Heading level={3} className={styles.title}>
         {title}
       </Heading>
-      <Typography.Paragraph style={{ margin: "initial" }}>
+      <Typography.Paragraph size="md" style={{ margin: "initial" }}>
         {intro}
       </Typography.Paragraph>
       {children}

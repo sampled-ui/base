@@ -16,7 +16,7 @@
 }
 
 .title {
-  font-weight: bolder;
+  font-weight: $font-weight-bold;
 }
 
 @media (prefers-color-scheme: dark) {
