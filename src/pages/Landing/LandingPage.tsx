@@ -21,6 +21,9 @@ import {
   Typography,
 } from "../../../lib/main";
 
+import SpacingShowcase from "./SpacingShowcase";
+import TypographyShowcase from "./TypographyShowcase";
+
 const { Heading, Paragraph, Text } = Typography;
 
 const features = [
@@ -43,7 +46,8 @@ const features = [
   {
     icon: <Code size={32} color="var(--color-accent)" />,
     title: "Developer Friendly",
-    description: "Uses Typescript and simple React JSX APIs.",
+    description:
+      "Uses HTML-style APIs that developers are already familiar with.",
   },
   {
     icon: <Palette size={32} color="var(--color-accent)" />,
@@ -73,7 +77,7 @@ export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <Layout style={{ height: "calc(100% - 4rem)" }}>
+    <Layout>
       <Spacing gap="xl" style={{ margin: "auto" }}>
         <Flex direction="column">
           <Flex direction="column" justify="start">
@@ -83,7 +87,7 @@ export const LandingPage: React.FC = () => {
               gap="lg"
               style={{ marginTop: "5rem" }}
             >
-              <Heading level={1}>Sampled UI Design System</Heading>
+              <Heading level={1} bold>Sampled UI Design System</Heading>
               <Text size="lg" style={{ textAlign: "center" }}>
                 A modern, flexible, and easy-to-use design system for building
                 beautiful web applications.
@@ -101,6 +105,7 @@ export const LandingPage: React.FC = () => {
               {features.map((feature) => (
                 <Card
                   key={feature.title}
+                  hoverable
                   style={{ maxWidth: "12rem", textAlign: "center" }}
                 >
                   <Spacing gap="lg">
@@ -117,6 +122,8 @@ export const LandingPage: React.FC = () => {
             </Flex>
           </Flex>
           {/* Agent Section */}
+          <TypographyShowcase />
+          <SpacingShowcase />
           <Flex
             direction="column"
             align="center"

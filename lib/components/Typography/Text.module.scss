@@ -90,6 +90,7 @@
   left: calc(100% + $spacing-sm);
   content: "Click to copy";
   color: $color-tertiary;
+  width: max-content;
 }
 
 .keyboard {

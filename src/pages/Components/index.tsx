@@ -132,8 +132,8 @@ export const ComponentsPage: React.FC = () => {
   const selected = useGetSelectedNavItem(navItems, location);
 
   return (
-    <Layout style={{ height: "calc(100% - 4rem)" }}>
-      <Sidebar style={{ width: "20rem", height: "100%", overflowY: "auto" }}>
+    <Layout>
+      <Sidebar>
         <Navigation selected={selected} items={navItems} />
       </Sidebar>
       <Layout ref={innerLayoutRef}>

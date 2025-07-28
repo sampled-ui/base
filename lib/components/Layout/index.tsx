@@ -34,6 +34,21 @@ export const Header: React.FC<HeaderProps> = ({
   );
 };
 
+interface BreakpointProps extends React.HTMLAttributes<HTMLDivElement> {
+  ref?: React.RefObject<HTMLDivElement | null>;
+}
+export const Breakpoint: React.FC<BreakpointProps> = ({
+  children,
+  className,
+  ...restProps
+}) => {
+  return (
+    <div className={`${styles.breakpoint} ${className}`} {...restProps}>
+      <div className={styles.breakpointInner}>{children}</div>
+    </div>
+  );
+};
+
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
   collapsible?: boolean;
   collapsed?: boolean;

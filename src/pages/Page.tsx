@@ -1,5 +1,6 @@
 import { Outlet, useNavigate } from "react-router";
 
+import { Breakpoint } from "../../lib/components/Layout";
 import { Flex, Header, Layout, Typography } from "../../lib/main";
 
 import styles from "./Page.module.scss";
@@ -12,11 +13,11 @@ export const Page = () => {
     <Layout style={{ height: "100vh", width: "100vw" }}>
       <Header>
         <Link onClick={() => navigate("/")}>
-            <object
-              data="wordmark-logo.svg"
-              type="image/svg+xml"
-              className={styles.logo}
-            />
+          <object
+            data="wordmark-logo.svg"
+            type="image/svg+xml"
+            className={styles.logo}
+          />
         </Link>
         <Flex align="center" justify="end" gap="md" className={styles.links}>
           <Link onClick={() => navigate("/design")}>Design</Link>
@@ -24,7 +25,9 @@ export const Page = () => {
           <Link onClick={() => navigate("/components")}>Components</Link>
         </Flex>
       </Header>
-      <Outlet />
+      <Breakpoint>
+        <Outlet />
+      </Breakpoint>
     </Layout>
   );
 };

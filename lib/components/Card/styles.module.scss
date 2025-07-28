@@ -13,3 +13,23 @@
     border-top-left-radius: $border-radius-md;
     border-top-right-radius: $border-radius-md;
 }
+
+.hoverable {
+    cursor: pointer;
+    transition: box-shadow $transition-fast $transition-function;
+}
+
+.hoverable:hover {
+    box-shadow: $shadow-md;
+    animation: scale $transition-fast $transition-function;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scale {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}

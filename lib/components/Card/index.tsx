@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 
 interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
   image?: string;
+  hoverable?: boolean;
   ref?: RefObject<HTMLDivElement | null>;
 }
 
@@ -14,6 +15,7 @@ export const Card: React.FC<CardProps> = ({
   className,
   children,
   ref,
+  hoverable,
   ...restProps
 }) => {
   const imageElement = image ? (
@@ -25,7 +27,9 @@ export const Card: React.FC<CardProps> = ({
 
   return (
     <div
-      className={classNames(styles.card, className)}
+      className={classNames(styles.card, className, {
+        [styles.hoverable]: hoverable,
+      })}
       ref={ref}
       {...restProps}
     >

@@ -8,13 +8,10 @@ const { Heading, Paragraph, Text } = Typography;
 
 const DesignPage: React.FC<DesignPageProps> = () => {
   return (
-    <Layout
-      style={{
-        height: "calc(100% - 4rem)",
-      }}
-    >
-      <Spacing gap="lg" style={{ width: "fit-content", margin: "2rem auto" }}>
+    <Layout>
+      <Spacing gap="lg">
         <Flex direction="column" gap="md">
+          <Spacing gap="lg"/>
           <Heading level={1}>🎨 Design Resources</Heading>
           <Text italic size="lg" variant="secondary">
             Coming Soon

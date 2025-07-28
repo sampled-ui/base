@@ -6,15 +6,10 @@ const { Heading, Paragraph, Text } = Typography;
 
 export const DevelopmentPage: React.FC = () => {
   return (
-    <Layout style={{ height: "calc(100% - 4rem)" }}>
-      <Spacing
-        gap="lg"
-        style={{
-          width: "fit-content",
-          margin: "2rem auto",
-        }}
-      >
+    <Layout>
+      <Spacing gap="lg">
         <Flex direction="column" justify="start" gap="md">
+          <Spacing gap="lg"/>
           <Heading level={1}>🛠️ Installation</Heading>
           <Text italic size="lg" variant="secondary">
             Get started quickly
@@ -38,7 +33,7 @@ export const DevelopmentPage: React.FC = () => {
               code
               style={{ width: "fit-content" }}
             >{`import { Button, Card, Typography } from '@sampled-ui/base';`}</Text>
-            <Spacing gap="md" />
+            <Spacing gap="sm" />
             <Paragraph size="md">
               For more details and usage examples, visit the Components page.
             </Paragraph>
@@ -53,7 +48,7 @@ export const DevelopmentPage: React.FC = () => {
               style={{ width: "fit-content" }}
               // eslint-disable-next-line max-len
             >{`createRoot(document.getElementById('root')!).render(\n  <ThemeProvider>\n    <App/>\n  </ThemeProvider>\n);`}</Text>
-            <Spacing gap="md" />
+            <Spacing gap="sm" />
             <Paragraph size="md">
               And use the theme hook to change themes dynamically:
             </Paragraph>
