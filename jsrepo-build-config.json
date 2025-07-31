@@ -8,7 +8,7 @@
     {
       "name": "style.scss",
       "path": "./lib/theme/style.scss",
-      "expectedPath": "./lib/theme/style.scss",
+      "expectedPath": "./src/@generated/theme/style.scss",
       "optional": false
     }
   ],
