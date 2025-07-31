@@ -4,6 +4,14 @@
   "version": "0.0.1",
   "readme": "README.md",
   "dirs": ["./lib/"],
+  "configFiles": [
+    {
+      "name": "style.scss",
+      "path": "./lib/theme/style.scss",
+      "expectedPath": "./lib/theme/style.scss",
+      "optional": false
+    }
+  ],
   "includeBlocks": [],
   "includeCategories": ["components", "utils", "theme"],
   "excludeBlocks": [],

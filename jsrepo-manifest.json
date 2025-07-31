@@ -1,6 +1,16 @@
 {
 	"name": "@sampled-ui/base",
 	"version": "0.0.1",
+	"configFiles": [
+		{
+			"name": "style.scss",
+			"path": "./lib/theme/style.scss",
+			"expectedPath": "./lib/theme/style.scss",
+			"optional": false,
+			"dependencies": [],
+			"devDependencies": []
+		}
+	],
 	"categories": [
 		{
 			"name": "components",
