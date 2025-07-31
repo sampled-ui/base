@@ -2,7 +2,7 @@ import { JSX, useEffect, useState } from "react";
 
 import classNames from "classnames";
 
-import { Variants } from "../../units";
+import { Variants } from "../../utils/units";
 import { Flex } from "../Flex";
 
 import { ToastContext } from "./context";

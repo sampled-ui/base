@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import { SizeUnits, Variants } from "../../units";
+import { SizeUnits, Variants } from "../../utils/units";
 
 import styles from "./styles.module.scss";
 

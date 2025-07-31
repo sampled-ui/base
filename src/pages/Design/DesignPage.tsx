@@ -10,9 +10,9 @@ const DesignPage: React.FC<DesignPageProps> = () => {
   return (
     <Layout>
       <Spacing gap="lg">
-        <Flex direction="column" gap="md">
+        <Flex direction="column" align="start" gap="md">
           <Spacing gap="lg"/>
-          <Heading level={1}>🎨 Design Resources</Heading>
+          <Heading level={1} bolder>🎨 Design Resources</Heading>
           <Text italic size="lg" variant="secondary">
             Coming Soon
           </Text>

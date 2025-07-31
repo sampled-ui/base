@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { HeadingUnits } from "../../units";
+import { HeadingUnits } from "../../utils/units";
 
 import styles from "./Heading.module.scss";
 

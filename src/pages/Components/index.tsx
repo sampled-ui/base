@@ -13,6 +13,7 @@ import {
 } from "../../../lib/main";
 import { Section } from "../../components/Section";
 
+import { Breakpoint } from "../../../lib/components/Layout";
 import ButtonSection from "./sections/ButtonSection";
 import CardSection from "./sections/CardSection";
 import ChartSection from "./sections/ChartSection";
@@ -20,6 +21,7 @@ import GridSection from "./sections/GridSection";
 import InputSection from "./sections/InputSection";
 import MenuSection from "./sections/MenuSection";
 import ProgressSection from "./sections/ProgressSection";
+import ShinyTextSection from "./sections/ShinyTextSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import SkeletonSection from "./sections/SkeletonSection";
 import { StatisticSection } from "./sections/StatisticSection";
@@ -127,19 +129,27 @@ export const ComponentsPage: React.FC = () => {
       title: "Chart",
       onClick: () => navigate("#chart"),
     },
+    {
+      key: "shiny-text",
+      title: "Shiny Text",
+      onClick: () => navigate("#shiny-text"),
+    },
   ];
 
   const selected = useGetSelectedNavItem(navItems, location);
 
   return (
     <Layout>
-      <Sidebar>
-        <Navigation selected={selected} items={navItems} />
-      </Sidebar>
-      <Layout ref={innerLayoutRef}>
-        <Spacing gap="xl" style={{ maxWidth: "58rem", margin: "auto" }}>
-          <Flex direction="column" align="start">
-            <Heading level={1}>📦 Components</Heading>
+      <Breakpoint breakpoint="md">
+        <Sidebar>
+          <Navigation selected={selected} items={navItems} />
+        </Sidebar>
+        <Spacing gap="lg">
+          <Flex direction="column" align="start" gap="md">
+            <Spacing gap="lg" />
+            <Heading level={1} bolder>
+              📦 Components
+            </Heading>
             <Divider style={{ marginBottom: "initial" }} />
           </Flex>
           <Section title="Overview" id="overview" divided />
@@ -158,8 +168,9 @@ export const ComponentsPage: React.FC = () => {
           <ProgressSection />
           <StatisticSection />
           <ChartSection />
+          <ShinyTextSection />
         </Spacing>
-      </Layout>
+      </Breakpoint>
     </Layout>
   );
 };

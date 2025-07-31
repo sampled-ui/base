@@ -8,9 +8,9 @@ export const DevelopmentPage: React.FC = () => {
   return (
     <Layout>
       <Spacing gap="lg">
-        <Flex direction="column" justify="start" gap="md">
+        <Flex direction="column" align="start" gap="md">
           <Spacing gap="lg"/>
-          <Heading level={1}>🛠️ Installation</Heading>
+          <Heading level={1} bolder>🛠️ Installation</Heading>
           <Text italic size="lg" variant="secondary">
             Get started quickly
           </Text>

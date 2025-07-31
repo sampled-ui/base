@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 import classNames from "classnames";
 
-import { SizeUnits } from "../../units";
+import { SizeUnits } from "../../utils/units";
 import { Menu, MenuItem, MenuProps } from "../Menu";
 import { Typography } from "../Typography";
 

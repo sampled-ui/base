@@ -1,4 +1,4 @@
-@use "../../style.scss" as *;
+@use "../../theme/style.scss" as *;
 
 .skeleton {
   background: $color-background-dim;
@@ -7,7 +7,6 @@
   width: 10rem;
   border-radius: $border-radius-xs;
   display: inline-flex;
-  line-height: 1;
 
   position: relative;
   user-select: none;

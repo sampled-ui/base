@@ -10,6 +10,7 @@ export * from "./components/Menu";
 export { Navigation } from "./components/Navigation";
 export { Progress } from "./components/Progress";
 export { Select } from "./components/Select";
+export { ShinyText } from "./components/ShinyText";
 export { Showcase } from "./components/Showcase";
 export { Skeleton } from "./components/Skeleton";
 export { Spacing } from "./components/Spacing";
@@ -21,8 +22,8 @@ export { ThemeContext, useThemeContext } from "./components/Theming/hooks";
 export * from "./components/Toast";
 export { Typography } from "./components/Typography";
 
-export * from "./units";
+export * from "./utils/units";
 
-import "./theme.css";
-import "./variables.css";
+import "./theme/theme.css";
+import "./theme/variables.css";
 

@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import styles from "./styles.module.scss";
 
 interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -35,15 +36,21 @@ export const Header: React.FC<HeaderProps> = ({
 };
 
 interface BreakpointProps extends React.HTMLAttributes<HTMLDivElement> {
+  breakpoint?: "md" | "lg" | "xl";
   ref?: React.RefObject<HTMLDivElement | null>;
 }
 export const Breakpoint: React.FC<BreakpointProps> = ({
   children,
   className,
+  breakpoint = "lg",
   ...restProps
 }) => {
   return (
-    <div className={`${styles.breakpoint} ${className}`} {...restProps}>
+    <div
+      // eslint-disable-next-line max-len
+      className={`${classNames(styles.breakpoint, { [styles.md]: breakpoint === "md", [styles.lg]: breakpoint === "lg", [styles.xl]: breakpoint === "xl" })} ${className}`}
+      {...restProps}
+    >
       <div className={styles.breakpointInner}>{children}</div>
     </div>
   );

@@ -2,7 +2,7 @@ import { JSX, useEffect, useRef, useState } from "react";
 
 import classNames from "classnames";
 
-import { SizeUnits } from "../../units";
+import { SizeUnits } from "../../utils/units";
 import { Flex } from "../Flex";
 import { Typography } from "../Typography";
 

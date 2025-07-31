@@ -1,4 +1,4 @@
-@use "../../style" as *;
+@use "../../theme/style" as *;
 
 .layout {
   width: 100%;
@@ -33,7 +33,7 @@
     flex-direction: column;
     border-right: $border;
     width: 16rem;
-    height: 100%;
+    height: calc(100% - 4rem);
     overflow-y: auto;
     background: $color-background;
     z-index: 99;
@@ -49,9 +49,17 @@
 
     .breakpointInner {
       width: 100%;
-      max-width: $breakpoint-md;
       margin: 0 auto;
       overflow: hidden;
+    }
+    &.md > .breakpointInner {
+      max-width: $breakpoint-md;
+    }
+    &.lg > .breakpointInner {
+      max-width: $breakpoint-lg;
+    }
+    &.xl > .breakpointInner {
+      max-width: $breakpoint-xl;
     }
 
     @at-root .layout:has(.breakpoint) {

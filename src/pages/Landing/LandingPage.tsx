@@ -87,7 +87,9 @@ export const LandingPage: React.FC = () => {
               gap="lg"
               style={{ marginTop: "5rem" }}
             >
-              <Heading level={1} bold>Sampled UI Design System</Heading>
+              <Heading level={1} bold>
+                Sampled UI Design System
+              </Heading>
               <Text size="lg" style={{ textAlign: "center" }}>
                 A modern, flexible, and easy-to-use design system for building
                 beautiful web applications.
@@ -100,7 +102,7 @@ export const LandingPage: React.FC = () => {
               gap="lg"
               justify="center"
               align="stretch"
-              style={{ marginTop: "4rem", maxWidth: "58rem", flexWrap: "wrap" }}
+              style={{ marginTop: "4rem", maxWidth: "100%", flexWrap: "wrap" }}
             >
               {features.map((feature) => (
                 <Card
@@ -128,7 +130,6 @@ export const LandingPage: React.FC = () => {
             direction="column"
             align="center"
             gap="lg"
-            style={{ marginTop: "4rem" }}
           >
             <Heading level={3}>✨ Component generation</Heading>
             <Paragraph size="md">

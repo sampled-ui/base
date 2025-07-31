@@ -12,7 +12,7 @@ const TypographyShowcase: React.FC<TypographyShowcaseProps> = () => {
       direction="column"
       align="start"
       gap="lg"
-      style={{ marginTop: "4rem" }}
+      style={{ marginTop: "4rem", width: "100%" }}
     >
       <Spacing gap="xl" />
       <Heading level={2} bold>✍️ Simple typography</Heading>
@@ -20,7 +20,7 @@ const TypographyShowcase: React.FC<TypographyShowcaseProps> = () => {
         Sampled UI provides flexible and accessible typography components for
         headings, paragraphs, and text that can be tweaked to your liking.
       </Paragraph>
-      <Spacing gap="xl" />
+      <Spacing gap="lg" />
       <Row gap="2rem">
         <Column span={8}>
           <Flex direction="column" gap="sm" align="start">
