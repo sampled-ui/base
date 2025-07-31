@@ -4,6 +4,9 @@ import classNames from "classnames";
 
 import styles from "./styles.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
   image?: string;
   hoverable?: boolean;

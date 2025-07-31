@@ -7,6 +7,9 @@ import { Typography } from "../Typography";
 
 import styles from "./styles.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   items: {
     key: string;

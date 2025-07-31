@@ -4,6 +4,9 @@ import { SizeUnits, Variants } from "../../utils/units";
 
 import styles from "./Text.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 export interface TextProps
   extends React.HTMLAttributes<HTMLDivElement | HTMLPreElement> {
   variant?: Omit<Variants, "primary">;

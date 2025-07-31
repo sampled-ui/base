@@ -5,6 +5,9 @@ import { Typography } from "../Typography";
 
 import styles from "./styles.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 type TagVariant = "outlined" | "filled";
 
 interface TagProps extends React.HTMLAttributes<HTMLDivElement> {

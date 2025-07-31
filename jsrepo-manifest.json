@@ -19,7 +19,9 @@
 					],
 					"localDependencies": [
 						"components/Flex",
-						"components/Typography"
+						"components/Typography",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
@@ -27,7 +29,9 @@
 					"devDependencies": [],
 					"_imports_": {
 						"../Flex": "{{components/Flex}}",
-						"../Typography": "{{components/Typography}}"
+						"../Typography": "{{components/Typography}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -43,14 +47,18 @@
 						"styles.module.scss"
 					],
 					"localDependencies": [
-						"utils/units"
+						"utils/units",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
 					"devDependencies": [],
 					"_imports_": {
-						"../../utils/units": "{{utils/units}}"
+						"../../utils/units": "{{utils/units}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -65,12 +73,18 @@
 						"index.tsx",
 						"styles.module.scss"
 					],
-					"localDependencies": [],
+					"localDependencies": [
+						"theme/theme",
+						"theme/variables"
+					],
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
 					"devDependencies": [],
-					"_imports_": {}
+					"_imports_": {
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
+					}
 				},
 				{
 					"name": "Chart",
@@ -89,14 +103,18 @@
 					"localDependencies": [
 						"components/Card",
 						"components/Flex",
-						"components/Typography"
+						"components/Typography",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [],
 					"devDependencies": [],
 					"_imports_": {
 						"../Card": "{{components/Card}}",
 						"../Flex": "{{components/Flex}}",
-						"../Typography": "{{components/Typography}}"
+						"../Typography": "{{components/Typography}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -111,10 +129,16 @@
 						"index.tsx",
 						"styles.module.scss"
 					],
-					"localDependencies": [],
+					"localDependencies": [
+						"theme/theme",
+						"theme/variables"
+					],
 					"dependencies": [],
 					"devDependencies": [],
-					"_imports_": {}
+					"_imports_": {
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
+					}
 				},
 				{
 					"name": "Flex",
@@ -129,14 +153,18 @@
 						"styles.module.scss"
 					],
 					"localDependencies": [
-						"utils/units"
+						"utils/units",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
 					"devDependencies": [],
 					"_imports_": {
-						"../../utils/units": "{{utils/units}}"
+						"../../utils/units": "{{utils/units}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -153,12 +181,18 @@
 						"index.tsx",
 						"styles.module.scss"
 					],
-					"localDependencies": [],
+					"localDependencies": [
+						"theme/theme",
+						"theme/variables"
+					],
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
 					"devDependencies": [],
-					"_imports_": {}
+					"_imports_": {
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
+					}
 				},
 				{
 					"name": "Input",
@@ -173,14 +207,18 @@
 						"styles.module.scss"
 					],
 					"localDependencies": [
-						"utils/units"
+						"utils/units",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
 					"devDependencies": [],
 					"_imports_": {
-						"../../utils/units": "{{utils/units}}"
+						"../../utils/units": "{{utils/units}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -195,12 +233,18 @@
 						"index.tsx",
 						"styles.module.scss"
 					],
-					"localDependencies": [],
+					"localDependencies": [
+						"theme/theme",
+						"theme/variables"
+					],
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
 					"devDependencies": [],
-					"_imports_": {}
+					"_imports_": {
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
+					}
 				},
 				{
 					"name": "Menu",
@@ -217,7 +261,9 @@
 					"localDependencies": [
 						"utils/units",
 						"components/Flex",
-						"components/Typography"
+						"components/Typography",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
@@ -226,7 +272,9 @@
 					"_imports_": {
 						"../../utils/units": "{{utils/units}}",
 						"../Flex": "{{components/Flex}}",
-						"../Typography": "{{components/Typography}}"
+						"../Typography": "{{components/Typography}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -244,7 +292,9 @@
 					"localDependencies": [
 						"components/Flex",
 						"components/Spacing",
-						"components/Typography"
+						"components/Typography",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
@@ -253,7 +303,9 @@
 					"_imports_": {
 						"../Flex": "{{components/Flex}}",
 						"../Spacing": "{{components/Spacing}}",
-						"../Typography": "{{components/Typography}}"
+						"../Typography": "{{components/Typography}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -268,12 +320,18 @@
 						"index.tsx",
 						"styles.module.scss"
 					],
-					"localDependencies": [],
+					"localDependencies": [
+						"theme/theme",
+						"theme/variables"
+					],
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
 					"devDependencies": [],
-					"_imports_": {}
+					"_imports_": {
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
+					}
 				},
 				{
 					"name": "Select",
@@ -290,7 +348,9 @@
 					"localDependencies": [
 						"utils/units",
 						"components/Menu",
-						"components/Typography"
+						"components/Typography",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
@@ -299,7 +359,9 @@
 					"_imports_": {
 						"../../utils/units": "{{utils/units}}",
 						"../Menu": "{{components/Menu}}",
-						"../Typography": "{{components/Typography}}"
+						"../Typography": "{{components/Typography}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -314,10 +376,16 @@
 						"index.module.scss",
 						"index.tsx"
 					],
-					"localDependencies": [],
+					"localDependencies": [
+						"theme/theme",
+						"theme/variables"
+					],
 					"dependencies": [],
 					"devDependencies": [],
-					"_imports_": {}
+					"_imports_": {
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
+					}
 				},
 				{
 					"name": "Showcase",
@@ -332,14 +400,18 @@
 						"styles.module.scss"
 					],
 					"localDependencies": [
-						"components/Typography"
+						"components/Typography",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
 					"devDependencies": [],
 					"_imports_": {
-						"../Typography": "{{components/Typography}}"
+						"../Typography": "{{components/Typography}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -354,12 +426,18 @@
 						"index.tsx",
 						"styles.module.scss"
 					],
-					"localDependencies": [],
+					"localDependencies": [
+						"theme/theme",
+						"theme/variables"
+					],
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
 					"devDependencies": [],
-					"_imports_": {}
+					"_imports_": {
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
+					}
 				},
 				{
 					"name": "Spacing",
@@ -374,14 +452,18 @@
 						"styles.module.scss"
 					],
 					"localDependencies": [
-						"utils/units"
+						"utils/units",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
 					"devDependencies": [],
 					"_imports_": {
-						"../../utils/units": "{{utils/units}}"
+						"../../utils/units": "{{utils/units}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -400,7 +482,9 @@
 						"components/Card",
 						"components/Flex",
 						"components/Spacing",
-						"components/Typography"
+						"components/Typography",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [],
 					"devDependencies": [],
@@ -409,7 +493,9 @@
 						"../Flex": "{{components/Flex}}",
 						"../Spacing": "{{components/Spacing}}",
 						"../Typography": "{{components/Typography}}",
-						"../Typography/Text": "{{components/Typography}}/Text"
+						"../Typography/Text": "{{components/Typography}}/Text",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -426,7 +512,9 @@
 					],
 					"localDependencies": [
 						"components/Flex",
-						"components/Typography"
+						"components/Typography",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
@@ -434,7 +522,9 @@
 					"devDependencies": [],
 					"_imports_": {
 						"../Flex": "{{components/Flex}}",
-						"../Typography": "{{components/Typography}}"
+						"../Typography": "{{components/Typography}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -451,7 +541,9 @@
 					],
 					"localDependencies": [
 						"utils/units",
-						"components/Typography"
+						"components/Typography",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
@@ -459,7 +551,9 @@
 					"devDependencies": [],
 					"_imports_": {
 						"../../utils/units": "{{utils/units}}",
-						"../Typography": "{{components/Typography}}"
+						"../Typography": "{{components/Typography}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -475,10 +569,16 @@
 						"hooks.tsx",
 						"index.tsx"
 					],
-					"localDependencies": [],
+					"localDependencies": [
+						"theme/theme",
+						"theme/variables"
+					],
 					"dependencies": [],
 					"devDependencies": [],
-					"_imports_": {}
+					"_imports_": {
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
+					}
 				},
 				{
 					"name": "Toast",
@@ -497,7 +597,9 @@
 					],
 					"localDependencies": [
 						"utils/units",
-						"components/Flex"
+						"components/Flex",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
@@ -505,7 +607,9 @@
 					"devDependencies": [],
 					"_imports_": {
 						"../../utils/units": "{{utils/units}}",
-						"../Flex": "{{components/Flex}}"
+						"../Flex": "{{components/Flex}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				},
 				{
@@ -528,14 +632,18 @@
 						"index.tsx"
 					],
 					"localDependencies": [
-						"utils/units"
+						"utils/units",
+						"theme/theme",
+						"theme/variables"
 					],
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
 					"devDependencies": [],
 					"_imports_": {
-						"../../utils/units": "{{utils/units}}"
+						"../../utils/units": "{{utils/units}}",
+						"../../theme/theme.css": "{{theme/theme}}.css",
+						"../../theme/variables.css": "{{theme/variables}}.css"
 					}
 				}
 			]

@@ -6,6 +6,9 @@ import { Typography } from "../Typography";
 
 import styles from "./styles.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 interface ShowcaseProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   title: string | JSX.Element;

@@ -3,6 +3,9 @@ import classNames from "classnames";
 import styles from "./Link.module.scss";
 import { Text, TextProps } from "./Text";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 export interface LinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
   size?: "sm" | "md" | "lg";
   textProps?: TextProps;

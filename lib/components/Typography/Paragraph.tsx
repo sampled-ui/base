@@ -2,6 +2,9 @@ import classNames from "classnames";
 
 import styles from "./Paragraph.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 export interface ParagraphProps
   extends React.HTMLAttributes<HTMLParagraphElement> {
   size?: "sm" | "md" | "lg";

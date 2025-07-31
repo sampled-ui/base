@@ -6,6 +6,9 @@ import { TextProps } from "../Typography/Text";
 
 import styles from "./styles.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 interface StatisticProps {
   label: string;
   value: string | number;

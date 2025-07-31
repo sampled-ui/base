@@ -4,6 +4,9 @@ import { SizeUnits } from "../../utils/units";
 
 import styles from "./styles.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 interface SpacingProps extends React.HTMLAttributes<HTMLDivElement> {
   gap?: SizeUnits;
   ref?: React.RefObject<HTMLDivElement | null>;

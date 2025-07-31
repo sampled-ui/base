@@ -6,6 +6,9 @@ import { Typography } from "../Typography";
 
 import styles from "./styles.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 interface BarChartProps {
   axis: { label: string; value: number; style?: CSSProperties }[];
   unit?: string;

@@ -1,5 +1,8 @@
 import styles from "./styles.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 interface DividerProps extends React.HTMLAttributes<HTMLHRElement> {
   ref?: React.RefObject<HTMLHRElement | null>;
 }

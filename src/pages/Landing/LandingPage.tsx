@@ -12,14 +12,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router";
 
-import {
-  Button,
-  Card,
-  Flex,
-  Layout,
-  Spacing,
-  Typography,
-} from "../../../lib/main";
+import { Button, Card, Flex, Layout, Spacing, Typography } from "../../../lib/main";
 
 import SpacingShowcase from "./SpacingShowcase";
 import TypographyShowcase from "./TypographyShowcase";
@@ -126,11 +119,7 @@ export const LandingPage: React.FC = () => {
           {/* Agent Section */}
           <TypographyShowcase />
           <SpacingShowcase />
-          <Flex
-            direction="column"
-            align="center"
-            gap="lg"
-          >
+          <Flex direction="column" align="center" gap="lg">
             <Heading level={3}>✨ Component generation</Heading>
             <Paragraph size="md">
               Want something unique? Use our AI-powered agent to generate custom

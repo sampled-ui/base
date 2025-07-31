@@ -4,6 +4,9 @@ import { SizeUnits } from "../../utils/units";
 
 import styles from "./styles.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
   direction?: "row" | "column";
   gap?: SizeUnits;

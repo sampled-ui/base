@@ -8,6 +8,9 @@ import { Flex } from "../Flex";
 import { ToastContext } from "./context";
 import styles from "./styles.module.scss";
 
+import "../../theme/theme.css";
+import "../../theme/variables.css";
+
 export interface Toast {
   id: string;
   message: string;

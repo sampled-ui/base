@@ -1,7 +1,11 @@
 import classNames from "classnames";
+
 import { HeadingUnits } from "../../utils/units";
 
 import styles from "./Heading.module.scss";
+
+import "../../theme/theme.css";
+import "../../theme/variables.css";
 
 export interface HeadingProps
   extends Omit<React.HTMLAttributes<HTMLHeadingElement>, "children"> {
