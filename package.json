@@ -1,60 +1,62 @@
 {
-  "name": "@sampled-ui/base",
-  "version": "0.0.70",
-  "type": "module",
-  "main": "dist/main.js",
-  "types": "dist/main.d.ts",
-  "files": [
-    "dist"
-  ],
-  "license": "MIT",
-  "homepage": "https://sampled-ui.github.io/base/",
-  "scripts": {
-    "dev": "vite",
-    "build": "rimraf dist && tsc --p ./tsconfig.build.json && vite build",
-    "build:app": "yarn vite build --app",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "prepublishOnly": "yarn build"
-  },
-  "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "@codemirror/lang-javascript": "^6.2.3",
-    "@eslint/js": "^9.21.0",
-    "@types/node": "^22.13.10",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@uiw/react-codemirror": "^4.23.10",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.21.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "glob": "^11.0.1",
-    "globals": "^15.15.0",
-    "lucide-react": "^0.487.0",
-    "prettier": "^3.5.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-element-to-jsx-string": "^17.0.0",
-    "react-is": "^19.1.0",
-    "react-router": "^7.4.0",
-    "rimraf": "^6.0.1",
-    "sass": "^1.86.0",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0",
-    "vite-plugin-dts": "^4.5.3",
-    "vite-plugin-lib-inject-css": "^2.2.1",
-    "vite-plugin-sass": "^0.1.0"
-  },
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "dependencies": {
-    "classnames": "^2.5.1"
-  }
+	"name": "@sampled-ui/base",
+	"version": "0.0.70",
+	"type": "module",
+	"main": "dist/main.js",
+	"types": "dist/main.d.ts",
+	"files": [
+		"dist"
+	],
+	"license": "MIT",
+	"homepage": "https://sampled-ui.github.io/base/",
+	"scripts": {
+		"dev": "vite",
+		"build": "rimraf dist && tsc --p ./tsconfig.build.json && vite build",
+		"build:app": "yarn vite build --app",
+		"lint": "eslint .",
+		"preview": "vite preview",
+		"prepublishOnly": "yarn build",
+		"build:registry": "jsrepo build"
+	},
+	"peerDependencies": {
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"@codemirror/lang-javascript": "^6.2.3",
+		"@eslint/js": "^9.21.0",
+		"@types/node": "^22.13.10",
+		"@types/react": "^19.0.10",
+		"@types/react-dom": "^19.0.4",
+		"@uiw/react-codemirror": "^4.23.10",
+		"@vitejs/plugin-react": "^4.3.4",
+		"eslint": "^9.21.0",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-react-hooks": "^5.1.0",
+		"eslint-plugin-react-refresh": "^0.4.19",
+		"glob": "^11.0.1",
+		"globals": "^15.15.0",
+		"jsrepo": "^2.4.4",
+		"lucide-react": "^0.487.0",
+		"prettier": "^3.5.3",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"react-element-to-jsx-string": "^17.0.0",
+		"react-is": "^19.1.0",
+		"react-router": "^7.4.0",
+		"rimraf": "^6.0.1",
+		"sass": "^1.86.0",
+		"typescript": "~5.7.2",
+		"typescript-eslint": "^8.24.1",
+		"vite": "^6.2.0",
+		"vite-plugin-dts": "^4.5.3",
+		"vite-plugin-lib-inject-css": "^2.2.1",
+		"vite-plugin-sass": "^0.1.0"
+	},
+	"sideEffects": [
+		"**/*.css"
+	],
+	"dependencies": {
+		"classnames": "^2.5.1"
+	}
 }

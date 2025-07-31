@@ -1,0 +1,618 @@
+{
+	"name": "@sampled-ui/base",
+	"version": "0.0.1",
+	"categories": [
+		{
+			"name": "components",
+			"blocks": [
+				{
+					"name": "Accordion",
+					"directory": "lib/components/Accordion",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"components/Flex",
+						"components/Typography"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../Flex": "{{components/Flex}}",
+						"../Typography": "{{components/Typography}}"
+					}
+				},
+				{
+					"name": "Button",
+					"directory": "lib/components/Button",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"utils/units"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../../utils/units": "{{utils/units}}"
+					}
+				},
+				{
+					"name": "Card",
+					"directory": "lib/components/Card",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Chart",
+					"directory": "lib/components/Chart",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Horizontal.tsx",
+						"Vertical.tsx",
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"components/Card",
+						"components/Flex",
+						"components/Typography"
+					],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {
+						"../Card": "{{components/Card}}",
+						"../Flex": "{{components/Flex}}",
+						"../Typography": "{{components/Typography}}"
+					}
+				},
+				{
+					"name": "Divider",
+					"directory": "lib/components/Divider",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Flex",
+					"directory": "lib/components/Flex",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"utils/units"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../../utils/units": "{{utils/units}}"
+					}
+				},
+				{
+					"name": "Grid",
+					"directory": "lib/components/Grid",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Column.tsx",
+						"Row.tsx",
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Input",
+					"directory": "lib/components/Input",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"utils/units"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../../utils/units": "{{utils/units}}"
+					}
+				},
+				{
+					"name": "Layout",
+					"directory": "lib/components/Layout",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Menu",
+					"directory": "lib/components/Menu",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"utils/units",
+						"components/Flex",
+						"components/Typography"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../../utils/units": "{{utils/units}}",
+						"../Flex": "{{components/Flex}}",
+						"../Typography": "{{components/Typography}}"
+					}
+				},
+				{
+					"name": "Navigation",
+					"directory": "lib/components/Navigation",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"components/Flex",
+						"components/Spacing",
+						"components/Typography"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../Flex": "{{components/Flex}}",
+						"../Spacing": "{{components/Spacing}}",
+						"../Typography": "{{components/Typography}}"
+					}
+				},
+				{
+					"name": "Progress",
+					"directory": "lib/components/Progress",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Select",
+					"directory": "lib/components/Select",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"utils/units",
+						"components/Menu",
+						"components/Typography"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../../utils/units": "{{utils/units}}",
+						"../Menu": "{{components/Menu}}",
+						"../Typography": "{{components/Typography}}"
+					}
+				},
+				{
+					"name": "ShinyText",
+					"directory": "lib/components/ShinyText",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.module.scss",
+						"index.tsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Showcase",
+					"directory": "lib/components/Showcase",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"components/Typography"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../Typography": "{{components/Typography}}"
+					}
+				},
+				{
+					"name": "Skeleton",
+					"directory": "lib/components/Skeleton",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Spacing",
+					"directory": "lib/components/Spacing",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"utils/units"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../../utils/units": "{{utils/units}}"
+					}
+				},
+				{
+					"name": "Statistic",
+					"directory": "lib/components/Statistic",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"components/Card",
+						"components/Flex",
+						"components/Spacing",
+						"components/Typography"
+					],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {
+						"../Card": "{{components/Card}}",
+						"../Flex": "{{components/Flex}}",
+						"../Spacing": "{{components/Spacing}}",
+						"../Typography": "{{components/Typography}}",
+						"../Typography/Text": "{{components/Typography}}/Text"
+					}
+				},
+				{
+					"name": "Tabs",
+					"directory": "lib/components/Tabs",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"components/Flex",
+						"components/Typography"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../Flex": "{{components/Flex}}",
+						"../Typography": "{{components/Typography}}"
+					}
+				},
+				{
+					"name": "Tag",
+					"directory": "lib/components/Tag",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"index.tsx",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"utils/units",
+						"components/Typography"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../../utils/units": "{{utils/units}}",
+						"../Typography": "{{components/Typography}}"
+					}
+				},
+				{
+					"name": "Theming",
+					"directory": "lib/components/Theming",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ThemeProvider.tsx",
+						"hooks.tsx",
+						"index.tsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Toast",
+					"directory": "lib/components/Toast",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ToastProvider.tsx",
+						"context.tsx",
+						"hooks.tsx",
+						"index.ts",
+						"styles.module.scss"
+					],
+					"localDependencies": [
+						"utils/units",
+						"components/Flex"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../../utils/units": "{{utils/units}}",
+						"../Flex": "{{components/Flex}}"
+					}
+				},
+				{
+					"name": "Typography",
+					"directory": "lib/components/Typography",
+					"category": "components",
+					"tests": false,
+					"docs": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Heading.module.scss",
+						"Heading.tsx",
+						"Link.module.scss",
+						"Link.tsx",
+						"Paragraph.module.scss",
+						"Paragraph.tsx",
+						"Text.module.scss",
+						"Text.tsx",
+						"index.tsx"
+					],
+					"localDependencies": [
+						"utils/units"
+					],
+					"dependencies": [
+						"classnames@^2.5.1"
+					],
+					"devDependencies": [],
+					"_imports_": {
+						"../../utils/units": "{{utils/units}}"
+					}
+				}
+			]
+		},
+		{
+			"name": "theme",
+			"blocks": [
+				{
+					"name": "style",
+					"directory": "lib/theme",
+					"category": "theme",
+					"tests": false,
+					"docs": false,
+					"subdirectory": false,
+					"list": true,
+					"files": [
+						"style.scss"
+					],
+					"localDependencies": [],
+					"_imports_": {},
+					"dependencies": [],
+					"devDependencies": []
+				},
+				{
+					"name": "theme",
+					"directory": "lib/theme",
+					"category": "theme",
+					"tests": false,
+					"docs": false,
+					"subdirectory": false,
+					"list": true,
+					"files": [
+						"theme.css"
+					],
+					"localDependencies": [],
+					"_imports_": {},
+					"dependencies": [],
+					"devDependencies": []
+				},
+				{
+					"name": "variables",
+					"directory": "lib/theme",
+					"category": "theme",
+					"tests": false,
+					"docs": false,
+					"subdirectory": false,
+					"list": true,
+					"files": [
+						"variables.css"
+					],
+					"localDependencies": [],
+					"_imports_": {},
+					"dependencies": [],
+					"devDependencies": []
+				}
+			]
+		},
+		{
+			"name": "utils",
+			"blocks": [
+				{
+					"name": "units",
+					"directory": "lib/utils",
+					"category": "utils",
+					"tests": false,
+					"docs": false,
+					"subdirectory": false,
+					"list": true,
+					"files": [
+						"units.ts"
+					],
+					"localDependencies": [],
+					"_imports_": {},
+					"dependencies": [],
+					"devDependencies": []
+				}
+			]
+		}
+	]
+}
