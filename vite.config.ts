@@ -7,7 +7,7 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 
-let config = defineConfig({
+export default defineConfig({
   plugins: [
     react(),
     libInjectCss(),
@@ -42,5 +42,3 @@ let config = defineConfig({
     },
   },
 });
-
-export default config;
