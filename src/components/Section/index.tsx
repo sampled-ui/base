@@ -35,8 +35,8 @@ export function Section<T>({
 }: SectionProps<T>) {
   const { hash } = window.location;
   useEffect(() => {
+    const element = document.getElementById(id);
     if (hash === `#${id}`) {
-      const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }

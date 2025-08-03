@@ -1,5 +1,6 @@
 import classNames from "classnames";
 
+import { SizeUnits } from "../../utils/units";
 import { Flex } from "../Flex";
 import { Spacing } from "../Spacing";
 import { Typography } from "../Typography";
@@ -20,6 +21,7 @@ interface NavigationProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "children"> {
   items: NavigationItem[];
   selected?: string;
+  size?: SizeUnits;
   ref?: React.RefObject<HTMLDivElement | null>;
 }
 
@@ -28,17 +30,23 @@ const { Text } = Typography;
 export const Navigation: React.FC<NavigationProps> = ({
   items,
   selected,
+  size = "md",
   className,
   ref,
   ...restProps
 }) => {
   return (
-    <Spacing className={`${styles.navigation} ${className}`} ref={ref} {...restProps}>
-      <Flex direction="column" gap="sm">
+    <Spacing
+      gap={size}
+      className={`${styles.navigation} ${className}`}
+      ref={ref}
+      {...restProps}
+    >
+      <Flex direction="column" gap={size === "sm" ? undefined : "sm"}>
         {items.map((item, index) => {
           return (
             <Flex
-              gap="md"
+              gap={size}
               align="center"
               key={index}
               className={classNames(styles.item, {
@@ -47,7 +55,7 @@ export const Navigation: React.FC<NavigationProps> = ({
               onClick={item.onClick}
             >
               {item.icon ?? null}
-              <Text size="md" key={index}>
+              <Text size={size} key={index}>
                 {item.title}
               </Text>
             </Flex>

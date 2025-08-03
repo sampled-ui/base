@@ -11,7 +11,7 @@
 	"homepage": "https://sampled-ui.github.io/base/",
 	"scripts": {
 		"dev": "vite",
-		"build": "rimraf dist && tsc --p ./tsconfig.build.json && vite build",
+		"build": "rimraf dist && tsc --p ./tsconfig.build.json && vite build && yarn build:registry",
 		"build:app": "yarn vite build --app",
 		"lint": "eslint .",
 		"preview": "vite preview",

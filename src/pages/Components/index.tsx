@@ -2,6 +2,7 @@ import { useMemo, useRef } from "react";
 
 import { Location, useLocation, useNavigate } from "react-router";
 
+import { Breakpoint } from "../../../lib/components/Layout";
 import {
   Divider,
   Flex,
@@ -13,7 +14,6 @@ import {
 } from "../../../lib/main";
 import { Section } from "../../components/Section";
 
-import { Breakpoint } from "../../../lib/components/Layout";
 import ButtonSection from "./sections/ButtonSection";
 import CardSection from "./sections/CardSection";
 import ChartSection from "./sections/ChartSection";
@@ -55,7 +55,9 @@ export const ComponentsPage: React.FC = () => {
       title: "Overview",
       onClick: () => {
         navigate("#");
-        innerLayoutRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+        if (innerLayoutRef.current) {
+          innerLayoutRef.current.scrollTo({ top: 0, behavior: "smooth" });
+        }
       },
     },
     {
@@ -142,9 +144,9 @@ export const ComponentsPage: React.FC = () => {
     <Layout>
       <Breakpoint breakpoint="md">
         <Sidebar>
-          <Navigation selected={selected} items={navItems} />
+          <Navigation size="sm" selected={selected} items={navItems} />
         </Sidebar>
-        <Spacing gap="lg">
+        <Spacing gap="lg" ref={innerLayoutRef}>
           <Flex direction="column" align="start" gap="md">
             <Spacing gap="lg" />
             <Heading level={1} bolder>
