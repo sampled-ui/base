@@ -310,7 +310,9 @@
 					"dependencies": [
 						"classnames@^2.5.1"
 					],
-					"devDependencies": [],
+					"devDependencies": [
+						"lucide-react@^0.487.0"
+					],
 					"_imports_": {
 						"../../utils/units": "{{utils/units}}",
 						"../Flex": "{{components/Flex}}",

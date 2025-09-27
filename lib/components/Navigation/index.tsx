@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import classNames from "classnames";
+import { ChevronRight } from "lucide-react";
 
 import { SizeUnits } from "../../utils/units";
 import { Flex } from "../Flex";
@@ -9,7 +10,6 @@ import { Typography } from "../Typography";
 
 import styles from "./styles.module.scss";
 
-import { ChevronRight } from "lucide-react";
 import "../../theme/theme.css";
 import "../../theme/variables.css";
 
@@ -24,7 +24,7 @@ export interface NavigationItem {
 interface NavigationProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "children" | "onClick"> {
   items: NavigationItem[];
-  selected?: string;
+  selected?: string | string[];
   size?: SizeUnits;
   onClick?: (item: NavigationItem) => void;
   ref?: React.RefObject<HTMLDivElement | null>;
@@ -35,7 +35,7 @@ const { Text } = Typography;
 // Helper function to check if an item is a direct child of the selected item
 const isDirectChildOfSelected = (
   item: NavigationItem,
-  selectedKey?: string,
+  selectedKey?: string | string[],
   allItems: NavigationItem[] = []
 ): boolean => {
   if (!selectedKey) return false;
@@ -43,7 +43,13 @@ const isDirectChildOfSelected = (
   // Find the selected item in the tree
   const findSelectedItem = (items: NavigationItem[]): NavigationItem | null => {
     for (const currentItem of items) {
-      if (currentItem.key === selectedKey) return currentItem;
+      if (
+        Array.isArray(selectedKey)
+          ? selectedKey.includes(currentItem.key)
+          : currentItem.key === selectedKey
+      ) {
+        return currentItem;
+      }
       if (currentItem.children) {
         const found = findSelectedItem(currentItem.children);
         if (found) return found;
@@ -89,7 +95,9 @@ export const Navigation: React.FC<NavigationProps> = ({
   ): React.ReactNode => {
     const hasChildren = item.children && item.children.length > 0;
     const isExpanded = expandedItems.has(item.key);
-    const isSelected = item.key === selected;
+    const isSelected = Array.isArray(selected)
+      ? selected.includes(item.key)
+      : item.key === selected;
     const isChildOfSelected = isDirectChildOfSelected(item, selected, allItems);
 
     return (
