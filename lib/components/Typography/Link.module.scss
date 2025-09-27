@@ -3,6 +3,8 @@
 .link {
   all: unset;
   cursor: pointer;
+  
+  height: fit-content;
 
   transition-property: opacity;
   transition-duration: $transition-fast;

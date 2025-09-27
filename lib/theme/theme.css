@@ -4,7 +4,8 @@
   --color-secondary: hsl(0, 0%, 0%);
   --color-tertiary: hsl(0, 0%, 60%);
   --color-primary-dim: hsl(0, 0%, 95%);
-  --color-accent: hsl(205, 100%, 45%);
+  --color-accent: hsl(205, 100%, 50%);
+  --color-accent-dim: hsl(205, 100%, 70%);
   --color-success: hsl(120, 100%, 38%);
   --color-error: hsl(0, 100%, 46%);
   --color-warning: hsl(40, 100%, 48%);
@@ -34,6 +35,7 @@
     --color-tertiary: hsl(0, 0%, 40%);
     --color-primary-dim: hsl(0, 0%, 15%);
     --color-accent: hsl(205, 100%, 50%);
+    --color-accent-dim: hsl(205, 100%, 70%);
 
     --color-background: hsl(0, 0%, 0%);
     --color-background-dim: hsl(0, 0%, 15%);

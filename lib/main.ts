@@ -7,7 +7,7 @@ export { Column, Row } from "./components/Grid";
 export { Input } from "./components/Input";
 export { Header, Layout, Sidebar } from "./components/Layout";
 export * from "./components/Menu";
-export { Navigation } from "./components/Navigation";
+export * from "./components/Navigation";
 export { Progress } from "./components/Progress";
 export { Select } from "./components/Select";
 export { ShinyText } from "./components/ShinyText";

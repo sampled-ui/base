@@ -12,7 +12,7 @@ export const Page = () => {
   return (
     <Layout style={{ height: "100vh", width: "100vw" }}>
       <Header>
-        <Link onClick={() => navigate("/")}>
+        <Link onClick={() => navigate("/")} style={{ height: "2rem" }}>
           <object
             data="wordmark-logo.svg"
             type="image/svg+xml"

@@ -27,7 +27,11 @@ export const Link: React.FC<LinkProps> = ({
   size = size ?? defaultProps.size;
   return (
     <a ref={ref} className={classNames(styles.link, className)} {...restProps}>
-      <Text {...{ ...textProps, size }}>{children}</Text>
+      {typeof children === "string" ? (
+        <Text {...{ ...textProps, size }}>{children}</Text>
+      ) : (
+        children
+      )}
     </a>
   );
 };

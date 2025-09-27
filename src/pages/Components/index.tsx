@@ -8,6 +8,7 @@ import {
   Flex,
   Layout,
   Navigation,
+  NavigationItem,
   Sidebar,
   Spacing,
   Typography,
@@ -20,6 +21,7 @@ import ChartSection from "./sections/ChartSection";
 import GridSection from "./sections/GridSection";
 import InputSection from "./sections/InputSection";
 import MenuSection from "./sections/MenuSection";
+import NavigationSection from "./sections/NavigationSection";
 import ProgressSection from "./sections/ProgressSection";
 import ShinyTextSection from "./sections/ShinyTextSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
@@ -34,13 +36,28 @@ import TypographySection from "./sections/TypographySection";
 const { Heading } = Typography;
 
 const useGetSelectedNavItem = (
-  navItems: { key: string; title: string; onClick: () => void }[],
+  navItems: NavigationItem[],
   location: Location
 ) => {
   return useMemo(() => {
     const path = location.pathname + location.hash;
-    const selected = navItems.find((item) => path.includes(item.key));
-    return selected?.key || "overview";
+
+    const findSelected = (items: NavigationItem[]): string | undefined => {
+      for (const item of items) {
+        if (path.includes(item.key)) {
+          return item.key;
+        }
+        if (item.children) {
+          const childSelected = findSelected(item.children);
+          if (childSelected) {
+            return childSelected;
+          }
+        }
+      }
+      return undefined;
+    };
+
+    return findSelected(navItems) || "overview";
   }, [navItems, location]);
 };
 
@@ -66,75 +83,96 @@ export const ComponentsPage: React.FC = () => {
       onClick: () => navigate("#theming"),
     },
     {
-      key: "button",
-      title: "Button",
-      onClick: () => navigate("#button"),
+      key: "components",
+      title: "Components",
+      children: [
+        {
+          key: "button",
+          title: "Button",
+          onClick: () => navigate("#button"),
+        },
+        {
+          key: "input",
+          title: "Input",
+          onClick: () => navigate("#input"),
+        },
+        {
+          key: "typography",
+          title: "Typography",
+          onClick: () => navigate("#typography"),
+        },
+        {
+          key: "card",
+          title: "Card",
+          onClick: () => navigate("#card"),
+        },
+        {
+          key: "showcase",
+          title: "Showcase",
+          onClick: () => navigate("#showcase"),
+        },
+        {
+          key: "tag",
+          title: "Tag",
+          onClick: () => navigate("#tag"),
+        },
+        {
+          key: "skeleton",
+          title: "Skeleton",
+          onClick: () => navigate("#skeleton"),
+        },
+        {
+          key: "progress",
+          title: "Progress",
+          onClick: () => navigate("#progress"),
+        },
+        {
+          key: "statistic",
+          title: "Statistic",
+          onClick: () => navigate("#statistic"),
+        },
+        {
+          key: "shiny-text",
+          title: "Shiny Text",
+          onClick: () => navigate("#shiny-text"),
+        },
+        {
+          key: "chart",
+          title: "Chart",
+          onClick: () => navigate("#chart"),
+        },
+        {
+          key: "menu",
+          title: "Menu",
+          onClick: () => navigate("#menu"),
+        },
+        {
+          key: "tabs",
+          title: "Tabs",
+          onClick: () => navigate("#tabs"),
+        },
+        {
+          key: "toast",
+          title: "Toast",
+          onClick: () => navigate("#toast"),
+        },
+      ],
     },
-    { key: "input", title: "Input", onClick: () => navigate("#input") },
     {
-      key: "typography",
-      title: "Typography",
-      onClick: () => navigate("#typography"),
-    },
-    {
-      key: "grid",
-      title: "Grid",
-      onClick: () => navigate("#grid"),
-    },
-    {
-      key: "card",
-      title: "Card",
-      onClick: () => navigate("#card"),
-    },
-    {
-      key: "tag",
-      title: "Tag",
-      onClick: () => navigate("#tag"),
-    },
-    {
-      key: "showcase",
-      title: "Showcase",
-      onClick: () => navigate("#showcase"),
-    },
-    {
-      key: "menu",
-      title: "Menu",
-      onClick: () => navigate("#menu"),
-    },
-    {
-      key: "toast",
-      title: "Toast",
-      onClick: () => navigate("#toast"),
-    },
-    {
-      key: "tabs",
-      title: "Tabs",
-      onClick: () => navigate("#tabs"),
-    },
-    {
-      key: "skeleton",
-      title: "Skeleton",
-      onClick: () => navigate("#skeleton"),
-    },
-    {
-      key: "progress",
-      title: "Progress",
-      onClick: () => navigate("#progress"),
-    },
-    {
-      key: "statistic",
-      title: "Statistic",
-      onClick: () => navigate("#statistic"),
-    },
-    {
-      key: "chart",
-      title: "Chart",
-      onClick: () => navigate("#chart"),
-    },
-    {
-      key: "shiny-text",
-      title: "Shiny Text",
-      onClick: () => navigate("#shiny-text"),
+      key: "layout",
+      title: "Layout",
+      children: [
+        {
+          key: "navigation",
+          title: "Navigation",
+          onClick: () => navigate("#navigation"),
+        },
+        {
+          key: "grid",
+          title: "Grid",
+          onClick: () => navigate("#grid"),
+        },
+      ],
     },
   ];
 
@@ -163,6 +201,7 @@ export const ComponentsPage: React.FC = () => {
           <CardSection />
           <TagSection />
           <ShowcaseSection />
+          <NavigationSection />
           <MenuSection />
           <ToastSection />
           <TabsSection />

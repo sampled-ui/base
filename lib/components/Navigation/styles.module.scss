@@ -3,21 +3,66 @@
 .navigation {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .item {
-  width: calc(100% - 1.5rem);
+  width: 100%;
   padding: $padding-md;
+  display: flex;
+  align-items: center;
 }
 
 .item:hover {
   cursor: pointer;
-  border-radius: $border-radius-xs;
   background: $color-background-dim;
 }
 
 .selected {
+  background: $color-accent !important;
+
   * {
-    font-weight: $font-weight-bold !important;
+    color: $color-primary !important;
   }
+}
+
+.childAccent {
+  position: relative;
+
+  background: $color-accent-dim;
+
+  * {
+    color: $color-primary;
+  }
+
+  &:hover {
+    background: $color-accent-dim !important;
+  }
+}
+
+.nestedGray {
+  background: $color-background-dim;
+  margin-right: $spacing-sm;
+}
+
+.expandIcon {
+  margin-left: auto;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: $color-secondary;
+  user-select: none;
+}
+
+.selected .expandIcon {
+  color: $color-primary !important;
+}
+
+.childAccent .expandIcon {
+  color: $color-secondary;
+}
+
+.childrenContainer {
+  display: flex;
+  flex-direction: column;
 }
