@@ -103,7 +103,7 @@ export const Navigation: React.FC<NavigationProps> = ({
     return (
       <div key={item.key} style={{ width: "100%" }}>
         <Flex
-          gap={size}
+          gap={size === "xs" ? "sm" : size}
           className={classNames(styles.item, {
             [styles.selected]: isSelected,
             [styles.childAccent]: isChildOfSelected,
@@ -129,10 +129,13 @@ export const Navigation: React.FC<NavigationProps> = ({
         >
           {hasChildren && (
             <ChevronRight
-              size={16}
+              size={12}
               style={{
-                transform: isExpanded ? "rotate(90deg)" : "rotate(0deg)",
+                transform: isExpanded
+                  ? "translateX(-0.8rem) rotate(90deg)"
+                  : "translateX(-0.8rem) rotate(0deg)",
                 transition: "transform 0.2s ease",
+                position: "absolute",
               }}
             />
           )}
