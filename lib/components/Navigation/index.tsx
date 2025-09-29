@@ -132,7 +132,7 @@ export const Navigation: React.FC<NavigationProps> = ({
               level > 0 && level % 2 === 1 && !isSelected && !isChildSelected,
           })}
           style={{
-            paddingLeft: `calc(${level} * 2rem + var(--spacing-md))`,
+            paddingLeft: `calc(${level} * 1rem + var(--spacing-md))`,
           }}
           onClick={() => {
             if (item.onClick) {

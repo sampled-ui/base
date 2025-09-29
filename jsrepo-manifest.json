@@ -302,7 +302,6 @@
 					"localDependencies": [
 						"utils/units",
 						"components/Flex",
-						"components/Spacing",
 						"components/Typography",
 						"theme/theme",
 						"theme/variables"
@@ -316,7 +315,6 @@
 					"_imports_": {
 						"../../utils/units": "{{utils/units}}",
 						"../Flex": "{{components/Flex}}",
-						"../Spacing": "{{components/Spacing}}",
 						"../Typography": "{{components/Typography}}",
 						"../../theme/theme.css": "{{theme/theme}}.css",
 						"../../theme/variables.css": "{{theme/variables}}.css"
