@@ -202,7 +202,6 @@ export const Navigation: React.FC<NavigationProps> = ({
       {...restProps}
       direction="column"
       align="stretch"
-      gap={size === "sm" ? undefined : "sm"}
     >
       {items.map((item) => renderNavigationItem(item, 0, items))}
     </Flex>
