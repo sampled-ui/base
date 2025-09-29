@@ -1,7 +1,3 @@
-/*
-	Installed from github/sampled-ui/base
-*/
-
 import { useEffect, useState } from "react";
 
 import classNames from "classnames";
