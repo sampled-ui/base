@@ -25,7 +25,7 @@ export const Page = () => {
           <Link onClick={() => navigate("/components")}>Components</Link>
         </Flex>
       </Header>
-      <Breakpoint>
+      <Breakpoint breakpoint="md">
         <Outlet />
       </Breakpoint>
     </Layout>

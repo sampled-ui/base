@@ -1,6 +1,6 @@
-import { useMemo, useRef } from "react";
+import { useRef, useState } from "react";
 
-import { Location, useLocation, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 import { Breakpoint } from "../../../lib/components/Layout";
 import {
@@ -8,7 +8,6 @@ import {
   Flex,
   Layout,
   Navigation,
-  NavigationItem,
   Sidebar,
   Spacing,
   Typography,
@@ -35,35 +34,9 @@ import TypographySection from "./sections/TypographySection";
 
 const { Heading } = Typography;
 
-const useGetSelectedNavItem = (
-  navItems: NavigationItem[],
-  location: Location
-) => {
-  return useMemo(() => {
-    const path = location.pathname + location.hash;
-
-    const findSelected = (items: NavigationItem[]): string | undefined => {
-      for (const item of items) {
-        if (path.includes(item.key)) {
-          return item.key;
-        }
-        if (item.children) {
-          const childSelected = findSelected(item.children);
-          if (childSelected) {
-            return childSelected;
-          }
-        }
-      }
-      return undefined;
-    };
-
-    return findSelected(navItems) || "overview";
-  }, [navItems, location]);
-};
-
 export const ComponentsPage: React.FC = () => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const [selected, setSelected] = useState("overview");
   const innerLayoutRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
@@ -71,7 +44,8 @@ export const ComponentsPage: React.FC = () => {
       key: "overview",
       title: "Overview",
       onClick: () => {
-        navigate("#");
+        navigate("#overview");
+        setSelected("overview");
         if (innerLayoutRef.current) {
           innerLayoutRef.current.scrollTo({ top: 0, behavior: "smooth" });
         }
@@ -80,7 +54,6 @@ export const ComponentsPage: React.FC = () => {
     {
       key: "theming",
       title: "Theming",
-      onClick: () => navigate("#theming"),
     },
     {
       key: "components",
@@ -89,72 +62,58 @@ export const ComponentsPage: React.FC = () => {
         {
           key: "button",
           title: "Button",
-          onClick: () => navigate("#button"),
         },
         {
           key: "input",
           title: "Input",
-          onClick: () => navigate("#input"),
         },
         {
           key: "typography",
           title: "Typography",
-          onClick: () => navigate("#typography"),
         },
         {
           key: "card",
           title: "Card",
-          onClick: () => navigate("#card"),
         },
         {
           key: "showcase",
           title: "Showcase",
-          onClick: () => navigate("#showcase"),
         },
         {
           key: "tag",
           title: "Tag",
-          onClick: () => navigate("#tag"),
         },
         {
           key: "skeleton",
           title: "Skeleton",
-          onClick: () => navigate("#skeleton"),
         },
         {
           key: "progress",
           title: "Progress",
-          onClick: () => navigate("#progress"),
         },
         {
           key: "statistic",
           title: "Statistic",
-          onClick: () => navigate("#statistic"),
         },
         {
           key: "shiny-text",
           title: "Shiny Text",
-          onClick: () => navigate("#shiny-text"),
         },
         {
           key: "chart",
           title: "Chart",
-          onClick: () => navigate("#chart"),
         },
         {
           key: "menu",
           title: "Menu",
-          onClick: () => navigate("#menu"),
         },
         {
           key: "tabs",
           title: "Tabs",
-          onClick: () => navigate("#tabs"),
         },
         {
           key: "toast",
           title: "Toast",
-          onClick: () => navigate("#toast"),
         },
       ],
     },
@@ -165,24 +124,33 @@ export const ComponentsPage: React.FC = () => {
         {
           key: "navigation",
           title: "Navigation",
-          onClick: () => navigate("#navigation"),
         },
         {
           key: "grid",
           title: "Grid",
-          onClick: () => navigate("#grid"),
         },
       ],
     },
   ];
 
-  const selected = useGetSelectedNavItem(navItems, location);
-
   return (
     <Layout>
       <Breakpoint breakpoint="md">
         <Sidebar>
-          <Navigation size="sm" selected={selected} items={navItems} />
+          <Navigation
+            size="sm"
+            selected={selected}
+            items={navItems}
+            onClick={(item) => {
+              if (item.key === "overview") {
+                navigate("#");
+                setSelected("overview");
+              } else {
+                navigate("#" + item.key);
+                setSelected(item.key);
+              }
+            }}
+          />
         </Sidebar>
         <Spacing gap="lg" ref={innerLayoutRef}>
           <Flex direction="column" align="start" gap="md">

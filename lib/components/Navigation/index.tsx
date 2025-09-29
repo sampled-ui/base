@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import classNames from "classnames";
 import { ChevronRight } from "lucide-react";
 
 import { SizeUnits } from "../../utils/units";
 import { Flex } from "../Flex";
-import { Spacing } from "../Spacing";
 import { Typography } from "../Typography";
 
 import styles from "./styles.module.scss";
@@ -32,8 +31,15 @@ interface NavigationProps
 
 const { Text } = Typography;
 
-// Helper function to check if an item is a direct child of the selected item
-const isDirectChildOfSelected = (
+const isChild = (selected: NavigationItem, item: NavigationItem): boolean => {
+  return (
+    selected.children?.some(
+      (child) => child.key === item.key || !!isChild(child, item)
+    ) ?? false
+  );
+};
+
+const isChildOfSelected = (
   item: NavigationItem,
   selectedKey?: string | string[],
   allItems: NavigationItem[] = []
@@ -62,7 +68,22 @@ const isDirectChildOfSelected = (
   if (!selectedItem || !selectedItem.children) return false;
 
   // Check if current item is a direct child of selected item
-  return selectedItem.children.some((child) => child.key === item.key);
+  return isChild(selectedItem, item);
+};
+
+const findParents = (items: NavigationItem[], child: string): string[] => {
+  for (const item of items) {
+    if (item.key === child) {
+      return [];
+    }
+    if (item.children) {
+      const path = findParents(item.children, child);
+      if (path.length) {
+        return [item.key, ...path];
+      }
+    }
+  }
+  return [];
 };
 
 export const Navigation: React.FC<NavigationProps> = ({
@@ -98,7 +119,7 @@ export const Navigation: React.FC<NavigationProps> = ({
     const isSelected = Array.isArray(selected)
       ? selected.includes(item.key)
       : item.key === selected;
-    const isChildOfSelected = isDirectChildOfSelected(item, selected, allItems);
+    const isChildSelected = isChildOfSelected(item, selected, allItems);
 
     return (
       <div key={item.key} style={{ width: "100%" }}>
@@ -106,9 +127,9 @@ export const Navigation: React.FC<NavigationProps> = ({
           gap={size === "xs" ? "sm" : size}
           className={classNames(styles.item, {
             [styles.selected]: isSelected,
-            [styles.childAccent]: isChildOfSelected,
+            [styles.childAccent]: isChildSelected,
             [styles.nestedGray]:
-              level > 0 && level % 2 === 1 && !isSelected && !isChildOfSelected,
+              level > 0 && level % 2 === 1 && !isSelected && !isChildSelected,
           })}
           style={{
             paddingLeft: `calc(${level} * 2rem + var(--spacing-md))`,
@@ -122,7 +143,6 @@ export const Navigation: React.FC<NavigationProps> = ({
               }
             }
             if (hasChildren) {
-              console.debug("Expanding item");
               toggleExpanded(item.key);
             }
           }}
@@ -153,20 +173,33 @@ export const Navigation: React.FC<NavigationProps> = ({
     );
   };
 
+  useEffect(() => {
+    const parents = new Set<string>();
+    if (selected) {
+      if (Array.isArray(selected)) {
+        selected.forEach((sel) => {
+          findParents(items, sel).forEach((parent) => parents.add(parent));
+        });
+      } else {
+        findParents(items, selected).forEach((parent) => parents.add(parent));
+      }
+    }
+    const isParentChainCollapsed = Array.from(parents).find(
+      (key) => !expandedItems.has(key)
+    );
+    if (isParentChainCollapsed) setExpandedItems(parents);
+  }, [expandedItems, items, selected]);
+
   return (
-    <Spacing
-      gap={size}
+    <Flex
       className={`${styles.navigation} ${className}`}
       ref={ref}
       {...restProps}
+      direction="column"
+      align="stretch"
+      gap={size === "sm" ? undefined : "sm"}
     >
-      <Flex
-        direction="column"
-        align="stretch"
-        gap={size === "sm" ? undefined : "sm"}
-      >
-        {items.map((item) => renderNavigationItem(item, 0, items))}
-      </Flex>
-    </Spacing>
+      {items.map((item) => renderNavigationItem(item, 0, items))}
+    </Flex>
   );
 };
