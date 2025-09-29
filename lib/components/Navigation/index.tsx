@@ -1,3 +1,7 @@
+/*
+	Installed from github/sampled-ui/base
+*/
+
 import { useEffect, useState } from "react";
 
 import classNames from "classnames";
@@ -71,15 +75,19 @@ const isChildOfSelected = (
   return isChild(selectedItem, item);
 };
 
-const findParents = (items: NavigationItem[], child: string): string[] => {
+const findParents = (
+  items: NavigationItem[],
+  child: string,
+  parent?: boolean
+): string[] => {
   for (const item of items) {
-    if (item.key === child) {
-      return [];
+    if (item.key === child && parent) {
+      return [item.key];
     }
     if (item.children) {
-      const path = findParents(item.children, child);
+      const path = findParents(item.children, child, true);
       if (path.length) {
-        return [item.key, ...path];
+        return [item.key];
       }
     }
   }
@@ -187,6 +195,7 @@ export const Navigation: React.FC<NavigationProps> = ({
     const isParentChainCollapsed = Array.from(parents).find(
       (key) => !expandedItems.has(key)
     );
+    console.debug(selected, isParentChainCollapsed, parents);
     if (isParentChainCollapsed) setExpandedItems(parents);
   }, [expandedItems, items, selected]);
 
