@@ -191,7 +191,6 @@ export const Navigation: React.FC<NavigationProps> = ({
     const isParentChainCollapsed = Array.from(parents).find(
       (key) => !expandedItems.has(key)
     );
-    console.debug(selected, isParentChainCollapsed, parents);
     if (isParentChainCollapsed) setExpandedItems(parents);
   }, [expandedItems, items, selected]);
 
